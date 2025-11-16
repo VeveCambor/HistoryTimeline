@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { HistoricalEvent } from '../types'
+import EventTooltip from './EventTooltip'
 
 interface TimelineProps {
   events: HistoricalEvent[]
@@ -51,8 +52,7 @@ function Timeline({ events, selectedEvent, onEventSelect, onEventHover }: Timeli
               >
                 <PointMarker $selected={isSelected} />
                 <PointTooltip>
-                  <PointYear>{event.year}</PointYear>
-                  <PointTitle>{event.title}</PointTitle>
+                  <EventTooltip event={event} />
                 </PointTooltip>
               </Point>
             )
@@ -175,20 +175,6 @@ const PointTooltip = styled.div`
   }
 `
 
-const PointYear = styled.div`
-  font-weight: 600;
-  color: #667eea;
-  font-size: 0.9rem;
-  margin-bottom: 0.2rem;
-`
-
-const PointTitle = styled.div`
-  font-size: 0.85rem;
-  color: #333;
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`
 
 const YearLabels = styled.div`
   display: flex;

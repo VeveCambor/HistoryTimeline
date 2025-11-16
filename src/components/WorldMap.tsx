@@ -1,9 +1,10 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { HistoricalEvent } from '../types'
+import EventTooltip from './EventTooltip'
 
 // Vytvoření custom ikon pro markery
 const createMarkerIcon = (color: string = '#3388ff') => {
@@ -26,19 +27,72 @@ const hoverIcon = createMarkerIcon('#ffd700')
 
 interface WorldMapProps {
   events: HistoricalEvent[]
-  selectedEvent: HistoricalEvent | null
   hoveredEvent: HistoricalEvent | null
   onEventSelect: (event: HistoricalEvent | null) => void
   onEventHover: (event: HistoricalEvent | null) => void
 }
 
-function WorldMap({ events, selectedEvent, hoveredEvent, onEventSelect, onEventHover }: WorldMapProps) {
-  const navigate = useNavigate()
-
-  const handleMarkerClick = (event: HistoricalEvent) => {
+// Komponenta pro marker s tooltipem
+function MarkerWithTooltip({ 
+  event, 
+  isHovered, 
+  onEventSelect, 
+  onEventHover, 
+  navigate 
+}: { 
+  event: HistoricalEvent
+  isHovered: boolean
+  onEventSelect: (event: HistoricalEvent | null) => void
+  onEventHover: (event: HistoricalEvent | null) => void
+  navigate: (path: string) => void
+}) {
+  const handleMarkerClick = () => {
     onEventSelect(event)
     navigate(`/event/${event.id}`)
   }
+
+  return (
+    <Marker
+      position={[event.coordinates.lat, event.coordinates.lng]}
+      icon={isHovered ? hoverIcon : defaultIcon}
+      eventHandlers={{
+        click: handleMarkerClick,
+        mouseover: (e) => {
+          onEventHover(event)
+          e.target.openTooltip()
+        },
+        mouseout: (e) => {
+          onEventHover(null)
+          e.target.closeTooltip()
+        },
+      }}
+    >
+      <Tooltip 
+        permanent={false} 
+        direction="top" 
+        offset={[0, -10]}
+        interactive={false}
+      >
+        <EventTooltip event={event} />
+      </Tooltip>
+      <Popup>
+        <PopupContent>
+          <h3>{event.title}</h3>
+          <PopupYear>{event.year}</PopupYear>
+          {event.location && (
+            <PopupLocation>{event.location}</PopupLocation>
+          )}
+          <PopupButton onClick={handleMarkerClick}>
+            Zobrazit detail
+          </PopupButton>
+        </PopupContent>
+      </Popup>
+    </Marker>
+  )
+}
+
+function WorldMap({ events, hoveredEvent, onEventSelect, onEventHover }: WorldMapProps) {
+  const navigate = useNavigate()
 
   return (
     <WorldMapContainer>
@@ -57,35 +111,14 @@ function WorldMap({ events, selectedEvent, hoveredEvent, onEventSelect, onEventH
           const isHovered = hoveredEvent?.id === event.id
           
           return (
-            <Marker
+            <MarkerWithTooltip
               key={event.id}
-              position={[event.coordinates.lat, event.coordinates.lng]}
-              icon={isHovered ? hoverIcon : defaultIcon}
-              eventHandlers={{
-                click: () => handleMarkerClick(event),
-                mouseover: (e) => {
-                  onEventHover(event)
-                  e.target.setIcon(hoverIcon)
-                },
-                mouseout: (e) => {
-                  onEventHover(null)
-                  e.target.setIcon(defaultIcon)
-                },
-              }}
-            >
-              <Popup>
-                <PopupContent>
-                  <h3>{event.title}</h3>
-                  <PopupYear>{event.year}</PopupYear>
-                  {event.location && (
-                    <PopupLocation>{event.location}</PopupLocation>
-                  )}
-                  <PopupButton onClick={() => handleMarkerClick(event)}>
-                    Zobrazit detail
-                  </PopupButton>
-                </PopupContent>
-              </Popup>
-            </Marker>
+              event={event}
+              isHovered={isHovered}
+              onEventSelect={onEventSelect}
+              onEventHover={onEventHover}
+              navigate={navigate}
+            />
           )
         })}
       </StyledMapContainer>
@@ -149,3 +182,4 @@ const PopupButton = styled.button`
     opacity: 0.9;
   }
 `
+

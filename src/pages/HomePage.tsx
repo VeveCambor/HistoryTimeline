@@ -20,7 +20,6 @@ function HomePage() {
         <MapContainer>
           <WorldMap 
             events={historicalEvents}
-            selectedEvent={selectedEvent}
             hoveredEvent={hoveredEvent}
             onEventSelect={setSelectedEvent}
             onEventHover={setHoveredEvent}
