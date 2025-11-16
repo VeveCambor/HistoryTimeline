@@ -15,18 +15,18 @@ const HomePageContainer = styled.div`
 const Header = styled.header`
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 2rem;
+  padding: 1rem 2rem;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
     font-weight: 700;
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     opacity: 0.9;
   }
 `
@@ -35,25 +35,27 @@ const Content = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
 
   @media (min-width: 1024px) {
-    flex-direction: row;
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
 `
 
 const MapContainer = styled.div`
   width: 100%;
-  height: 500px;
+  height: 350px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   background: white;
+  flex-shrink: 0;
 
   @media (min-width: 1024px) {
-    width: 50%;
-    height: 600px;
+    height: 400px;
   }
 `
 
@@ -61,12 +63,9 @@ const TimelineContainer = styled.div`
   width: 100%;
   background: white;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-
-  @media (min-width: 1024px) {
-    width: 50%;
-  }
+  flex-shrink: 0;
 `
 
 function HomePage() {
