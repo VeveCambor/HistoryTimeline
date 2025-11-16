@@ -33,7 +33,29 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Julius Caesar byl zavražděn skupinou římských senátorů včetně Bruta a Cassia.',
     details: 'Atentát na Julia Caesara 15. března 44 př. n. l. byl klíčovým momentem v historii Římské říše. Caesarova smrt vedla k občanské válce a nakonec k pádu Římské republiky a vzniku Římského císařství.',
     tags: ['Řím', 'Politika', 'Antika'],
-    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800'
+    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800',
+    historicalBoundaries: [
+      {
+        name: 'Římská říše (cca 44 př. n. l.)',
+        color: '#8B4513',
+        coordinates: [[
+          // Zjednodušené hranice Římské říše kolem roku 44 př. n. l.
+          { lat: 36.0, lng: -10.0 }, // Španělsko - západ
+          { lat: 43.0, lng: -10.0 }, // Galie - západ
+          { lat: 51.0, lng: 2.0 },   // Británie - jih
+          { lat: 51.0, lng: 8.0 },   // Germánie - západ
+          { lat: 50.0, lng: 15.0 },  // Střední Evropa
+          { lat: 45.0, lng: 20.0 },  // Balkán
+          { lat: 40.0, lng: 28.0 },  // Konstantinopol
+          { lat: 36.0, lng: 36.0 },  // Sýrie
+          { lat: 32.0, lng: 35.0 },  // Palestina
+          { lat: 30.0, lng: 32.0 },  // Egypt
+          { lat: 33.0, lng: 10.0 },  // Severní Afrika - východ
+          { lat: 36.0, lng: 5.0 },   // Severní Afrika - střed
+          { lat: 36.0, lng: -10.0 }, // Španělsko - západ (uzavření)
+        ]]
+      }
+    ]
   },
   {
     id: 4,
@@ -44,7 +66,40 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Poslední západořímský císař Romulus Augustulus byl sesazen germánským vůdcem Odoakerem.',
     details: 'Tato událost je tradičně považována za konec starověku a začátek středověku. Pád Římské říše měl dalekosáhlé důsledky pro Evropu a celý svět.',
     tags: ['Řím', 'Středověk', 'Historie'],
-    image: 'https://images.unsplash.com/photo-1529360269321-4c0a0c0b5b5e?w=800'
+    image: 'https://images.unsplash.com/photo-1529360269321-4c0a0c0b5b5e?w=800',
+    historicalBoundaries: [
+      {
+        name: 'Západořímská říše (476 n. l.)',
+        color: '#8B4513',
+        coordinates: [[
+          // Zjednodušené hranice Západořímské říše v době pádu
+          { lat: 36.0, lng: -10.0 }, // Španělsko - západ
+          { lat: 43.0, lng: -10.0 }, // Galie - západ
+          { lat: 50.0, lng: 2.0 },   // Severní Galie
+          { lat: 47.0, lng: 8.0 },   // Alpy
+          { lat: 45.0, lng: 12.0 },  // Severní Itálie
+          { lat: 41.0, lng: 15.0 },  // Střední Itálie
+          { lat: 36.0, lng: 15.0 },  // Jižní Itálie
+          { lat: 36.0, lng: 5.0 },   // Severní Afrika
+          { lat: 36.0, lng: -10.0 }, // Španělsko - západ (uzavření)
+        ]]
+      },
+      {
+        name: 'Východořímská říše (476 n. l.)',
+        color: '#4169E1',
+        coordinates: [[
+          // Zjednodušené hranice Východořímské říše
+          { lat: 40.0, lng: 15.0 },  // Balkán - západ
+          { lat: 45.0, lng: 20.0 },  // Balkán - sever
+          { lat: 40.0, lng: 28.0 },  // Konstantinopol
+          { lat: 36.0, lng: 36.0 },  // Sýrie
+          { lat: 32.0, lng: 35.0 },  // Palestina
+          { lat: 30.0, lng: 32.0 },  // Egypt
+          { lat: 32.0, lng: 20.0 },  // Kyrenaika
+          { lat: 40.0, lng: 15.0 },  // Balkán - západ (uzavření)
+        ]]
+      }
+    ]
   },
   {
     id: 5,

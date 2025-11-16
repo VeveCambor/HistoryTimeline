@@ -1,6 +1,7 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { historicalEvents } from '../data/events'
+import HistoricalMap from '../components/HistoricalMap'
 
 function EventDetail() {
   const { id } = useParams<{ id: string }>()
@@ -54,6 +55,13 @@ function EventDetail() {
           <Section>
             <h2>Další informace</h2>
             <p>{event.details}</p>
+          </Section>
+        )}
+
+        {event.historicalBoundaries && event.historicalBoundaries.length > 0 && (
+          <Section>
+            <h2>Historická mapa</h2>
+            <HistoricalMap event={event} />
           </Section>
         )}
 

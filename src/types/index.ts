@@ -3,6 +3,12 @@ export interface Coordinates {
   lng: number
 }
 
+export interface HistoricalBoundary {
+  name: string
+  coordinates: Coordinates[][]
+  color?: string
+}
+
 export interface HistoricalEvent {
   id: number
   year: number
@@ -13,5 +19,6 @@ export interface HistoricalEvent {
   details?: string
   tags?: string[]
   image?: string
+  historicalBoundaries?: HistoricalBoundary[]
 }
 
