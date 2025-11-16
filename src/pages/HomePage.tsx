@@ -32,6 +32,8 @@ function HomePage() {
   return (
     <HomePageContainer>
       <Header>
+        <RuinsIcon>🏛️</RuinsIcon>
+        <TimelineIcon>⏳</TimelineIcon>
         <h1>Historická časová osa</h1>
         <p>Prozkoumejte významné milníky v historii lidstva</p>
       </Header>
@@ -76,21 +78,67 @@ const HomePageContainer = styled.div`
 `
 
 const Header = styled.header`
+  position: relative;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 
   h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.25rem;
-    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.3px;
+    
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+    }
   }
 
   p {
-    font-size: 0.9rem;
-    opacity: 0.9;
+    font-size: 0.95rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+    
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+    }
+  }
+`
+
+const RuinsIcon = styled.div`
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 3rem;
+  opacity: 0.3;
+  z-index: 1;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+`
+
+const TimelineIcon = styled.div`
+  position: absolute;
+  top: 1rem;
+  left: 4.5rem;
+  font-size: 3rem;
+  opacity: 0.3;
+  z-index: 1;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    top: 0.5rem;
+    left: 3rem;
   }
 `
 

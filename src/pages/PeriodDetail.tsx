@@ -97,11 +97,11 @@ const PeriodDetailContainer = styled.div`
 `
 
 const Header = styled.div<{ $color: string }>`
+  position: relative;
   background: ${props => props.$color};
   color: white;
-  padding: 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
+  padding: 3rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 
   &::before {
@@ -111,19 +111,37 @@ const Header = styled.div<{ $color: string }>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, ${props => props.$color} 0%, rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(135deg, ${props => props.$color} 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://unsplash.com/photos/greece-cape-sounio-ruins-of-an-ancient-temple-of-poseidon-greek-god-of-the-sea-on-sunset-shot-of-temple-ruins-on-sunset-tourist-landmark-of-attica-sounion-greece-J7MPbX1-XzA') center/cover;
+    opacity: 0.15;
     z-index: 0;
   }
 
   > * {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
-    font-weight: 700;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.5px;
+    
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
   }
 
   button {

@@ -30,7 +30,7 @@ function EventDetail() {
 
   return (
     <EventDetailContainer>
-      <Header>
+      <Header $hasImage={!!event.image} $imageUrl={event.image}>
         <BackButton />
         <h1>{event.title}</h1>
         <Meta>
@@ -81,16 +81,44 @@ const EventDetailContainer = styled.div`
   background: #f5f5f5;
 `
 
-const Header = styled.div`
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string }>`
+  position: relative;
+  background: ${props => 
+    props.$hasImage && props.$imageUrl
+      ? `linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%), url('${props.$imageUrl}') center/cover`
+      : 'linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80") center/cover'
+  };
   color: white;
-  padding: 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.75) 0%, rgba(118, 75, 162, 0.75) 100%);
+    z-index: 1;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
-    font-weight: 700;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.5px;
+    
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
   }
 
   button {
