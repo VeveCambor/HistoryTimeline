@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import WorldMap from '../components/WorldMap'
 import Timeline from '../components/Timeline'
@@ -8,9 +9,17 @@ import { HistoricalEvent } from '../types'
 import { HistoricalPeriod } from '../types/periods'
 
 function HomePage() {
+  const location = useLocation()
   const [selectedEvent, setSelectedEvent] = useState<HistoricalEvent | null>(null)
   const [hoveredEvent, setHoveredEvent] = useState<HistoricalEvent | null>(null)
   const [selectedPeriod, setSelectedPeriod] = useState<HistoricalPeriod>(HistoricalPeriod.ALL)
+
+  // Obnovit vybrané období z location state
+  useEffect(() => {
+    if (location.state && (location.state as { selectedPeriod?: HistoricalPeriod }).selectedPeriod) {
+      setSelectedPeriod((location.state as { selectedPeriod: HistoricalPeriod }).selectedPeriod)
+    }
+  }, [location.state])
 
   // Filtrovat události podle vybraného období
   const filteredEvents = useMemo(() => {

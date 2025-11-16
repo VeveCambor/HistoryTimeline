@@ -5,6 +5,7 @@ import { HistoricalPeriod, PERIODS } from '../types/periods'
 import { PREHISTORY_SUB_PERIODS } from '../types/prehistoryPeriods'
 import EventTooltip from './EventTooltip'
 import EventCard from './ui/EventCard'
+import PeriodCard from './ui/PeriodCard'
 
 interface TimelineProps {
   events: HistoricalEvent[]
@@ -180,6 +181,24 @@ function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEvent
         )}
       </Container>
 
+      {/* Zobrazit kartičky sub-period pro pravěk */}
+      {visibleSubPeriods.length > 0 && (
+        <PeriodsList>
+          <PeriodsTitle>Období pravěku</PeriodsTitle>
+          <PeriodsGrid>
+            {visibleSubPeriods.map((subPeriod) => (
+              <PeriodCard
+                key={subPeriod.id}
+                period={subPeriod}
+                onClick={() => navigate(`/period/${subPeriod.id}`, { 
+                  state: { selectedPeriod } 
+                })}
+              />
+            ))}
+          </PeriodsGrid>
+        </PeriodsList>
+      )}
+
       <EventsList>
         <EventsTitle>Všechny události</EventsTitle>
         <EventsGrid>
@@ -321,6 +340,22 @@ const EventsTitle = styled.h3`
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #333;
+`
+
+const PeriodsList = styled.div`
+  margin-bottom: 2rem;
+`
+
+const PeriodsTitle = styled.h3`
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+`
+
+const PeriodsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
 `
 
 const EventsGrid = styled.div`

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import GlobalStyle from './styles/GlobalStyle'
 import HomePage from './pages/HomePage'
 import EventDetail from './pages/EventDetail'
+import PeriodDetail from './pages/PeriodDetail'
 
 function App() {
   return (
@@ -10,10 +11,11 @@ function App() {
       <GlobalStyle />
       <Router>
         <AppContainer>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/event/:id" element={<EventDetail />} />
-          </Routes>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/event/:id" element={<EventDetail />} />
+                  <Route path="/period/:id" element={<PeriodDetail />} />
+                </Routes>
         </AppContainer>
       </Router>
     </>
