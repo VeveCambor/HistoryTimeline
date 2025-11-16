@@ -46,6 +46,7 @@ function HomePage() {
             events={filteredEvents}
             selectedEvent={selectedEvent}
             hoveredEvent={hoveredEvent}
+            selectedPeriod={selectedPeriod}
             onEventSelect={setSelectedEvent}
             onEventHover={setHoveredEvent}
           />

@@ -19,14 +19,14 @@ export const PERIODS: PeriodInfo[] = [
   {
     id: HistoricalPeriod.ALL,
     name: 'Všechna období',
-    startYear: -10000,
+    startYear: -100000,
     endYear: 2100,
     color: '#667eea'
   },
   {
     id: HistoricalPeriod.PREHISTORY,
     name: 'Pravěk',
-    startYear: -10000,
+    startYear: -100000,
     endYear: -3000,
     color: '#8B4513'
   },
