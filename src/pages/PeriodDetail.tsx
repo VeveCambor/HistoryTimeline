@@ -1,6 +1,7 @@
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { PREHISTORY_SUB_PERIODS } from '../types/prehistoryPeriods'
+import { getSubPeriodsForPeriod } from '../types/periodSubPeriods'
 import { HistoricalPeriod } from '../types/periods'
 import Section from '../components/ui/Section'
 import YearBadge from '../components/ui/YearBadge'
@@ -13,10 +14,42 @@ function PeriodDetail() {
   const { id } = useParams<{ id: string }>()
   const location = useLocation()
   const navigate = useNavigate()
-  const period = PREHISTORY_SUB_PERIODS.find(p => p.id === id)
   
-  // Získat vybrané období z location state, nebo použít pravěk jako výchozí
-  const selectedPeriod = (location.state as { selectedPeriod?: HistoricalPeriod })?.selectedPeriod || HistoricalPeriod.PREHISTORY
+  // Hledat v sub-periodách pravěku
+  let period: { id: string; name: string; startYear: number; endYear: number; color: string; description?: string; periodId?: string } | undefined = PREHISTORY_SUB_PERIODS.find(p => p.id === id)
+  
+  // Pokud není v pravěku, hledat v ostatních obdobích
+  if (!period) {
+    const allSubPeriods = [
+      ...getSubPeriodsForPeriod('ancient'),
+      ...getSubPeriodsForPeriod('medieval'),
+      ...getSubPeriodsForPeriod('modern'),
+      ...getSubPeriodsForPeriod('contemporary')
+    ]
+    period = allSubPeriods.find(p => p.id === id)
+  }
+  
+  // Získat vybrané období z location state, nebo určit podle periodId
+  let selectedPeriod = (location.state as { selectedPeriod?: HistoricalPeriod })?.selectedPeriod
+  
+  if (!selectedPeriod && period) {
+    // Určit období podle periodId nebo podle rozsahu let
+    if (period.periodId) {
+      const periodMap: Record<string, HistoricalPeriod> = {
+        'ancient': HistoricalPeriod.ANCIENT,
+        'medieval': HistoricalPeriod.MEDIEVAL,
+        'modern': HistoricalPeriod.MODERN,
+        'contemporary': HistoricalPeriod.CONTEMPORARY
+      }
+      selectedPeriod = periodMap[period.periodId] || HistoricalPeriod.PREHISTORY
+    } else {
+      selectedPeriod = HistoricalPeriod.PREHISTORY
+    }
+  }
+  
+  if (!selectedPeriod) {
+    selectedPeriod = HistoricalPeriod.PREHISTORY
+  }
   
   const handleBack = () => {
     // Navigovat zpět na homepage s vybraným obdobím
@@ -78,12 +111,28 @@ function PeriodDetail() {
 
 function getPeriodDescription(periodId: string): string {
   const descriptions: Record<string, string> = {
+    // Pravěk
     paleolithic: 'Paleolit, neboli starší doba kamenná, je nejdelší období v historii lidstva. Začíná s prvními kamennými nástroji a končí s koncem poslední doby ledové. Lidé v této době byli lovci a sběrači, žili v malých skupinách a používali primitivní kamenné nástroje. Toto období zahrnuje vývoj člověka od prvních hominidů až po moderního člověka.',
     mesolithic: 'Mezolit, neboli střední doba kamenná, je přechodné období mezi paleolitem a neolitem. Vyznačuje se adaptací na změněné klimatické podmínky po skončení doby ledové. Lidé začali využívat nové zdroje potravy a vyvíjeli specializované nástroje pro lov a rybolov.',
     neolithic: 'Neolit, neboli mladší doba kamenná, přinesl revoluční změny v lidské společnosti. Lidé začali pěstovat plodiny a chovat zvířata, což vedlo k usedlému způsobu života a vzniku prvních osad. Objevila se keramika, tkaní a další řemesla. Toto období položilo základy pro vznik prvních civilizací.',
     copper: 'Doba měděná, také známá jako chalkolit nebo eneolit, je období, kdy lidé začali využívat měď pro výrobu nástrojů a zbraní. Měď byla první kov, který lidé začali zpracovávat. Toto období představuje přechod mezi dobou kamennou a dobou bronzovou.',
     bronze: 'Doba bronzová je charakterizována využitím bronzu, slitiny mědi a cínu, pro výrobu nástrojů, zbraní a ozdob. Bronzové předměty byly pevnější a odolnější než měděné. Toto období přineslo rozvoj obchodu, specializaci řemesel a vznik prvních městských států.',
-    iron: 'Doba železná začala, když lidé začali zpracovávat železo, které je pevnější a dostupnější než bronz. Železné nástroje a zbraně změnily způsob válčení a zemědělství. Toto období vidělo vznik velkých říší a pokročilých civilizací, které položily základy pro starověk.'
+    iron: 'Doba železná začala, když lidé začali zpracovávat železo, které je pevnější a dostupnější než bronz. Železné nástroje a zbraně změnily způsob válčení a zemědělství. Toto období vidělo vznik velkých říší a pokročilých civilizací, které položily základy pro starověk.',
+    // Starověk
+    early_ancient: 'Raný starověk je období vzniku prvních velkých civilizací. V této době se rozvíjely starověké říše v Mezopotámii, Egyptě, Indii a Číně. Vzniklo písmo, první zákony a organizované státní systémy.',
+    classical: 'Klasické období je zlatý věk starověku, charakterizovaný rozkvětem řecké a římské civilizace. Vznikla demokracie, filozofie, divadlo a architektura, které ovlivnily celou západní civilizaci.',
+    late_ancient: 'Pozdní starověk je období úpadku římské říše a přechodu ke středověku. V této době se šířilo křesťanství, říše se rozdělila na východní a západořímskou, a nakonec došlo k pádu západořímské říše.',
+    // Středověk
+    early_medieval: 'Raný středověk, také známý jako temné období, následoval po pádu římské říše. Vyznačuje se migrací národů, vznikem nových království a šířením křesťanství po Evropě.',
+    high_medieval: 'Vrcholný středověk je období rozkvětu středověké společnosti. Vznikaly katedrály, univerzity, rytířství a křížové výpravy. Byla to doba velkého kulturního a ekonomického rozvoje.',
+    late_medieval: 'Pozdní středověk je období před renesancí. Vyznačuje se stoletou válkou, černou smrtí a objevením Ameriky. Toto období připravilo půdu pro novověk.',
+    // Novověk
+    renaissance: 'Renesance je období kulturního a intelektuálního obrození v Evropě. Vyznačuje se obnovením zájmu o antickou kulturu, rozvojem umění, vědy a objevů. Byla to doba velkých osobností jako Leonardo da Vinci, Michelangelo a dalších.',
+    enlightenment: 'Osvícenství, neboli věk rozumu, je období intelektuálního a filozofického hnutí. Vyznačuje se důrazem na rozum, vědu a lidská práva. Toto období položilo základy pro moderní demokracii a vědecký pokrok.',
+    // Moderní doba
+    industrial: 'Průmyslová revoluce přinesla zásadní změny v ekonomice a společnosti. Vznikaly továrny, železnice a nové technologie. Toto období změnilo způsob života lidí a položilo základy pro moderní průmyslovou společnost.',
+    world_wars: 'Období světových válek je jedno z nejtemnějších období v historii. Dvě světové války způsobily obrovské utrpení a změnily politickou mapu světa. Toto období také přineslo technologický pokrok a změny v mezinárodních vztazích.',
+    modern_era: 'Moderní éra je období od konce druhé světové války do současnosti. Vyznačuje se studenou válkou, dekolonizací, technologickou revolucí a globalizací. Je to doba rychlých změn a pokroku.'
   }
   return descriptions[periodId] || 'Toto období je důležitou součástí historie lidstva.'
 }

@@ -3,10 +3,12 @@ import styled from 'styled-components'
 import { HistoricalEvent } from '../types'
 import { HistoricalPeriod, PERIODS } from '../types/periods'
 import { PREHISTORY_SUB_PERIODS } from '../types/prehistoryPeriods'
+import { getSubPeriodsForPeriod } from '../types/periodSubPeriods'
 import EventTooltip from './EventTooltip'
 import EventCard from './ui/EventCard'
 import PeriodCard from './ui/PeriodCard'
 import MainPeriodCard from './ui/MainPeriodCard'
+import PeriodSubPeriodCard from './ui/PeriodSubPeriodCard'
 
 interface TimelineProps {
   events: HistoricalEvent[]
@@ -53,12 +55,25 @@ function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEvent
     return ((year - displayMinYear) / yearRange) * 100
   }
 
-  // Filtrovat sub-periody - zobrazit pouze když je vybraný pravěk
+  // Filtrovat sub-periody - zobrazit podle vybraného období
   const visibleSubPeriods = selectedPeriod === HistoricalPeriod.PREHISTORY
     ? PREHISTORY_SUB_PERIODS.filter(period => {
         return (period.startYear <= displayMaxYear && period.endYear >= displayMinYear)
       })
     : []
+
+  // Pro ostatní období zobrazit jejich sub-periody
+  const visiblePeriodSubPeriods = selectedPeriod !== HistoricalPeriod.ALL && selectedPeriod !== HistoricalPeriod.PREHISTORY
+    ? getSubPeriodsForPeriod(selectedPeriod).filter(subPeriod => {
+        return (subPeriod.startYear <= displayMaxYear && subPeriod.endYear >= displayMinYear)
+      })
+    : []
+  
+  // Kombinovat všechny viditelné sub-periody pro zobrazení na časové ose
+  const allVisibleSubPeriods = [
+    ...visibleSubPeriods.map(p => ({ ...p, type: 'prehistory' as const })),
+    ...visiblePeriodSubPeriods.map(p => ({ ...p, type: 'period' as const }))
+  ]
 
   // Pro "Všechna období" zobrazit hlavní období jako legendu
   const visibleMainPeriods = selectedPeriod === HistoricalPeriod.ALL 
@@ -72,10 +87,10 @@ function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEvent
     <TimelineContainer>
       <Title>Časová osa</Title>
       <Container>
-        {/* Zobrazit sub-periody pravěku jako samostatnou vrstvu pod časovou osou */}
-        {visibleSubPeriods.length > 0 && (
+        {/* Zobrazit sub-periody jako samostatnou vrstvu pod časovou osou */}
+        {allVisibleSubPeriods.length > 0 && (
           <SubPeriodsContainer>
-            {visibleSubPeriods.map((subPeriod) => {
+            {allVisibleSubPeriods.map((subPeriod) => {
               const startPos = calculatePosition(Math.max(subPeriod.startYear, displayMinYear))
               const endPos = calculatePosition(Math.min(subPeriod.endYear, displayMaxYear))
               const width = endPos - startPos
@@ -153,10 +168,27 @@ function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEvent
           <YearLabel>{displayMaxYear}</YearLabel>
         </YearLabels>
         
-        {/* Legenda - sub-periody pro pravěk nebo hlavní období pro "Všechna období" */}
+        {/* Legenda - sub-periody pro pravěk */}
         {visibleSubPeriods.length > 0 && (
           <SubPeriodLegend>
             {visibleSubPeriods.map((subPeriod) => (
+              <SubPeriodLegendItem key={subPeriod.id}>
+                <SubPeriodLegendColor $color={subPeriod.color} />
+                <SubPeriodLegendText>
+                  <SubPeriodLegendName>{subPeriod.name}</SubPeriodLegendName>
+                  {subPeriod.description && (
+                    <SubPeriodLegendDesc>{subPeriod.description}</SubPeriodLegendDesc>
+                  )}
+                </SubPeriodLegendText>
+              </SubPeriodLegendItem>
+            ))}
+          </SubPeriodLegend>
+        )}
+        
+        {/* Legenda - sub-periody pro ostatní období */}
+        {visiblePeriodSubPeriods.length > 0 && (
+          <SubPeriodLegend>
+            {visiblePeriodSubPeriods.map((subPeriod) => (
               <SubPeriodLegendItem key={subPeriod.id}>
                 <SubPeriodLegendColor $color={subPeriod.color} />
                 <SubPeriodLegendText>
@@ -192,6 +224,29 @@ function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEvent
               <PeriodCard
                 key={subPeriod.id}
                 period={subPeriod}
+                onClick={() => navigate(`/period/${subPeriod.id}`, { 
+                  state: { selectedPeriod } 
+                })}
+              />
+            ))}
+          </PeriodsGrid>
+        </PeriodsList>
+      )}
+
+      {/* Zobrazit kartičky sub-period pro ostatní období */}
+      {visiblePeriodSubPeriods.length > 0 && (
+        <PeriodsList>
+          <PeriodsTitle>
+            {selectedPeriod === HistoricalPeriod.ANCIENT && 'Období starověku'}
+            {selectedPeriod === HistoricalPeriod.MEDIEVAL && 'Období středověku'}
+            {selectedPeriod === HistoricalPeriod.MODERN && 'Období novověku'}
+            {selectedPeriod === HistoricalPeriod.CONTEMPORARY && 'Období moderní doby'}
+          </PeriodsTitle>
+          <PeriodsGrid>
+            {visiblePeriodSubPeriods.map((subPeriod) => (
+              <PeriodSubPeriodCard
+                key={subPeriod.id}
+                subPeriod={subPeriod}
                 onClick={() => navigate(`/period/${subPeriod.id}`, { 
                   state: { selectedPeriod } 
                 })}
