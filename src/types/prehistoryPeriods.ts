@@ -14,7 +14,7 @@ export const PREHISTORY_SUB_PERIODS: PrehistorySubPeriod[] = [
     name: 'Paleolit',
     startYear: -100000,
     endYear: -10000,
-    color: '#8B4513',
+    color: '#654321',
     description: 'Starší doba kamenná'
   },
   // Doba kamenná - Mezolit
@@ -23,7 +23,7 @@ export const PREHISTORY_SUB_PERIODS: PrehistorySubPeriod[] = [
     name: 'Mezolit',
     startYear: -10000,
     endYear: -8000,
-    color: '#A0522D',
+    color: '#8B6F47',
     description: 'Střední doba kamenná'
   },
   // Doba kamenná - Neolit
@@ -32,8 +32,35 @@ export const PREHISTORY_SUB_PERIODS: PrehistorySubPeriod[] = [
     name: 'Neolit',
     startYear: -8000,
     endYear: -5000,
-    color: '#CD853F',
+    color: '#D2B48C',
     description: 'Mladší doba kamenná'
+  },
+  // Doba měděná (Chalkolit/Eneolit)
+  {
+    id: 'copper',
+    name: 'Doba měděná',
+    startYear: -5000,
+    endYear: -3000,
+    color: '#B87333',
+    description: 'Chalkolit/Eneolit'
+  },
+  // Doba bronzová
+  {
+    id: 'bronze',
+    name: 'Doba bronzová',
+    startYear: -3000,
+    endYear: -1200,
+    color: '#DAA520',
+    description: 'Využití bronzu'
+  },
+  // Doba železná
+  {
+    id: 'iron',
+    name: 'Doba železná',
+    startYear: -1200,
+    endYear: -800,
+    color: '#2F4F4F',
+    description: 'Využití železa'
   }
 ]
 
