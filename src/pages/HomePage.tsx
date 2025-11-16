@@ -60,6 +60,7 @@ function HomePage() {
             selectedPeriod={selectedPeriod}
             onEventSelect={setSelectedEvent}
             onEventHover={setHoveredEvent}
+            onPeriodChange={setSelectedPeriod}
           />
         </TimelineContainer>
       </Content>

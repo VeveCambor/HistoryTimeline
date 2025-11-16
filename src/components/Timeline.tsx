@@ -6,6 +6,7 @@ import { PREHISTORY_SUB_PERIODS } from '../types/prehistoryPeriods'
 import EventTooltip from './EventTooltip'
 import EventCard from './ui/EventCard'
 import PeriodCard from './ui/PeriodCard'
+import MainPeriodCard from './ui/MainPeriodCard'
 
 interface TimelineProps {
   events: HistoricalEvent[]
@@ -14,9 +15,10 @@ interface TimelineProps {
   selectedPeriod: HistoricalPeriod
   onEventSelect: (event: HistoricalEvent | null) => void
   onEventHover: (event: HistoricalEvent | null) => void
+  onPeriodChange?: (period: HistoricalPeriod) => void
 }
 
-function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEventSelect, onEventHover }: TimelineProps) {
+function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEventSelect, onEventHover, onPeriodChange }: TimelineProps) {
   const navigate = useNavigate()
 
   // Seřadit události podle roku
@@ -193,6 +195,30 @@ function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEvent
                 onClick={() => navigate(`/period/${subPeriod.id}`, { 
                   state: { selectedPeriod } 
                 })}
+              />
+            ))}
+          </PeriodsGrid>
+        </PeriodsList>
+      )}
+
+      {/* Zobrazit kartičky hlavních období pro "Všechna období" */}
+      {visibleMainPeriods.length > 0 && (
+        <PeriodsList>
+          <PeriodsTitle>Historická období</PeriodsTitle>
+          <PeriodsGrid>
+            {visibleMainPeriods.map((period) => (
+              <MainPeriodCard
+                key={period.id}
+                period={period}
+                onClick={() => {
+                  if (onPeriodChange) {
+                    onPeriodChange(period.id)
+                  } else {
+                    navigate('/', { 
+                      state: { selectedPeriod: period.id } 
+                    })
+                  }
+                }}
               />
             ))}
           </PeriodsGrid>
