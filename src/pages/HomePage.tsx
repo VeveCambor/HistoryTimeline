@@ -5,6 +5,44 @@ import Timeline from '../components/Timeline'
 import { historicalEvents } from '../data/events'
 import { HistoricalEvent } from '../types'
 
+function HomePage() {
+  const [selectedEvent, setSelectedEvent] = useState<HistoricalEvent | null>(null)
+  const [hoveredEvent, setHoveredEvent] = useState<HistoricalEvent | null>(null)
+
+  return (
+    <HomePageContainer>
+      <Header>
+        <h1>Historická časová osa</h1>
+        <p>Prozkoumejte významné milníky v historii lidstva</p>
+      </Header>
+      
+      <Content>
+        <MapContainer>
+          <WorldMap 
+            events={historicalEvents}
+            selectedEvent={selectedEvent}
+            hoveredEvent={hoveredEvent}
+            onEventSelect={setSelectedEvent}
+            onEventHover={setHoveredEvent}
+          />
+        </MapContainer>
+        
+        <TimelineContainer>
+          <Timeline 
+            events={historicalEvents}
+            selectedEvent={selectedEvent}
+            onEventSelect={setSelectedEvent}
+            onEventHover={setHoveredEvent}
+          />
+        </TimelineContainer>
+      </Content>
+    </HomePageContainer>
+  )
+}
+
+export default HomePage
+
+// Styled Components
 const HomePageContainer = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -67,41 +105,3 @@ const TimelineContainer = styled.div`
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 `
-
-function HomePage() {
-  const [selectedEvent, setSelectedEvent] = useState<HistoricalEvent | null>(null)
-  const [hoveredEvent, setHoveredEvent] = useState<HistoricalEvent | null>(null)
-
-  return (
-    <HomePageContainer>
-      <Header>
-        <h1>Historická časová osa</h1>
-        <p>Prozkoumejte významné milníky v historii lidstva</p>
-      </Header>
-      
-      <Content>
-        <MapContainer>
-          <WorldMap 
-            events={historicalEvents}
-            selectedEvent={selectedEvent}
-            hoveredEvent={hoveredEvent}
-            onEventSelect={setSelectedEvent}
-            onEventHover={setHoveredEvent}
-          />
-        </MapContainer>
-        
-        <TimelineContainer>
-          <Timeline 
-            events={historicalEvents}
-            selectedEvent={selectedEvent}
-            onEventSelect={setSelectedEvent}
-            onEventHover={setHoveredEvent}
-          />
-        </TimelineContainer>
-      </Content>
-    </HomePageContainer>
-  )
-}
-
-export default HomePage
-

@@ -4,11 +4,6 @@ import GlobalStyle from './styles/GlobalStyle'
 import HomePage from './pages/HomePage'
 import EventDetail from './pages/EventDetail'
 
-const AppContainer = styled.div`
-  width: 100%;
-  min-height: 100vh;
-`
-
 function App() {
   return (
     <>
@@ -27,3 +22,8 @@ function App() {
 
 export default App
 
+// Styled Components
+const AppContainer = styled.div`
+  width: 100%;
+  min-height: 100vh;
+`

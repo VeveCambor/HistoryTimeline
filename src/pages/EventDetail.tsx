@@ -2,6 +2,81 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { historicalEvents } from '../data/events'
 
+function EventDetail() {
+  const { id } = useParams<{ id: string }>()
+  const navigate = useNavigate()
+  const event = historicalEvents.find(e => e.id === parseInt(id || '0', 10))
+
+  if (!event) {
+    return (
+      <EventDetailContainer>
+        <NotFound>
+          <h2>Událost nenalezena</h2>
+          <BackLink to="/">
+            ← Zpět na hlavní stránku
+          </BackLink>
+        </NotFound>
+      </EventDetailContainer>
+    )
+  }
+
+  return (
+    <EventDetailContainer>
+      <Header>
+        <BackButton onClick={() => navigate(-1)}>
+          ← Zpět
+        </BackButton>
+        <h1>{event.title}</h1>
+        <Meta>
+          <Year>{event.year}</Year>
+          {event.location && (
+            <Location>📍 {event.location}</Location>
+          )}
+        </Meta>
+      </Header>
+
+      <Content>
+        {event.image && (
+          <ImageContainer>
+            <Image 
+              src={event.image} 
+              alt={event.title}
+            />
+          </ImageContainer>
+        )}
+
+        <Section>
+          <h2>Popis události</h2>
+          <p>{event.description}</p>
+        </Section>
+
+        {event.details && (
+          <Section>
+            <h2>Další informace</h2>
+            <p>{event.details}</p>
+          </Section>
+        )}
+
+        {event.tags && event.tags.length > 0 && (
+          <TagsContainer>
+            <h2>Štítky</h2>
+            <TagsList>
+              {event.tags.map((tag, index) => (
+                <Tag key={index}>
+                  {tag}
+                </Tag>
+              ))}
+            </TagsList>
+          </TagsContainer>
+        )}
+      </Content>
+    </EventDetailContainer>
+  )
+}
+
+export default EventDetail
+
+// Styled Components
 const EventDetailContainer = styled.div`
   min-height: 100vh;
   background: #f5f5f5;
@@ -152,78 +227,3 @@ const BackLink = styled(Link)`
     color: #764ba2;
   }
 `
-
-function EventDetail() {
-  const { id } = useParams<{ id: string }>()
-  const navigate = useNavigate()
-  const event = historicalEvents.find(e => e.id === parseInt(id || '0', 10))
-
-  if (!event) {
-    return (
-      <EventDetailContainer>
-        <NotFound>
-          <h2>Událost nenalezena</h2>
-          <BackLink to="/">
-            ← Zpět na hlavní stránku
-          </BackLink>
-        </NotFound>
-      </EventDetailContainer>
-    )
-  }
-
-  return (
-    <EventDetailContainer>
-      <Header>
-        <BackButton onClick={() => navigate(-1)}>
-          ← Zpět
-        </BackButton>
-        <h1>{event.title}</h1>
-        <Meta>
-          <Year>{event.year}</Year>
-          {event.location && (
-            <Location>📍 {event.location}</Location>
-          )}
-        </Meta>
-      </Header>
-
-      <Content>
-        {event.image && (
-          <ImageContainer>
-            <Image 
-              src={event.image} 
-              alt={event.title}
-            />
-          </ImageContainer>
-        )}
-
-        <Section>
-          <h2>Popis události</h2>
-          <p>{event.description}</p>
-        </Section>
-
-        {event.details && (
-          <Section>
-            <h2>Další informace</h2>
-            <p>{event.details}</p>
-          </Section>
-        )}
-
-        {event.tags && event.tags.length > 0 && (
-          <TagsContainer>
-            <h2>Štítky</h2>
-            <TagsList>
-              {event.tags.map((tag, index) => (
-                <Tag key={index}>
-                  {tag}
-                </Tag>
-              ))}
-            </TagsList>
-          </TagsContainer>
-        )}
-      </Content>
-    </EventDetailContainer>
-  )
-}
-
-export default EventDetail
-

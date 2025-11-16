@@ -5,14 +5,97 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { HistoricalEvent } from '../types'
 
-// Oprava pro ikony markerů v Leaflet
-delete L.Icon.Default.prototype._getIconUrl
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-})
+// Vytvoření custom ikon pro markery
+const createMarkerIcon = (color: string = '#3388ff') => {
+  return L.divIcon({
+    className: 'custom-marker',
+    html: `
+      <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
+        <path fill="${color}" stroke="#fff" stroke-width="2" d="M12.5 0C5.596 0 0 5.596 0 12.5c0 8.75 12.5 28.5 12.5 28.5S25 21.25 25 12.5C25 5.596 19.404 0 12.5 0z"/>
+        <circle fill="#fff" cx="12.5" cy="12.5" r="5"/>
+      </svg>
+    `,
+    iconSize: [25, 41],
+    iconAnchor: [12.5, 41],
+    popupAnchor: [0, -41],
+  })
+}
 
+const defaultIcon = createMarkerIcon('#3388ff')
+const hoverIcon = createMarkerIcon('#ffd700')
+
+interface WorldMapProps {
+  events: HistoricalEvent[]
+  selectedEvent: HistoricalEvent | null
+  hoveredEvent: HistoricalEvent | null
+  onEventSelect: (event: HistoricalEvent | null) => void
+  onEventHover: (event: HistoricalEvent | null) => void
+}
+
+function WorldMap({ events, selectedEvent, hoveredEvent, onEventSelect, onEventHover }: WorldMapProps) {
+  const navigate = useNavigate()
+
+  const handleMarkerClick = (event: HistoricalEvent) => {
+    onEventSelect(event)
+    navigate(`/event/${event.id}`)
+  }
+
+  return (
+    <WorldMapContainer>
+      <StyledMapContainer
+        center={[20, 0]}
+        zoom={2}
+        style={{ height: '100%', width: '100%' }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {events.map((event) => {
+          if (!event.coordinates) return null
+          
+          const isHovered = hoveredEvent?.id === event.id
+          
+          return (
+            <Marker
+              key={event.id}
+              position={[event.coordinates.lat, event.coordinates.lng]}
+              icon={isHovered ? hoverIcon : defaultIcon}
+              eventHandlers={{
+                click: () => handleMarkerClick(event),
+                mouseover: (e) => {
+                  onEventHover(event)
+                  e.target.setIcon(hoverIcon)
+                },
+                mouseout: (e) => {
+                  onEventHover(null)
+                  e.target.setIcon(defaultIcon)
+                },
+              }}
+            >
+              <Popup>
+                <PopupContent>
+                  <h3>{event.title}</h3>
+                  <PopupYear>{event.year}</PopupYear>
+                  {event.location && (
+                    <PopupLocation>{event.location}</PopupLocation>
+                  )}
+                  <PopupButton onClick={() => handleMarkerClick(event)}>
+                    Zobrazit detail
+                  </PopupButton>
+                </PopupContent>
+              </Popup>
+            </Marker>
+          )
+        })}
+      </StyledMapContainer>
+    </WorldMapContainer>
+  )
+}
+
+export default WorldMap
+
+// Styled Components
 const WorldMapContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -21,6 +104,11 @@ const WorldMapContainer = styled.div`
 
 const StyledMapContainer = styled(MapContainer)`
   z-index: 1;
+
+  .custom-marker {
+    background: transparent;
+    border: none;
+  }
 `
 
 const PopupContent = styled.div`
@@ -61,66 +149,3 @@ const PopupButton = styled.button`
     opacity: 0.9;
   }
 `
-
-interface WorldMapProps {
-  events: HistoricalEvent[]
-  selectedEvent: HistoricalEvent | null
-  hoveredEvent: HistoricalEvent | null
-  onEventSelect: (event: HistoricalEvent | null) => void
-  onEventHover: (event: HistoricalEvent | null) => void
-}
-
-function WorldMap({ events, selectedEvent, hoveredEvent, onEventSelect, onEventHover }: WorldMapProps) {
-  const navigate = useNavigate()
-
-  const handleMarkerClick = (event: HistoricalEvent) => {
-    onEventSelect(event)
-    navigate(`/event/${event.id}`)
-  }
-
-  return (
-    <WorldMapContainer>
-      <StyledMapContainer
-        center={[20, 0]}
-        zoom={2}
-        style={{ height: '100%', width: '100%' }}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {events.map((event) => {
-          if (!event.coordinates) return null
-          
-          return (
-            <Marker
-              key={event.id}
-              position={[event.coordinates.lat, event.coordinates.lng]}
-              eventHandlers={{
-                click: () => handleMarkerClick(event),
-                mouseover: () => onEventHover(event),
-                mouseout: () => onEventHover(null),
-              }}
-            >
-              <Popup>
-                <PopupContent>
-                  <h3>{event.title}</h3>
-                  <PopupYear>{event.year}</PopupYear>
-                  {event.location && (
-                    <PopupLocation>{event.location}</PopupLocation>
-                  )}
-                  <PopupButton onClick={() => handleMarkerClick(event)}>
-                    Zobrazit detail
-                  </PopupButton>
-                </PopupContent>
-              </Popup>
-            </Marker>
-          )
-        })}
-      </StyledMapContainer>
-    </WorldMapContainer>
-  )
-}
-
-export default WorldMap
-

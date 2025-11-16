@@ -2,6 +2,100 @@ import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { HistoricalEvent } from '../types'
 
+interface TimelineProps {
+  events: HistoricalEvent[]
+  selectedEvent: HistoricalEvent | null
+  onEventSelect: (event: HistoricalEvent | null) => void
+  onEventHover: (event: HistoricalEvent | null) => void
+}
+
+function Timeline({ events, selectedEvent, onEventSelect, onEventHover }: TimelineProps) {
+  const navigate = useNavigate()
+
+  // Seřadit události podle roku
+  const sortedEvents = [...events].sort((a, b) => a.year - b.year)
+
+  // Najít nejstarší a nejnovější rok pro výpočet pozice
+  const minYear = Math.min(...events.map(e => e.year))
+  const maxYear = Math.max(...events.map(e => e.year))
+  const yearRange = maxYear - minYear
+
+  const handleEventClick = (event: HistoricalEvent) => {
+    onEventSelect(event)
+    navigate(`/event/${event.id}`)
+  }
+
+  const calculatePosition = (year: number): number => {
+    if (yearRange === 0) return 50
+    return ((year - minYear) / yearRange) * 100
+  }
+
+  return (
+    <TimelineContainer>
+      <Title>Časová osa</Title>
+      <Container>
+        <Line>
+          {sortedEvents.map((event) => {
+            const position = calculatePosition(event.year)
+            const isSelected = selectedEvent?.id === event.id
+            
+            return (
+              <Point
+                key={event.id}
+                $selected={isSelected}
+                style={{ left: `${position}%` }}
+                onClick={() => handleEventClick(event)}
+                onMouseEnter={() => onEventHover(event)}
+                onMouseLeave={() => onEventHover(null)}
+                title={`${event.title} (${event.year})`}
+              >
+                <PointMarker $selected={isSelected} />
+                <PointTooltip>
+                  <PointYear>{event.year}</PointYear>
+                  <PointTitle>{event.title}</PointTitle>
+                </PointTooltip>
+              </Point>
+            )
+          })}
+        </Line>
+        
+        <YearLabels>
+          <YearLabel>{minYear}</YearLabel>
+          <YearLabel>{maxYear}</YearLabel>
+        </YearLabels>
+      </Container>
+
+      <EventsList>
+        <EventsTitle>Všechny události</EventsTitle>
+        <EventsGrid>
+          {sortedEvents.map((event) => {
+            const isSelected = selectedEvent?.id === event.id
+            
+            return (
+              <EventCard
+                key={event.id}
+                $selected={isSelected}
+                onClick={() => handleEventClick(event)}
+                onMouseEnter={() => onEventHover(event)}
+                onMouseLeave={() => onEventHover(null)}
+              >
+                <EventYear>{event.year}</EventYear>
+                <EventTitle>{event.title}</EventTitle>
+                {event.location && (
+                  <EventLocation>📍 {event.location}</EventLocation>
+                )}
+              </EventCard>
+            )
+          })}
+        </EventsGrid>
+      </EventsList>
+    </TimelineContainer>
+  )
+}
+
+export default Timeline
+
+// Styled Components
 const TimelineContainer = styled.div`
   width: 100%;
 `
@@ -164,97 +258,3 @@ const EventLocation = styled.div`
   font-size: 0.85rem;
   color: #666;
 `
-
-interface TimelineProps {
-  events: HistoricalEvent[]
-  selectedEvent: HistoricalEvent | null
-  onEventSelect: (event: HistoricalEvent | null) => void
-  onEventHover: (event: HistoricalEvent | null) => void
-}
-
-function Timeline({ events, selectedEvent, onEventSelect, onEventHover }: TimelineProps) {
-  const navigate = useNavigate()
-
-  // Seřadit události podle roku
-  const sortedEvents = [...events].sort((a, b) => a.year - b.year)
-
-  // Najít nejstarší a nejnovější rok pro výpočet pozice
-  const minYear = Math.min(...events.map(e => e.year))
-  const maxYear = Math.max(...events.map(e => e.year))
-  const yearRange = maxYear - minYear
-
-  const handleEventClick = (event: HistoricalEvent) => {
-    onEventSelect(event)
-    navigate(`/event/${event.id}`)
-  }
-
-  const calculatePosition = (year: number): number => {
-    if (yearRange === 0) return 50
-    return ((year - minYear) / yearRange) * 100
-  }
-
-  return (
-    <TimelineContainer>
-      <Title>Časová osa</Title>
-      <Container>
-        <Line>
-          {sortedEvents.map((event) => {
-            const position = calculatePosition(event.year)
-            const isSelected = selectedEvent?.id === event.id
-            
-            return (
-              <Point
-                key={event.id}
-                $selected={isSelected}
-                style={{ left: `${position}%` }}
-                onClick={() => handleEventClick(event)}
-                onMouseEnter={() => onEventHover(event)}
-                onMouseLeave={() => onEventHover(null)}
-                title={`${event.title} (${event.year})`}
-              >
-                <PointMarker $selected={isSelected} />
-                <PointTooltip>
-                  <PointYear>{event.year}</PointYear>
-                  <PointTitle>{event.title}</PointTitle>
-                </PointTooltip>
-              </Point>
-            )
-          })}
-        </Line>
-        
-        <YearLabels>
-          <YearLabel>{minYear}</YearLabel>
-          <YearLabel>{maxYear}</YearLabel>
-        </YearLabels>
-      </Container>
-
-      <EventsList>
-        <EventsTitle>Všechny události</EventsTitle>
-        <EventsGrid>
-          {sortedEvents.map((event) => {
-            const isSelected = selectedEvent?.id === event.id
-            
-            return (
-              <EventCard
-                key={event.id}
-                $selected={isSelected}
-                onClick={() => handleEventClick(event)}
-                onMouseEnter={() => onEventHover(event)}
-                onMouseLeave={() => onEventHover(null)}
-              >
-                <EventYear>{event.year}</EventYear>
-                <EventTitle>{event.title}</EventTitle>
-                {event.location && (
-                  <EventLocation>📍 {event.location}</EventLocation>
-                )}
-              </EventCard>
-            )
-          })}
-        </EventsGrid>
-      </EventsList>
-    </TimelineContainer>
-  )
-}
-
-export default Timeline
-
