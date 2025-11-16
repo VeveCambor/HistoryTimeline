@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { HistoricalEvent } from '../types'
+import YearBadge from './ui/YearBadge'
 
 interface EventTooltipProps {
   event: HistoricalEvent
@@ -8,7 +9,7 @@ interface EventTooltipProps {
 function EventTooltip({ event }: EventTooltipProps) {
   return (
     <TooltipContainer>
-      <TooltipYear>{event.year}</TooltipYear>
+      <YearBadge year={event.year} variant="tooltip" />
       <TooltipTitle>{event.title}</TooltipTitle>
     </TooltipContainer>
   )
@@ -19,13 +20,6 @@ export default EventTooltip
 // Styled Components
 const TooltipContainer = styled.div`
   text-align: center;
-`
-
-const TooltipYear = styled.div`
-  font-weight: 600;
-  color: #667eea;
-  font-size: 0.9rem;
-  margin-bottom: 0.2rem;
 `
 
 const TooltipTitle = styled.div`

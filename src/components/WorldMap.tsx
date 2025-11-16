@@ -5,6 +5,9 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { HistoricalEvent } from '../types'
 import EventTooltip from './EventTooltip'
+import Button from './ui/Button'
+import YearBadge from './ui/YearBadge'
+import Location from './ui/Location'
 
 // Vytvoření custom ikon pro markery
 const createMarkerIcon = (color: string = '#3388ff') => {
@@ -75,18 +78,20 @@ function MarkerWithTooltip({
       >
         <EventTooltip event={event} />
       </Tooltip>
-      <Popup>
-        <PopupContent>
-          <h3>{event.title}</h3>
-          <PopupYear>{event.year}</PopupYear>
-          {event.location && (
-            <PopupLocation>{event.location}</PopupLocation>
-          )}
-          <PopupButton onClick={handleMarkerClick}>
-            Zobrazit detail
-          </PopupButton>
-        </PopupContent>
-      </Popup>
+              <Popup>
+                <PopupContent>
+                  <PopupTitle>{event.title}</PopupTitle>
+                  <YearBadge year={event.year} variant="tooltip" />
+                  {event.location && (
+                    <PopupLocationWrapper>
+                      <Location location={event.location} />
+                    </PopupLocationWrapper>
+                  )}
+                  <Button onClick={handleMarkerClick} fullWidth>
+                    Zobrazit detail
+                  </Button>
+                </PopupContent>
+              </Popup>
     </Marker>
   )
 }
@@ -146,40 +151,16 @@ const StyledMapContainer = styled(MapContainer)`
 
 const PopupContent = styled.div`
   min-width: 200px;
-
-  h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
 `
 
-const PopupYear = styled.p`
-  font-size: 1rem;
-  font-weight: 600;
-  color: #667eea;
-  margin-bottom: 0.3rem;
-`
-
-const PopupLocation = styled.p`
-  font-size: 0.9rem;
-  color: #666;
+const PopupTitle = styled.h3`
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  color: #333;
 `
 
-const PopupButton = styled.button`
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
+const PopupLocationWrapper = styled.div`
+  margin-bottom: 0.5rem;
   font-size: 0.9rem;
-  width: 100%;
-  transition: opacity 0.3s;
-
-  &:hover {
-    opacity: 0.9;
-  }
 `
 

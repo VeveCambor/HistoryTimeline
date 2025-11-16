@@ -1,13 +1,24 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import styled from 'styled-components'
 import WorldMap from '../components/WorldMap'
 import Timeline from '../components/Timeline'
+import PeriodFilter from '../components/PeriodFilter'
 import { historicalEvents } from '../data/events'
 import { HistoricalEvent } from '../types'
+import { HistoricalPeriod } from '../types/periods'
 
 function HomePage() {
   const [selectedEvent, setSelectedEvent] = useState<HistoricalEvent | null>(null)
   const [hoveredEvent, setHoveredEvent] = useState<HistoricalEvent | null>(null)
+  const [selectedPeriod, setSelectedPeriod] = useState<HistoricalPeriod>(HistoricalPeriod.ALL)
+
+  // Filtrovat události podle vybraného období
+  const filteredEvents = useMemo(() => {
+    if (selectedPeriod === HistoricalPeriod.ALL) {
+      return historicalEvents
+    }
+    return historicalEvents.filter(event => event.period === selectedPeriod)
+  }, [selectedPeriod])
 
   return (
     <HomePageContainer>
@@ -19,7 +30,7 @@ function HomePage() {
       <Content>
         <MapContainer>
           <WorldMap 
-            events={historicalEvents}
+            events={filteredEvents}
             hoveredEvent={hoveredEvent}
             onEventSelect={setSelectedEvent}
             onEventHover={setHoveredEvent}
@@ -27,8 +38,12 @@ function HomePage() {
         </MapContainer>
         
         <TimelineContainer>
+          <PeriodFilter 
+            selectedPeriod={selectedPeriod}
+            onPeriodChange={setSelectedPeriod}
+          />
           <Timeline 
-            events={historicalEvents}
+            events={filteredEvents}
             selectedEvent={selectedEvent}
             hoveredEvent={hoveredEvent}
             onEventSelect={setSelectedEvent}

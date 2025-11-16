@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { HistoricalEvent } from '../types'
 import EventTooltip from './EventTooltip'
+import EventCard from './ui/EventCard'
 
 interface TimelineProps {
   events: HistoricalEvent[]
@@ -78,18 +79,15 @@ function Timeline({ events, selectedEvent, hoveredEvent, onEventSelect, onEventH
             return (
               <EventCard
                 key={event.id}
-                $selected={isSelected}
-                $hovered={isHovered}
+                year={event.year}
+                title={event.title}
+                location={event.location}
+                selected={isSelected}
+                hovered={isHovered}
                 onClick={() => handleEventClick(event)}
                 onMouseEnter={() => onEventHover(event)}
                 onMouseLeave={() => onEventHover(null)}
-              >
-                <EventYear>{event.year}</EventYear>
-                <EventTitle>{event.title}</EventTitle>
-                {event.location && (
-                  <EventLocation>📍 {event.location}</EventLocation>
-                )}
-              </EventCard>
+              />
             )
           })}
         </EventsGrid>
@@ -218,48 +216,3 @@ const EventsGrid = styled.div`
   gap: 1rem;
 `
 
-const EventCard = styled.div<{ $selected?: boolean; $hovered?: boolean }>`
-  background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-
-  &:hover {
-    border-color: #667eea;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
-    transform: translateY(-2px);
-  }
-
-  ${props => props.$selected && `
-    border-color: #667eea;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-  `}
-
-  ${props => props.$hovered && !props.$selected && `
-    border-color: #ffd700;
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-    background: rgba(255, 215, 0, 0.05);
-  `}
-`
-
-const EventYear = styled.div`
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #667eea;
-  margin-bottom: 0.5rem;
-`
-
-const EventTitle = styled.div`
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.3rem;
-`
-
-const EventLocation = styled.div`
-  font-size: 0.85rem;
-  color: #666;
-`

@@ -9,6 +9,8 @@ export interface HistoricalBoundary {
   color?: string
 }
 
+import { HistoricalPeriod } from './periods'
+
 export interface HistoricalEvent {
   id: number
   year: number
@@ -20,5 +22,6 @@ export interface HistoricalEvent {
   tags?: string[]
   image?: string
   historicalBoundaries?: HistoricalBoundary[]
+  period?: HistoricalPeriod
 }
 

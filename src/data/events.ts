@@ -1,4 +1,5 @@
 import { HistoricalEvent } from '../types'
+import { getPeriodForYear } from '../types/periods'
 
 // Ukázková data historických událostí
 export const historicalEvents: HistoricalEvent[] = [
@@ -11,7 +12,8 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Vznik klínového písma v Sumeru, které se stalo základem pro další písemné systémy.',
     details: 'Klínové písmo bylo nejstarším známým systémem psaní. Používalo se pro zaznamenávání obchodních transakcí, zákonů a literárních děl. Tento vynález umožnil uchování a předávání znalostí napříč generacemi.',
     tags: ['Písmo', 'Mezopotámie', 'Civilizace'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800'
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    period: getPeriodForYear(-3000)
   },
   {
     id: 2,
@@ -22,7 +24,8 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'První zaznamenané olympijské hry v antickém Řecku, které se konaly na počest boha Dia.',
     details: 'Olympijské hry byly nejvýznamnější sportovní událostí antického světa. Konaly se každé čtyři roky a přitahovaly sportovce a diváky z celého řeckého světa. Hry byly tak důležité, že během jejich konání se zastavovaly války.',
     tags: ['Sport', 'Řecko', 'Antika'],
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800'
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800',
+    period: getPeriodForYear(-776)
   },
   {
     id: 3,
@@ -55,7 +58,8 @@ export const historicalEvents: HistoricalEvent[] = [
           { lat: 36.0, lng: -10.0 }, // Španělsko - západ (uzavření)
         ]]
       }
-    ]
+    ],
+    period: getPeriodForYear(-44)
   },
   {
     id: 4,
@@ -99,7 +103,8 @@ export const historicalEvents: HistoricalEvent[] = [
           { lat: 40.0, lng: 15.0 },  // Balkán - západ (uzavření)
         ]]
       }
-    ]
+    ],
+    period: getPeriodForYear(476)
   },
   {
     id: 5,
@@ -110,7 +115,8 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Vilém Dobyvatel porazil anglického krále Harolda II. a získal anglický trůn.',
     details: 'Bitva u Hastingsu byla rozhodující bitvou normanského dobytí Anglie. Vilém Dobyvatel se stal anglickým králem a zavedl normanskou vládu, která změnila anglickou společnost, jazyk a kulturu.',
     tags: ['Anglie', 'Válka', 'Středověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800'
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    period: getPeriodForYear(1066)
   },
   {
     id: 6,
@@ -121,7 +127,8 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Kryštof Kolumbus přistál na Bahamách, čímž zahájil evropskou kolonizaci Ameriky.',
     details: 'Kolumbova plavba otevřela novou éru v historii. Jeho objev vedl k masivní migraci Evropanů do Nového světa a k výměně zboží, rostlin, zvířat a nemocí mezi kontinenty, což mělo trvalý dopad na celý svět.',
     tags: ['Objevy', 'Amerika', 'Kolonizace'],
-    image: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800'
+    image: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800',
+    period: getPeriodForYear(1492)
   },
   {
     id: 7,
@@ -132,7 +139,8 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Začátek Francouzské revoluce, která svrhla monarchii a zavedla republiku.',
     details: 'Francouzská revoluce byla jedním z nejvýznamnějších politických převratů v historii. Přinesla myšlenky svobody, rovnosti a bratrství, které ovlivnily celý svět a vedly k moderním demokratickým státům.',
     tags: ['Francie', 'Revoluce', 'Politika'],
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800'
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800',
+    period: getPeriodForYear(1789)
   },
   {
     id: 8,
@@ -143,7 +151,8 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Apollo 11 úspěšně přistálo na Měsíci, Neil Armstrong se stal prvním člověkem, který vstoupil na měsíční povrch.',
     details: 'Tato událost byla vrcholem vesmírného závodu mezi USA a SSSR. Armstrongův krok na Měsíci byl sledován stovkami milionů lidí po celém světě a představoval jeden z největších úspěchů lidstva.',
     tags: ['Vesmír', 'USA', 'Věda'],
-    image: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800'
+    image: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800',
+    period: getPeriodForYear(1969)
   }
 ]
 
