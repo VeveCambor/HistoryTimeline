@@ -30,6 +30,7 @@ function HomePage() {
           <Timeline 
             events={historicalEvents}
             selectedEvent={selectedEvent}
+            hoveredEvent={hoveredEvent}
             onEventSelect={setSelectedEvent}
             onEventHover={setHoveredEvent}
           />

@@ -6,11 +6,12 @@ import EventTooltip from './EventTooltip'
 interface TimelineProps {
   events: HistoricalEvent[]
   selectedEvent: HistoricalEvent | null
+  hoveredEvent: HistoricalEvent | null
   onEventSelect: (event: HistoricalEvent | null) => void
   onEventHover: (event: HistoricalEvent | null) => void
 }
 
-function Timeline({ events, selectedEvent, onEventSelect, onEventHover }: TimelineProps) {
+function Timeline({ events, selectedEvent, hoveredEvent, onEventSelect, onEventHover }: TimelineProps) {
   const navigate = useNavigate()
 
   // Seřadit události podle roku
@@ -39,18 +40,20 @@ function Timeline({ events, selectedEvent, onEventSelect, onEventHover }: Timeli
           {sortedEvents.map((event) => {
             const position = calculatePosition(event.year)
             const isSelected = selectedEvent?.id === event.id
+            const isHovered = hoveredEvent?.id === event.id
             
             return (
               <Point
                 key={event.id}
                 $selected={isSelected}
+                $hovered={isHovered}
                 style={{ left: `${position}%` }}
                 onClick={() => handleEventClick(event)}
                 onMouseEnter={() => onEventHover(event)}
                 onMouseLeave={() => onEventHover(null)}
                 title={`${event.title} (${event.year})`}
               >
-                <PointMarker $selected={isSelected} />
+                <PointMarker $selected={isSelected} $hovered={isHovered} />
                 <PointTooltip>
                   <EventTooltip event={event} />
                 </PointTooltip>
@@ -70,11 +73,13 @@ function Timeline({ events, selectedEvent, onEventSelect, onEventHover }: Timeli
         <EventsGrid>
           {sortedEvents.map((event) => {
             const isSelected = selectedEvent?.id === event.id
+            const isHovered = hoveredEvent?.id === event.id
             
             return (
               <EventCard
                 key={event.id}
                 $selected={isSelected}
+                $hovered={isHovered}
                 onClick={() => handleEventClick(event)}
                 onMouseEnter={() => onEventHover(event)}
                 onMouseLeave={() => onEventHover(null)}
@@ -121,7 +126,7 @@ const Line = styled.div`
   margin: 0 1rem;
 `
 
-const Point = styled.div<{ $selected?: boolean }>`
+const Point = styled.div<{ $selected?: boolean; $hovered?: boolean }>`
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -129,7 +134,7 @@ const Point = styled.div<{ $selected?: boolean }>`
   z-index: 2;
 `
 
-const PointMarker = styled.div<{ $selected?: boolean }>`
+const PointMarker = styled.div<{ $selected?: boolean; $hovered?: boolean }>`
   width: 20px;
   height: 20px;
   background: white;
@@ -144,6 +149,14 @@ const PointMarker = styled.div<{ $selected?: boolean }>`
     background: #667eea;
     border-color: #764ba2;
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  `}
+
+  ${props => props.$hovered && !props.$selected && `
+    width: 24px;
+    height: 24px;
+    background: #ffd700;
+    border-color: #ffd700;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
   `}
 
   ${Point}:hover & {
@@ -205,7 +218,7 @@ const EventsGrid = styled.div`
   gap: 1rem;
 `
 
-const EventCard = styled.div<{ $selected?: boolean }>`
+const EventCard = styled.div<{ $selected?: boolean; $hovered?: boolean }>`
   background: white;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
@@ -223,6 +236,12 @@ const EventCard = styled.div<{ $selected?: boolean }>`
     border-color: #667eea;
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  `}
+
+  ${props => props.$hovered && !props.$selected && `
+    border-color: #ffd700;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    background: rgba(255, 215, 0, 0.05);
   `}
 `
 
