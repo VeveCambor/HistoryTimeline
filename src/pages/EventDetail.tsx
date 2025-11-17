@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { historicalEvents } from '../data/events'
 import HistoricalMap from '../components/HistoricalMap'
@@ -14,7 +14,12 @@ import Link from '../components/ui/Link'
 
 function EventDetail() {
   const { id } = useParams<{ id: string }>()
+  const navigate = useNavigate()
   const event = historicalEvents.find(e => e.id === parseInt(id || '0', 10))
+
+  const handleTagClick = (tag: string) => {
+    navigate('/', { state: { searchQuery: tag } })
+  }
 
   if (!event) {
     return (
@@ -65,7 +70,7 @@ function EventDetail() {
         {event.tags && event.tags.length > 0 && (
           <TagsSection>
             <TagsSectionTitle>Štítky</TagsSectionTitle>
-            <TagsList tags={event.tags} />
+            <TagsList tags={event.tags} onTagClick={handleTagClick} />
           </TagsSection>
         )}
       </Content>

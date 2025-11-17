@@ -16,10 +16,16 @@ function HomePage() {
   const [selectedPeriod, setSelectedPeriod] = useState<HistoricalPeriod>(HistoricalPeriod.ALL)
   const [searchQuery, setSearchQuery] = useState<string>('')
 
-  // Obnovit vybrané období z location state
+  // Obnovit vybrané období a vyhledávací dotaz z location state
   useEffect(() => {
-    if (location.state && (location.state as { selectedPeriod?: HistoricalPeriod }).selectedPeriod) {
-      setSelectedPeriod((location.state as { selectedPeriod: HistoricalPeriod }).selectedPeriod)
+    if (location.state) {
+      const state = location.state as { selectedPeriod?: HistoricalPeriod; searchQuery?: string }
+      if (state.selectedPeriod) {
+        setSelectedPeriod(state.selectedPeriod)
+      }
+      if (state.searchQuery) {
+        setSearchQuery(state.searchQuery)
+      }
     }
   }, [location.state])
 
