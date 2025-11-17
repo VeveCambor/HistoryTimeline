@@ -33,9 +33,9 @@ function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEvent
   if (selectedPeriod !== HistoricalPeriod.ALL) {
     const selectedPeriodInfo = PERIODS.find(p => p.id === selectedPeriod)
     if (selectedPeriodInfo) {
-      // Pro pravěk použij -12000 jako minimum (protože pravěk začíná dříve)
+      // Pro pravěk použij -40000 jako minimum (protože pravěk začíná dříve)
       if (selectedPeriod === HistoricalPeriod.PREHISTORY) {
-        displayMinYear = -12000
+        displayMinYear = -40000
       } else {
         displayMinYear = selectedPeriodInfo.startYear
       }
