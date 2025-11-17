@@ -734,6 +734,164 @@ export const historicalEvents: HistoricalEvent[] = [
     tags: ['USA', 'Terorismus', 'Moderní doba'],
     image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800',
     period: getPeriodForYear(2001)
+  },
+  // Afrika
+  {
+    id: 57,
+    year: -3000,
+    title: 'Vznik starověkého Egypta',
+    location: 'Egypt',
+    coordinates: { lat: 26.0, lng: 31.0 },
+    description: 'Začátek egyptské civilizace sjednocením Horního a Dolního Egypta.',
+    details: 'Starověký Egypt byl jednou z nejvyspělejších civilizací starověku. Vznikl podél řeky Nil a přinesl významné objevy v architektuře, matematice, medicíně a písmu.',
+    tags: ['Egypt', 'Afrika', 'Civilizace', 'Starověk'],
+    image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73a6e?w=800',
+    period: getPeriodForYear(-3000)
+  },
+  {
+    id: 58,
+    year: -814,
+    title: 'Založení Kartága',
+    location: 'Kartágo, Tunis',
+    coordinates: { lat: 36.8528, lng: 10.3231 },
+    description: 'Féničané založili město Kartágo, které se stalo mocnou obchodní říší.',
+    details: 'Kartágo bylo založeno fénickými kolonisty z Tyru. Stalo se jednou z nejmocnějších obchodních říší ve Středomoří a hlavním rivalem Říma.',
+    tags: ['Afrika', 'Obchod', 'Starověk'],
+    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800',
+    period: getPeriodForYear(-814)
+  },
+  {
+    id: 59,
+    year: 330,
+    title: 'Založení Aksumské říše',
+    location: 'Etiopie',
+    coordinates: { lat: 14.0, lng: 38.5 },
+    description: 'Vznik Aksumské říše, jedné z nejmocnějších afrických říší starověku.',
+    details: 'Aksumská říše byla významnou obchodní mocností, která kontrolovala obchod mezi Afrikou, Arábií a Indií. Byla jednou z prvních říší, které přijaly křesťanství.',
+    tags: ['Afrika', 'Etiopie', 'Obchod', 'Starověk'],
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    period: getPeriodForYear(330)
+  },
+  {
+    id: 60,
+    year: 1076,
+    title: 'Pád Ghanské říše',
+    location: 'Ghana',
+    coordinates: { lat: 8.0, lng: -2.0 },
+    description: 'Konec Ghanské říše, první velké západoafrické říše.',
+    details: 'Ghanská říše byla první významnou říší v západní Africe. Kontrolovala obchod se zlatem a solí a byla známá svým bohatstvím. Její pád otevřel cestu pro další západoafrické říše.',
+    tags: ['Afrika', 'Ghana', 'Obchod', 'Středověk'],
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    period: getPeriodForYear(1076)
+  },
+  {
+    id: 61,
+    year: 1324,
+    title: 'Pouť Mansa Musy do Mekky',
+    location: 'Mali',
+    coordinates: { lat: 17.0, lng: -4.0 },
+    description: 'Mansa Musa, král Mali, podnikl legendární pouť do Mekky s obrovským bohatstvím.',
+    details: 'Mansa Musa byl jedním z nejbohatších lidí v historii. Jeho pouť do Mekky s karavanou nesoucí obrovské množství zlata způsobila inflaci v celém Středomoří a upoutala pozornost celého světa k bohatství Mali.',
+    tags: ['Afrika', 'Mali', 'Náboženství', 'Středověk'],
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    period: getPeriodForYear(1324)
+  },
+  {
+    id: 62,
+    year: 1885,
+    title: 'Berlínská konference',
+    location: 'Berlín, Německo',
+    coordinates: { lat: 52.5200, lng: 13.4050 },
+    description: 'Evropské mocnosti rozdělily Afriku na kolonie bez ohledu na africké národy.',
+    details: 'Berlínská konference rozdělila Afriku mezi evropské koloniální mocnosti. Toto rozdělení ignorovalo etnické a kulturní hranice a mělo trvalé negativní dopady na africké národy.',
+    tags: ['Afrika', 'Kolonizace', 'Politika', 'Moderní doba'],
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    period: getPeriodForYear(1885)
+  },
+  {
+    id: 63,
+    year: 1994,
+    title: 'Konec apartheidu v Jižní Africe',
+    location: 'Jižní Afrika',
+    coordinates: { lat: -25.7, lng: 28.2 },
+    description: 'Nelson Mandela se stal prvním černošským prezidentem Jižní Afriky.',
+    details: 'Konec apartheidu a zvolení Nelsona Mandely prezidentem ukončilo desetiletí rasové segregace v Jižní Africe. Mandela se stal symbolem boje za svobodu a usmíření.',
+    tags: ['Afrika', 'Politika', 'Lidská práva', 'Moderní doba'],
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    period: getPeriodForYear(1994)
+  },
+  // Jižní Amerika
+  {
+    id: 64,
+    year: -3000,
+    title: 'Začátek andské civilizace',
+    location: 'Peru',
+    coordinates: { lat: -9.0, lng: -75.0 },
+    description: 'Vznik prvních usedlých společností v Andách.',
+    details: 'Andské civilizace začaly vznikat podél pobřeží a v horách Jižní Ameriky. Tyto společnosti vyvinuly pokročilé zemědělské techniky a architekturu.',
+    tags: ['Jižní Amerika', 'Peru', 'Civilizace', 'Pravěk'],
+    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    period: getPeriodForYear(-3000)
+  },
+  {
+    id: 65,
+    year: -1200,
+    title: 'Vznik Chavínské kultury',
+    location: 'Peru',
+    coordinates: { lat: -9.6, lng: -77.2 },
+    description: 'Začátek Chavínské kultury, první významné andské civilizace.',
+    details: 'Chavínská kultura byla první velkou andskou civilizací. Vytvořila rozsáhlou obchodní síť a vyvinula charakteristický umělecký styl s náboženskými motivy.',
+    tags: ['Jižní Amerika', 'Peru', 'Civilizace', 'Pravěk'],
+    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    period: getPeriodForYear(-1200)
+  },
+  {
+    id: 66,
+    year: 1438,
+    title: 'Vznik Incké říše',
+    location: 'Peru',
+    coordinates: { lat: -13.2, lng: -72.5 },
+    description: 'Inkové začali budovat svou říši v Andách.',
+    details: 'Incká říše byla největší říší v předkolumbovské Americe. Rozkládala se podél celého západního pobřeží Jižní Ameriky a měla pokročilý systém silnic, zemědělství a administrativy.',
+    tags: ['Jižní Amerika', 'Peru', 'Civilizace', 'Středověk'],
+    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    period: getPeriodForYear(1438)
+  },
+  {
+    id: 67,
+    year: 1532,
+    title: 'Dobytí Incké říše',
+    location: 'Peru',
+    coordinates: { lat: -13.2, lng: -72.5 },
+    description: 'Francisco Pizarro dobyl Inckou říši pro Španělsko.',
+    details: 'Dobytí Incké říše Španěly vedenými Pizarrem ukončilo existenci největší předkolumbovské říše v Americe. Tato událost změnila historii Jižní Ameriky a vedla k evropské kolonizaci.',
+    tags: ['Jižní Amerika', 'Peru', 'Kolonizace', 'Novověk'],
+    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    period: getPeriodForYear(1532)
+  },
+  {
+    id: 68,
+    year: 1822,
+    title: 'Nezávislost Brazílie',
+    location: 'Brazílie',
+    coordinates: { lat: -15.8, lng: -47.9 },
+    description: 'Brazílie vyhlásila nezávislost na Portugalsku.',
+    details: 'Brazílie získala nezávislost mírovou cestou pod vedením Dom Pedra I. Stala se největším nezávislým státem v Jižní Americe a jedinou portugalsky mluvící zemí na kontinentu.',
+    tags: ['Jižní Amerika', 'Brazílie', 'Politika', 'Moderní doba'],
+    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    period: getPeriodForYear(1822)
+  },
+  {
+    id: 69,
+    year: 1914,
+    title: 'Otevření Panamského průplavu',
+    location: 'Panama',
+    coordinates: { lat: 9.0, lng: -79.5 },
+    description: 'Panamský průplav byl otevřen, čímž propojil Atlantik a Pacifik.',
+    details: 'Otevření Panamského průplavu zkrátilo námořní cestu mezi Atlantikem a Pacifikem o tisíce kilometrů. Mělo zásadní dopad na světový obchod a změnilo geopolitickou situaci.',
+    tags: ['Jižní Amerika', 'Panama', 'Technologie', 'Moderní doba'],
+    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    period: getPeriodForYear(1914)
   }
 ]
 
