@@ -11,4 +11,7 @@ export { default as Meta } from './Meta'
 export { default as Location } from './Location'
 export { default as NotFound } from './NotFound'
 export { default as Link } from './Link'
+export { default as PeriodCard } from './PeriodCard'
+export { default as MainPeriodCard } from './MainPeriodCard'
+export { default as SearchInput } from './SearchInput'
 

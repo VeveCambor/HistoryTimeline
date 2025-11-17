@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import WorldMap from '../components/WorldMap'
 import Timeline from '../components/Timeline'
 import PeriodFilter from '../components/PeriodFilter'
+import SearchInput from '../components/ui/SearchInput'
 import { historicalEvents } from '../data/events'
 import { HistoricalEvent } from '../types'
 import { HistoricalPeriod } from '../types/periods'
@@ -13,6 +14,7 @@ function HomePage() {
   const [selectedEvent, setSelectedEvent] = useState<HistoricalEvent | null>(null)
   const [hoveredEvent, setHoveredEvent] = useState<HistoricalEvent | null>(null)
   const [selectedPeriod, setSelectedPeriod] = useState<HistoricalPeriod>(HistoricalPeriod.ALL)
+  const [searchQuery, setSearchQuery] = useState<string>('')
 
   // Obnovit vybrané období z location state
   useEffect(() => {
@@ -21,13 +23,31 @@ function HomePage() {
     }
   }, [location.state])
 
-  // Filtrovat události podle vybraného období
+  // Filtrovat události podle vybraného období a vyhledávacího dotazu
   const filteredEvents = useMemo(() => {
-    if (selectedPeriod === HistoricalPeriod.ALL) {
-      return historicalEvents
+    let events = historicalEvents
+
+    // Filtrovat podle období
+    if (selectedPeriod !== HistoricalPeriod.ALL) {
+      events = events.filter(event => event.period === selectedPeriod)
     }
-    return historicalEvents.filter(event => event.period === selectedPeriod)
-  }, [selectedPeriod])
+
+    // Filtrovat podle vyhledávacího dotazu
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim()
+      events = events.filter(event => {
+        const titleMatch = event.title.toLowerCase().includes(query)
+        const descriptionMatch = event.description.toLowerCase().includes(query)
+        const locationMatch = event.location.toLowerCase().includes(query)
+        const tagsMatch = event.tags?.some(tag => tag.toLowerCase().includes(query))
+        const yearMatch = event.year.toString().includes(query)
+        
+        return titleMatch || descriptionMatch || locationMatch || tagsMatch || yearMatch
+      })
+    }
+
+    return events
+  }, [selectedPeriod, searchQuery])
 
   return (
     <HomePageContainer>
@@ -49,10 +69,17 @@ function HomePage() {
         </MapContainer>
         
         <TimelineContainer>
-          <PeriodFilter 
-            selectedPeriod={selectedPeriod}
-            onPeriodChange={setSelectedPeriod}
-          />
+          <FiltersContainer>
+            <PeriodFilter 
+              selectedPeriod={selectedPeriod}
+              onPeriodChange={setSelectedPeriod}
+            />
+            <SearchInput 
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder="Vyhledat události podle názvu, místa, roku..."
+            />
+          </FiltersContainer>
           <Timeline 
             events={filteredEvents}
             selectedEvent={selectedEvent}
@@ -178,4 +205,18 @@ const TimelineContainer = styled.div`
   padding: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
+`
+
+const FiltersContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
 `

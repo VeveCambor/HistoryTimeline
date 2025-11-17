@@ -31,16 +31,24 @@ export default PeriodFilter
 
 // Styled Components
 const FilterContainer = styled.div`
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #e0e0e0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 auto;
+  }
 `
 
 const FilterTitle = styled.h3`
   font-size: 1rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 0.75rem;
+  margin: 0;
+  white-space: nowrap;
 `
 
 const FilterButtons = styled.div`
