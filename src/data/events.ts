@@ -146,10 +146,10 @@ export const historicalEvents: HistoricalEvent[] = [
     id: 8,
     year: 1969,
     title: 'První přistání na Měsíci',
-    location: 'Měsíc',
-    coordinates: { lat: 0.6875, lng: 23.4333 },
+    location: 'Kennedy Space Center, Florida, USA',
+    coordinates: { lat: 28.5721, lng: -80.6480 },
     description: 'Apollo 11 úspěšně přistálo na Měsíci, Neil Armstrong se stal prvním člověkem, který vstoupil na měsíční povrch.',
-    details: 'Tato událost byla vrcholem vesmírného závodu mezi USA a SSSR. Armstrongův krok na Měsíci byl sledován stovkami milionů lidí po celém světě a představoval jeden z největších úspěchů lidstva.',
+    details: 'Tato událost byla vrcholem vesmírného závodu mezi USA a SSSR. Armstrongův krok na Měsíci byl sledován stovkami milionů lidí po celém světě a představoval jeden z největších úspěchů lidstva. Mise startovala z Kennedy Space Center na Floridě.',
     tags: ['Vesmír', 'USA', 'Věda'],
     image: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800',
     period: getPeriodForYear(1969)
