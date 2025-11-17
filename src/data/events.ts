@@ -162,9 +162,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Chauvet, Francie',
     coordinates: { lat: 44.3833, lng: 4.4167 },
     description: 'Vznik prvních známých jeskynních maleb v Chauvetově jeskyni, zobrazujících zvířata a abstraktní symboly.',
-    details: 'Jeskynní malby v Chauvetově jeskyni jsou jedny z nejstarších známých uměleckých děl lidstva. Představují důležitý milník v kulturním vývoji člověka a ukazují schopnost abstraktního myšlení a uměleckého vyjádření.',
+    details: 'Jeskynní malby v Chauvetově jeskyni jsou jedny z nejstarších známých uměleckých děl lidstva, datované do období před 30 000 až 40 000 lety. Jeskyně byla objevena v roce 1994 a obsahuje více než 400 maleb zvířat včetně lvů, medvědů, nosorožců a koní. Malby jsou vytvořené pomocí uhlíku a okru a vykazují pokročilé umělecké techniky jako perspektiva a stínování. Tyto malby představují důležitý milník v kulturním vývoji člověka a ukazují schopnost abstraktního myšlení, uměleckého vyjádření a možná i náboženských nebo rituálních praktik. Jeskyně byla pravděpodobně používána pro rituální účely a malby mohly sloužit jako forma komunikace nebo záznamu důležitých událostí. Objev těchto maleb změnil naše chápání pravěkého umění a ukázal, že lidé měli rozvinutou kulturu již v době paleolitu.',
     tags: ['Umění', 'Pravěk', 'Kultura'],
-    image: 'https://images.unsplash.com/photo-1574943320219-553eb213722d?w=800',
+    image: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80',
     period: getPeriodForYear(-40000)
   },
   {
@@ -174,9 +174,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Sibiř, Rusko',
     coordinates: { lat: 60.0, lng: 100.0 },
     description: 'Vznik prvních šamanských praktik a náboženských rituálů v pravěkých společnostech.',
-    details: 'Šamanismus byl jedním z prvních náboženských systémů lidstva. Šamani sloužili jako prostředníci mezi lidským a duchovním světem a hráli klíčovou roli v pravěkých společnostech.',
+    details: 'Šamanismus byl jedním z prvních náboženských systémů lidstva, který vznikl pravděpodobně v období před 25 000 lety. Šamani sloužili jako prostředníci mezi lidským a duchovním světem, léčitelé, věštci a duchovní vůdci svých komunit. Šamanské praktiky zahrnovaly rituální tance, bubnování, užívání halucinogenních látek a transové stavy, během kterých šamani komunikovali s duchy a zvířaty. Šamanismus byl zvláště rozšířen v severních oblastech Eurasie a Severní Ameriky, kde přežívá dodnes u některých domorodých kultur. Tento náboženský systém měl hluboký vliv na pravěké společnosti - šamani pomáhali při lovu, léčení nemocí, předpovídání počasí a řešení konfliktů. Šamanismus také ovlivnil pozdější náboženské systémy a některé jeho prvky lze nalézt v mnoha světových náboženstvích. Archeologické nálezy z této doby, jako jsou rituální předměty a jeskynní malby, naznačují existenci šamanských praktik již v paleolitu.',
     tags: ['Náboženství', 'Pravěk', 'Kultura'],
-    image: 'https://images.unsplash.com/photo-1574943320219-553eb213722d?w=800',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
     period: getPeriodForYear(-25000)
   },
   {
@@ -186,9 +186,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Střední Asie',
     coordinates: { lat: 45.0, lng: 80.0 },
     description: 'Lidé začali domestikovat vlky, což vedlo k vzniku psa jako prvního domestikovaného zvířete.',
-    details: 'Domestikace psa byla prvním krokem k domestikaci zvířat. Psi pomáhali při lovu, hlídání a později při pastevectví. Tento vztah mezi člověkem a psem trvá dodnes.',
+    details: 'Domestikace psa byla prvním a nejdůležitějším krokem k domestikaci zvířat. Proces začal před přibližně 15 000 až 12 000 lety, kdy se vlci začali přibližovat k lidským táborům, pravděpodobně kvůli zbytkům jídla. Postupně se vyvinul vzájemný vztah - lidé poskytovali vlkům potravu a úkryt, zatímco vlci pomáhali při lovu, hlídání tábora a varování před nebezpečím. Tento proces vedl k genetickým změnám - domestikovaní psi se lišili od vlků menší velikostí, kratšími čenichy a přátelštějším chováním. Psi se stali nepostradatelnými společníky pravěkých lidí - pomáhali při lovu velkých zvířat, hlídali osady, pomáhali při pastevectví a poskytovali teplo v chladných nocích. Tento vztah mezi člověkem a psem trvá dodnes a psi zůstávají jedním z nejvěrnějších společníků lidstva. Domestikace psa také otevřela cestu k domestikaci dalších zvířat, což bylo klíčové pro rozvoj zemědělství a usedlých společností.',
     tags: ['Domestikace', 'Pravěk', 'Zvířata'],
-    image: 'https://images.unsplash.com/photo-1574943320219-553eb213722d?w=800',
+    image: 'https://images.unsplash.com/photo-1552053831-71594a27632d?w=800&q=80',
     period: getPeriodForYear(-12000)
   },
   {
@@ -198,9 +198,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Úrodný půlměsíc',
     coordinates: { lat: 33.0, lng: 44.0 },
     description: 'Lidé začali pěstovat plodiny a chovat zvířata, což vedlo k usedlému způsobu života.',
-    details: 'Neolitická revoluce byla přechod od lovu a sběru k zemědělství. Tato změna umožnila vznik prvních osad, specializaci práce a růst populace. Byla to jedna z nejdůležitějších změn v historii lidstva.',
+    details: 'Neolitická revoluce, která začala před přibližně 12 000 lety v oblasti Úrodného půlměsíce (Mezopotámie, Levanta, Anatolie), byla jednou z nejdůležitějších změn v historii lidstva. Tento přechod od lovu a sběru k zemědělství a chovu zvířat způsobil revoluční změny v lidské společnosti. Lidé začali pěstovat pšenici, ječmen, čočku a hrách a domestikovali ovce, kozy, prasata a skot. Tato změna umožnila usedlý způsob života - místo neustálého putování za potravou mohli lidé zůstat na jednom místě a budovat trvalé osady. Zemědělství vedlo k růstu populace, protože dokázalo uživit více lidí na menší ploše. Vznikla specializace práce - někteří lidé se stali zemědělci, jiní řemeslníky, obchodníky nebo kněžími. To vedlo k rozvoji technologií, obchodu, sociální hierarchie a nakonec k vzniku prvních měst a civilizací. Neolitická revoluce se postupně šířila z Úrodného půlměsíce do Evropy, Asie a Afriky, transformovala lidskou společnost a položila základy pro moderní svět.',
     tags: ['Zemědělství', 'Pravěk', 'Civilizace'],
-    image: 'https://images.unsplash.com/photo-1574943320219-553eb213722d?w=800',
+    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80',
     period: getPeriodForYear(-10000)
   },
   {
@@ -210,9 +210,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Jericho, Palestina',
     coordinates: { lat: 31.8553, lng: 35.4627 },
     description: 'Vznik prvních trvalých osad v Jerichu, jednoho z nejstarších měst na světě.',
-    details: 'Jericho je považováno za jedno z nejstarších trvale obydlených měst na světě. Vzniklo díky neolitické revoluci a zemědělství, které umožnilo usedlý způsob života.',
+    details: 'Jericho, ležící v údolí Jordánu, je považováno za jedno z nejstarších trvale obydlených měst na světě s historií sahající až do doby před 11 000 lety. Vzniklo díky neolitické revoluci a zemědělství, které umožnilo usedlý způsob života. Rané Jericho mělo kamenné zdi vysoké až 4 metry a kamennou věž vysokou 8,5 metru, což naznačuje pokročilé stavební techniky a potřebu obrany. Město mělo pravděpodobně několik set až tisíc obyvatel, kteří se živili zemědělstvím - pěstovali pšenici, ječmen, čočku a fíky a chovali kozy a ovce. Jericho bylo strategicky umístěno u pramene vody a na křižovatce obchodních cest, což přispělo k jeho dlouhodobému osídlení. Archeologické nálezy z Jericha zahrnují keramiku, kamenné nástroje, sošky a dokonce i lebky pokryté sádrou, což naznačuje rozvinutou kulturu a možná i náboženské praktiky. Jericho představuje přechod od nomádského způsobu života k usedlým městským společnostem a je považováno za kolébku městské civilizace.',
     tags: ['Osady', 'Pravěk', 'Civilizace'],
-    image: 'https://images.unsplash.com/photo-1574943320219-553eb213722d?w=800',
+    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&q=80',
     period: getPeriodForYear(-9000)
   },
   {
@@ -222,9 +222,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Mezopotámie',
     coordinates: { lat: 33.0, lng: 44.0 },
     description: 'Lidé začali vyrábět keramické nádoby pro skladování a vaření.',
-    details: 'Vynález keramiky byl důležitým krokem v technologickém vývoji. Keramické nádoby umožnily lepší skladování potravin a vody, což přispělo k rozvoji usedlých společností.',
+    details: 'Vynález keramiky před přibližně 9 000 lety byl jedním z nejdůležitějších technologických pokroků v pravěku. Keramika se vyráběla z hlíny, která se tvarovala a pak vypalovala v ohni, čímž se stala tvrdou a vodotěsnou. První keramické nádoby byly jednoduché, ale postupně se technika zdokonalovala - lidé začali používat hrnčířský kruh, zdobit nádoby vzory a barvit je. Keramické nádoby měly zásadní význam pro usedlé společnosti - umožnily skladování obilí, vody a dalších potravin po delší dobu, což bylo klíčové pro přežití během suchých období. Keramika také umožnila vaření potravin, což zlepšilo stravitelnost a nutriční hodnotu jídla. Kromě praktického použití se keramika stala také uměleckým médiem - nádoby byly zdobeny složitými vzory, které nám dnes poskytují cenné informace o kultuře a umění pravěkých společností. Keramika také umožnila rozvoj obchodu, protože nádoby se staly cenným zbožím. Tento vynález přispěl k rozvoji usedlých společností a byl předzvěstí dalších technologických pokroků.',
     tags: ['Technologie', 'Pravěk', 'Řemesla'],
-    image: 'https://images.unsplash.com/photo-1574943320219-553eb213722d?w=800',
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80',
     period: getPeriodForYear(-7000)
   },
   {
@@ -234,9 +234,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Střední Asie',
     coordinates: { lat: 45.0, lng: 80.0 },
     description: 'Lidé začali domestikovat koně, což změnilo dopravu a válčení.',
-    details: 'Domestikace koně měla zásadní dopad na lidskou společnost. Koně umožnili rychlejší dopravu, efektivnější lov a později změnili způsob válčení. Byli klíčoví pro rozvoj nomádských kultur.',
+    details: 'Domestikace koně před přibližně 6 000 lety v stepích střední Asie měla revoluční dopad na lidskou společnost. Koně byli původně loveni pro maso, ale postupně se lidé naučili je chovat a využívat k jízdě a tahu. První domestikovaní koně byli menší než moderní koně, ale jejich síla a rychlost změnily způsob života lidí. Koně umožnili rychlejší dopravu na dlouhé vzdálenosti, což vedlo k rozvoji obchodu a komunikace mezi vzdálenými komunitami. Byli klíčoví pro rozvoj nomádských kultur stepí, které mohly migrovat se svými stády a rychle se přesouvat. Koně také změnili způsob válčení - jízda na koni poskytovala vojákům mobilitu a výhodu v boji. Později se koně stali symbolem moci a bohatství. Domestikace koně také umožnila rozvoj pastevectví - pastevci mohli efektivněji spravovat velká stáda dobytka. Tento vynález měl zásadní vliv na historii - kočovné národy na koních, jako byli Hunové a Mongolové, později změnily mapu Evropy a Asie. Kůň zůstal hlavním dopravním prostředkem až do vynálezu parního stroje a automobilu.',
     tags: ['Domestikace', 'Pravěk', 'Zvířata'],
-    image: 'https://images.unsplash.com/photo-1574943320219-553eb213722d?w=800',
+    image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800&q=80',
     period: getPeriodForYear(-5000)
   },
   {
@@ -246,9 +246,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Mezopotámie',
     coordinates: { lat: 33.0, lng: 44.0 },
     description: 'Vynález kola, jeden z nejdůležitějších vynálezů v historii lidstva.',
-    details: 'Vynález kola způsobil revoluci v dopravě a technologii. Kolo se stalo základem pro mnoho dalších vynálezů a mělo zásadní vliv na rozvoj civilizace.',
+    details: 'Vynález kola před přibližně 5 500 lety v Mezopotámii je považován za jeden z nejdůležitějších vynálezů v historii lidstva. První kola byla pravděpodobně použita pro hrnčířský kruh, ale brzy se začala používat pro dopravu. První vozíky a vozy s koly byly taženy lidmi nebo zvířaty a umožnily přepravu těžkých nákladů na dlouhé vzdálenosti. Kolo způsobilo revoluci v dopravě - místo nošení břemen na zádech nebo tažení saní mohli lidé používat vozy, což výrazně zvýšilo efektivitu přepravy. To mělo zásadní dopad na obchod, protože umožnilo přepravu většího množství zboží na větší vzdálenosti. Kolo také změnilo válčení - válečné vozy se staly důležitou zbraní starověkých armád. V průběhu historie se kolo stalo základem pro mnoho dalších vynálezů - od mlýnských kol přes hodinové mechanismy až po moderní automobily a letadla. Zajímavé je, že kolo bylo vynalezeno nezávisle na několika místech, ale v Americe se kolo prakticky nepoužívalo až do příchodu Evropanů, i když bylo známé. Kolo zůstává jedním z nejdůležitějších vynálezů lidstva dodnes.',
     tags: ['Technologie', 'Pravěk', 'Vynálezy'],
-    image: 'https://images.unsplash.com/photo-1574943320219-553eb213722d?w=800',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
     period: getPeriodForYear(-3500)
   },
   {
@@ -828,9 +828,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Peru',
     coordinates: { lat: -9.0, lng: -75.0 },
     description: 'Vznik prvních usedlých společností v Andách.',
-    details: 'Andské civilizace začaly vznikat podél pobřeží a v horách Jižní Ameriky. Tyto společnosti vyvinuly pokročilé zemědělské techniky a architekturu.',
+    details: 'Andské civilizace začaly vznikat před přibližně 5 000 lety podél pobřeží a v horách Jižní Ameriky, zejména v oblasti dnešního Peru. Tyto rané společnosti se přizpůsobily náročnému horskému prostředí And a vyvinuly unikátní zemědělské techniky. Vytvořily terasovitá pole (andenes) na strmých svazích, která umožnila pěstování plodin v nadmořské výšce přes 3 000 metrů. Pěstovali brambory, kukuřici, quinoa a další plodiny odolné vůči vysoké nadmořské výšce. Andské společnosti také domestikovaly lamy a alpaky, které poskytovaly vlnu, maso a sloužily jako soumaři. Vyvinuly pokročilé textilní techniky a vytvářely složité tkané látky. Architektura těchto raných společností zahrnovala kamenné stavby a chrámy, které ukazují pokročilé stavební techniky. Andské civilizace také vytvořily rozsáhlé sítě cest a mostů, které spojovaly vzdálené oblasti. Tyto rané společnosti položily základy pro pozdější velké andské civilizace, jako byly Inkové.',
     tags: ['Jižní Amerika', 'Peru', 'Civilizace', 'Pravěk'],
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    image: 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800&q=80',
     period: getPeriodForYear(-3000)
   },
   {
@@ -840,9 +840,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Peru',
     coordinates: { lat: -9.6, lng: -77.2 },
     description: 'Začátek Chavínské kultury, první významné andské civilizace.',
-    details: 'Chavínská kultura byla první velkou andskou civilizací. Vytvořila rozsáhlou obchodní síť a vyvinula charakteristický umělecký styl s náboženskými motivy.',
+    details: 'Chavínská kultura, která vzkvétala mezi lety 900 a 200 př. n. l., byla první velkou andskou civilizací a je považována za "matku andských kultur". Centrum této kultury bylo v Chavín de Huántar, posvátném místě v peruánských Andách. Chavínská kultura vytvořila rozsáhlou obchodní síť, která spojovala pobřežní a horská údolí a umožnila výměnu zboží, myšlenek a technologií. Chavínci vyvinuli charakteristický umělecký styl s náboženskými motivy - jejich umění zobrazovalo hybridní bytosti kombinující lidské a zvířecí rysy, často s kočkovitými šelmami, hady a dravými ptáky. Tyto motivy byly vyřezávány do kamene, tkané do textilií a vytvářeny v keramice. Chavínská architektura zahrnovala složité chrámy s podzemními chodbami a komorami, kde se pravděpodobně konaly rituály. Chavínci také vyvinuli pokročilé inženýrské techniky, včetně akvaduktů a odvodňovacích systémů. Tato kultura měla zásadní vliv na pozdější andské civilizace a její umělecký styl a náboženské praktiky ovlivnily celou andskou oblast po staletí.',
     tags: ['Jižní Amerika', 'Peru', 'Civilizace', 'Pravěk'],
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    image: 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800&q=80',
     period: getPeriodForYear(-1200)
   },
   {
