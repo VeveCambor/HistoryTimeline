@@ -4,12 +4,13 @@ import { ReactNode } from 'react'
 interface SectionProps {
   children: ReactNode
   title?: string
+  color?: string
 }
 
-function Section({ children, title }: SectionProps) {
+function Section({ children, title, color }: SectionProps) {
   return (
     <SectionContainer>
-      {title && <SectionTitle>{title}</SectionTitle>}
+      {title && <SectionTitle $color={color}>{title}</SectionTitle>}
       {children}
     </SectionContainer>
   )
@@ -26,9 +27,11 @@ const SectionContainer = styled.div`
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 `
 
-const SectionTitle = styled.h2`
+const SectionTitle = styled.h2<{ $color?: string }>`
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: ${props => props.$color || '#333'};
+  border-bottom: 2px solid ${props => props.$color ? `${props.$color}40` : '#e0e0e0'};
+  padding-bottom: 0.5rem;
 `
 

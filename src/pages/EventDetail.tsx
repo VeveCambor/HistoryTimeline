@@ -11,7 +11,7 @@ import Location from '../components/ui/Location'
 import Meta from '../components/ui/Meta'
 import NotFound from '../components/ui/NotFound'
 import Link from '../components/ui/Link'
-import { HistoricalPeriod } from '../types/periods'
+import { HistoricalPeriod, PERIODS } from '../types/periods'
 
 function EventDetail() {
   const { id } = useParams<{ id: string }>()
@@ -42,13 +42,16 @@ function EventDetail() {
     )
   }
 
+  // Získat barvu období pro událost
+  const periodColor = PERIODS.find(p => p.id === event.period)?.color || '#667eea'
+
   return (
     <EventDetailContainer>
-      <Header $hasImage={!!event.image} $imageUrl={event.image}>
+      <Header $hasImage={!!event.image} $imageUrl={event.image} $periodColor={periodColor}>
         <BackButton onClick={handleBack} />
         <h1>{event.title}</h1>
         <Meta>
-          <YearBadge year={event.year} variant="header" />
+          <YearBadge year={event.year} variant="header" color={periodColor} />
           {event.location && (
             <Location location={event.location} />
           )}
@@ -60,12 +63,12 @@ function EventDetail() {
           <EventImage src={event.image} alt={event.title} />
         )}
 
-        <Section title="Popis události">
+        <Section title="Popis události" color={periodColor}>
           <p>{event.description}</p>
         </Section>
 
         {event.details && (
-          <Section title="Další informace">
+          <Section title="Další informace" color={periodColor}>
             <p>{event.details}</p>
           </Section>
         )}
@@ -79,7 +82,7 @@ function EventDetail() {
         {event.tags && event.tags.length > 0 && (
           <TagsSection>
             <TagsSectionTitle>Štítky</TagsSectionTitle>
-            <TagsList tags={event.tags} onTagClick={handleTagClick} />
+            <TagsList tags={event.tags} onTagClick={handleTagClick} color={periodColor} />
           </TagsSection>
         )}
       </Content>
@@ -95,13 +98,17 @@ const EventDetailContainer = styled.div`
   background: #f5f5f5;
 `
 
-const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string }>`
+const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string; $periodColor: string }>`
   position: relative;
-  background: ${props => 
-    props.$hasImage && props.$imageUrl
-      ? `linear-gradient(135deg, rgba(255, 215, 0, 0.85) 0%, rgba(255, 140, 0, 0.85) 50%, rgba(139, 69, 19, 0.85) 100%), url('${props.$imageUrl}') center/cover`
-      : 'linear-gradient(135deg, rgba(255, 215, 0, 0.9) 0%, rgba(255, 140, 0, 0.9) 50%, rgba(139, 69, 19, 0.9) 100%), url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80") center/cover'
-  };
+  background: ${props => {
+    const colorRgb = hexToRgb(props.$periodColor)
+    const overlayColor = colorRgb ? `rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, 0.85)` : 'rgba(102, 126, 234, 0.85)'
+    
+    if (props.$hasImage && props.$imageUrl) {
+      return `linear-gradient(135deg, ${overlayColor} 0%, ${overlayColor} 100%), url('${props.$imageUrl}') center/cover`
+    }
+    return `linear-gradient(135deg, ${overlayColor} 0%, ${overlayColor} 100%), url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80") center/cover`
+  }};
   color: white;
   padding: 3rem 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -114,7 +121,10 @@ const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string }>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.75) 0%, rgba(255, 140, 0, 0.75) 50%, rgba(139, 69, 19, 0.75) 100%);
+    background: ${props => {
+      const colorRgb = hexToRgb(props.$periodColor)
+      return colorRgb ? `linear-gradient(135deg, rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, 0.75) 0%, rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, 0.75) 100%)` : 'linear-gradient(135deg, rgba(102, 126, 234, 0.75) 0%, rgba(118, 75, 162, 0.75) 100%)'
+    }};
     z-index: 1;
   }
 
@@ -158,3 +168,13 @@ const TagsSectionTitle = styled.h2`
   margin-bottom: 1rem;
   color: #333;
 `
+
+// Pomocná funkce pro převod hex barvy na RGB
+function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null
+}

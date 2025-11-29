@@ -3,18 +3,19 @@ import styled from 'styled-components'
 interface YearBadgeProps {
   year: number
   variant?: 'header' | 'card' | 'tooltip'
+  color?: string
 }
 
-function YearBadge({ year, variant = 'header' }: YearBadgeProps) {
-  return <YearBadgeContainer $variant={variant}>{year}</YearBadgeContainer>
+function YearBadge({ year, variant = 'header', color }: YearBadgeProps) {
+  return <YearBadgeContainer $variant={variant} $color={color}>{year}</YearBadgeContainer>
 }
 
 export default YearBadge
 
 // Styled Components
-const YearBadgeContainer = styled.span<{ $variant: string }>`
+const YearBadgeContainer = styled.span<{ $variant: string; $color?: string }>`
   font-weight: 600;
-  color: #FF8C00;
+  color: ${props => props.$color || '#FF8C00'};
   
   ${props => {
     switch (props.$variant) {

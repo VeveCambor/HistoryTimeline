@@ -7,7 +7,7 @@ import PeriodFilter from '../components/PeriodFilter'
 import SearchInput from '../components/ui/SearchInput'
 import { historicalEvents } from '../data/events'
 import { HistoricalEvent } from '../types'
-import { HistoricalPeriod } from '../types/periods'
+import { HistoricalPeriod, PERIODS } from '../types/periods'
 
 function HomePage() {
   const location = useLocation()
@@ -55,9 +55,12 @@ function HomePage() {
     return events
   }, [selectedPeriod, searchQuery])
 
+  // Získat barvu vybraného období
+  const periodColor = PERIODS.find(p => p.id === selectedPeriod)?.color || '#667eea'
+
   return (
     <HomePageContainer>
-      <Header>
+      <Header $periodColor={periodColor}>
         <RuinsIcon>🏛️</RuinsIcon>
         <TimelineIcon>⏳</TimelineIcon>
         <h1>Historická časová osa</h1>
@@ -112,9 +115,19 @@ const HomePageContainer = styled.div`
   flex-direction: column;
 `
 
-const Header = styled.header`
+const Header = styled.header<{ $periodColor: string }>`
   position: relative;
-  background: linear-gradient(135deg, #FFD700 0%, #FF8C00 50%, #8B4513 100%);
+  background: ${props => {
+    const colorRgb = hexToRgb(props.$periodColor)
+    if (!colorRgb) return 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    
+    // Vytvořit gradient s tmavší variantou barvy
+    const darkerR = Math.max(0, colorRgb.r - 30)
+    const darkerG = Math.max(0, colorRgb.g - 30)
+    const darkerB = Math.max(0, colorRgb.b - 30)
+    
+    return `linear-gradient(135deg, ${props.$periodColor} 0%, rgb(${darkerR}, ${darkerG}, ${darkerB}) 100%)`
+  }};
   color: white;
   padding: 1.5rem 2rem;
   text-align: center;
@@ -227,3 +240,13 @@ const FiltersContainer = styled.div`
     gap: 1.5rem;
   }
 `
+
+// Pomocná funkce pro převod hex barvy na RGB
+function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null
+}

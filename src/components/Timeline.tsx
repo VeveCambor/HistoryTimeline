@@ -286,6 +286,7 @@ function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEvent
           {sortedEvents.map((event) => {
             const isSelected = selectedEvent?.id === event.id
             const isHovered = hoveredEvent?.id === event.id
+            const eventPeriodColor = PERIODS.find(p => p.id === event.period)?.color
             
             return (
               <EventCard
@@ -298,6 +299,7 @@ function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEvent
                 onClick={() => handleEventClick(event)}
                 onMouseEnter={() => onEventHover(event)}
                 onMouseLeave={() => onEventHover(null)}
+                color={eventPeriodColor}
               />
             )
           })}
