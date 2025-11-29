@@ -39,7 +39,7 @@ const StyledButton = styled.button<{ $variant: string; $fullWidth: boolean }>`
     switch (props.$variant) {
       case 'primary':
         return `
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, #FFD700 0%, #FF8C00 50%, #8B4513 100%);
           color: white;
           &:hover {
             opacity: 0.9;
@@ -56,9 +56,9 @@ const StyledButton = styled.button<{ $variant: string; $fullWidth: boolean }>`
       case 'ghost':
         return `
           background: transparent;
-          color: #667eea;
+          color: #FF8C00;
           &:hover {
-            background: rgba(102, 126, 234, 0.1);
+            background: rgba(255, 140, 0, 0.1);
           }
         `
       default:

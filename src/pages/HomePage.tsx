@@ -69,6 +69,7 @@ function HomePage() {
           <WorldMap 
             events={filteredEvents}
             hoveredEvent={hoveredEvent}
+            selectedPeriod={selectedPeriod}
             onEventSelect={setSelectedEvent}
             onEventHover={setHoveredEvent}
           />
@@ -113,7 +114,7 @@ const HomePageContainer = styled.div`
 
 const Header = styled.header`
   position: relative;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FF8C00 50%, #8B4513 100%);
   color: white;
   padding: 1.5rem 2rem;
   text-align: center;

@@ -14,7 +14,7 @@ export default YearBadge
 // Styled Components
 const YearBadgeContainer = styled.span<{ $variant: string }>`
   font-weight: 600;
-  color: #667eea;
+  color: #FF8C00;
   
   ${props => {
     switch (props.$variant) {

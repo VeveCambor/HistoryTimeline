@@ -54,8 +54,8 @@ const Input = styled.input`
   transition: all 0.3s;
 
   &:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #FF8C00;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
   }
 
   &::placeholder {

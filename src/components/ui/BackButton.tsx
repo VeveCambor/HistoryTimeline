@@ -4,13 +4,16 @@ import Button from './Button'
 interface BackButtonProps {
   to?: string
   label?: string
+  onClick?: () => void
 }
 
-function BackButton({ to, label = '← Zpět' }: BackButtonProps) {
+function BackButton({ to, label = '← Zpět', onClick }: BackButtonProps) {
   const navigate = useNavigate()
 
   const handleClick = () => {
-    if (to) {
+    if (onClick) {
+      onClick()
+    } else if (to) {
       navigate(to)
     } else {
       navigate(-1)

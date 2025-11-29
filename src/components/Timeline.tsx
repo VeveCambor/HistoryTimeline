@@ -47,7 +47,7 @@ function Timeline({ events, selectedEvent, hoveredEvent, selectedPeriod, onEvent
 
   const handleEventClick = (event: HistoricalEvent) => {
     onEventSelect(event)
-    navigate(`/event/${event.id}`)
+    navigate(`/event/${event.id}`, { state: { selectedPeriod } })
   }
 
   const calculatePosition = (year: number): number => {

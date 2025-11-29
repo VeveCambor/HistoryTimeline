@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { historicalEvents } from '../data/events'
 import HistoricalMap from '../components/HistoricalMap'
@@ -11,14 +11,23 @@ import Location from '../components/ui/Location'
 import Meta from '../components/ui/Meta'
 import NotFound from '../components/ui/NotFound'
 import Link from '../components/ui/Link'
+import { HistoricalPeriod } from '../types/periods'
 
 function EventDetail() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
+  const location = useLocation()
   const event = historicalEvents.find(e => e.id === parseInt(id || '0', 10))
 
+  // Získat vybrané období z location state
+  const selectedPeriod = (location.state as { selectedPeriod?: HistoricalPeriod })?.selectedPeriod || HistoricalPeriod.ALL
+
+  const handleBack = () => {
+    navigate('/', { state: { selectedPeriod } })
+  }
+
   const handleTagClick = (tag: string) => {
-    navigate('/', { state: { searchQuery: tag } })
+    navigate('/', { state: { selectedPeriod, searchQuery: tag } })
   }
 
   if (!event) {
@@ -36,7 +45,7 @@ function EventDetail() {
   return (
     <EventDetailContainer>
       <Header $hasImage={!!event.image} $imageUrl={event.image}>
-        <BackButton />
+        <BackButton onClick={handleBack} />
         <h1>{event.title}</h1>
         <Meta>
           <YearBadge year={event.year} variant="header" />
@@ -90,8 +99,8 @@ const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string }>`
   position: relative;
   background: ${props => 
     props.$hasImage && props.$imageUrl
-      ? `linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%), url('${props.$imageUrl}') center/cover`
-      : 'linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80") center/cover'
+      ? `linear-gradient(135deg, rgba(255, 215, 0, 0.85) 0%, rgba(255, 140, 0, 0.85) 50%, rgba(139, 69, 19, 0.85) 100%), url('${props.$imageUrl}') center/cover`
+      : 'linear-gradient(135deg, rgba(255, 215, 0, 0.9) 0%, rgba(255, 140, 0, 0.9) 50%, rgba(139, 69, 19, 0.9) 100%), url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80") center/cover'
   };
   color: white;
   padding: 3rem 2rem;
@@ -105,7 +114,7 @@ const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string }>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.75) 0%, rgba(118, 75, 162, 0.75) 100%);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.75) 0%, rgba(255, 140, 0, 0.75) 50%, rgba(139, 69, 19, 0.75) 100%);
     z-index: 1;
   }
 

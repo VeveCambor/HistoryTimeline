@@ -52,15 +52,15 @@ const CardContainer = styled.div<{ $selected?: boolean; $hovered?: boolean }>`
   transition: all 0.3s;
 
   &:hover {
-    border-color: #667eea;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    border-color: #FF8C00;
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
     transform: translateY(-2px);
   }
 
   ${props => props.$selected && `
-    border-color: #667eea;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    border-color: #FF8C00;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 140, 0, 0.1) 50%, rgba(139, 69, 19, 0.1) 100%);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
   `}
 
   ${props => props.$hovered && !props.$selected && `

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { HistoricalEvent } from '../types'
+import { HistoricalPeriod } from '../types/periods'
 import EventTooltip from './EventTooltip'
 import Button from './ui/Button'
 import YearBadge from './ui/YearBadge'
@@ -31,6 +32,7 @@ const hoverIcon = createMarkerIcon('#ffd700')
 interface WorldMapProps {
   events: HistoricalEvent[]
   hoveredEvent: HistoricalEvent | null
+  selectedPeriod: HistoricalPeriod
   onEventSelect: (event: HistoricalEvent | null) => void
   onEventHover: (event: HistoricalEvent | null) => void
 }
@@ -41,17 +43,19 @@ function MarkerWithTooltip({
   isHovered, 
   onEventSelect, 
   onEventHover, 
-  navigate 
+  navigate,
+  selectedPeriod
 }: { 
   event: HistoricalEvent
   isHovered: boolean
   onEventSelect: (event: HistoricalEvent | null) => void
   onEventHover: (event: HistoricalEvent | null) => void
-  navigate: (path: string) => void
+  navigate: (path: string, state?: { selectedPeriod: HistoricalPeriod }) => void
+  selectedPeriod: HistoricalPeriod
 }) {
   const handleMarkerClick = () => {
     onEventSelect(event)
-    navigate(`/event/${event.id}`)
+    navigate(`/event/${event.id}`, { state: { selectedPeriod } })
   }
 
   return (
@@ -96,7 +100,7 @@ function MarkerWithTooltip({
   )
 }
 
-function WorldMap({ events, hoveredEvent, onEventSelect, onEventHover }: WorldMapProps) {
+function WorldMap({ events, hoveredEvent, selectedPeriod, onEventSelect, onEventHover }: WorldMapProps) {
   const navigate = useNavigate()
 
   return (
@@ -123,6 +127,7 @@ function WorldMap({ events, hoveredEvent, onEventSelect, onEventHover }: WorldMa
               onEventSelect={onEventSelect}
               onEventHover={onEventHover}
               navigate={navigate}
+              selectedPeriod={selectedPeriod}
             />
           )
         })}

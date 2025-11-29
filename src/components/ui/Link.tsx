@@ -15,14 +15,14 @@ export default Link
 // Styled Components
 const StyledLink = styled(RouterLink)`
   display: inline-block;
-  color: #667eea;
+  color: #FF8C00;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
   transition: color 0.3s;
 
   &:hover {
-    color: #764ba2;
+    color: #8B4513;
   }
 `
 
