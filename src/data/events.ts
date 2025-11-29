@@ -18,6 +18,8 @@ import chamurapihoZakonik from '../assets/gallery/pravek/chamurapiho-zákoník.j
 import zacatekAndskeCivilizace from '../assets/gallery/pravek/začátek-andské-civilizace.jpeg'
 import chavinskaKultura from '../assets/gallery/pravek/chavínská-kutua.jpeg'
 import kartago from '../assets/gallery/pravek/kartágo.jpeg'
+import vznikPisma from '../assets/gallery/pravek/vznik-písma.jpg'
+import trojanWar from '../assets/gallery/pravek/trojan-war.webp'
 
 // Ukázková data historických událostí
 export const historicalEvents: HistoricalEvent[] = [
@@ -30,7 +32,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Vznik klínového písma v Sumeru, které se stalo základem pro další písemné systémy.',
     details: 'Klínové písmo bylo nejstarším známým systémem psaní. Používalo se pro zaznamenávání obchodních transakcí, zákonů a literárních děl. Tento vynález umožnil uchování a předávání znalostí napříč generacemi.',
     tags: ['Písmo', 'Mezopotámie', 'Civilizace'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    image: vznikPisma,
     period: getPeriodForYear(-3000)
   },
   {
@@ -202,7 +204,7 @@ export const historicalEvents: HistoricalEvent[] = [
     year: -12000,
     title: 'Domestikace psa',
     location: 'Střední Asie',
-    coordinates: { lat: 45.0, lng: 80.0 },
+    coordinates: { lat: 47.0, lng: 85.0 },
     description: 'Lidé začali domestikovat vlky, což vedlo k vzniku psa jako prvního domestikovaného zvířete.',
     details: 'Domestikace psa byla prvním a nejdůležitějším krokem k domestikaci zvířat. Proces začal před přibližně 15 000 až 12 000 lety, kdy se vlci začali přibližovat k lidským táborům, pravděpodobně kvůli zbytkům jídla. Postupně se vyvinul vzájemný vztah - lidé poskytovali vlkům potravu a úkryt, zatímco vlci pomáhali při lovu, hlídání tábora a varování před nebezpečím. Tento proces vedl k genetickým změnám - domestikovaní psi se lišili od vlků menší velikostí, kratšími čenichy a přátelštějším chováním. Psi se stali nepostradatelnými společníky pravěkých lidí - pomáhali při lovu velkých zvířat, hlídali osady, pomáhali při pastevectví a poskytovali teplo v chladných nocích. Tento vztah mezi člověkem a psem trvá dodnes a psi zůstávají jedním z nejvěrnějších společníků lidstva. Domestikace psa také otevřela cestu k domestikaci dalších zvířat, což bylo klíčové pro rozvoj zemědělství a usedlých společností.',
     tags: ['Domestikace', 'Pravěk', 'Zvířata'],
@@ -339,7 +341,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Legendární válka mezi Řeky a Trójany, popsaná v Homérově Iliadě.',
     details: 'Trojan War, ačkoli je z velké části legendární, pravděpodobně měla historický základ. Homérova Iliada a Odyssea jsou jedny z nejvýznamnějších literárních děl západní civilizace.',
     tags: ['Řecko', 'Válka', 'Literatura'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    image: trojanWar,
     period: getPeriodForYear(-1200)
   },
   {
