@@ -30,10 +30,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Mezopotámie',
     coordinates: { lat: 33.0, lng: 44.0 },
     description: 'Vznik klínového písma v Sumeru, které se stalo základem pro další písemné systémy.',
-    details: 'Klínové písmo bylo nejstarším známým systémem psaní. Používalo se pro zaznamenávání obchodních transakcí, zákonů a literárních děl. Tento vynález umožnil uchování a předávání znalostí napříč generacemi.',
+    details: 'Klínové písmo bylo nejstarším známým systémem psaní, vynalezeným Sumery v Mezopotámii před přibližně 5000 lety. Původně se používalo pro zaznamenávání obchodních transakcí - hliněné tabulky s otisky klínových znaků sloužily jako účetní záznamy. Postupně se rozšířilo na zákony, literární díla, mýty a historické záznamy. Klínové písmo se psalo pomocí rákosového pera (stylus) do měkké hlíny, která se pak vypalovala, čímž se záznamy staly trvalými. Tento systém používalo více než 3000 let několik civilizací včetně Akkadů, Babyloňanů a Asyřanů. Nejslavnějším příkladem je Chammurapiho zákoník, vytesaný do kamenné stély. Klínové písmo bylo rozluštěno až v 19. století díky práci Henryho Rawlinsona na Behistunské skále. Tento vynález umožnil uchování a předávání znalostí napříč generacemi a byl klíčový pro rozvoj civilizace.',
     tags: ['Písmo', 'Mezopotámie', 'Civilizace'],
     image: vznikPisma,
-    period: getPeriodForYear(-3000)
+    period: getPeriodForYear(-3000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Kl%C3%ADnov%C3%A9_p%C3%ADsmo'
   },
   {
     id: 2,
@@ -42,10 +43,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Olympie, Řecko',
     coordinates: { lat: 37.6383, lng: 21.6300 },
     description: 'První zaznamenané olympijské hry v antickém Řecku, které se konaly na počest boha Dia.',
-    details: 'Olympijské hry byly nejvýznamnější sportovní událostí antického světa. Konaly se každé čtyři roky a přitahovaly sportovce a diváky z celého řeckého světa. Hry byly tak důležité, že během jejich konání se zastavovaly války.',
+    details: 'První olympijské hry se konaly v roce 776 př. n. l. v posvátném okrsku Olympie na Peloponésu. Původně to byla jednodenní událost s jediným závodem - během na délku stadionu (asi 192 metrů). Postupně se hry rozrostly na pětidenní festival s více než 20 disciplínami včetně běhu, skoku do dálky, vrhu diskem, oštěpem, zápasu, boxu a vozatajství. Vítězové získávali pouze olivový věnec, ale doma byli oslavováni jako hrdinové a často dostávali doživotní rentu. Hry byly tak posvátné, že během jejich konání se vyhlašoval "posvátný mír" (ekecheiria), který zastavoval všechny války mezi řeckými městskými státy. Ženy nesměly hry sledovat ani se jich účastnit - dokonce i divačky riskovaly trest smrti. Antické olympijské hry se konaly více než 1000 let, až do roku 393 n. l., kdy je zakázal římský císař Theodosius I. jako pohanský rituál. Moderní olympijské hry byly obnoveny v roce 1896 v Athénách.',
     tags: ['Sport', 'Řecko', 'Antika'],
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800',
-    period: getPeriodForYear(-776)
+    period: getPeriodForYear(-776),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Olympijsk%C3%A9_hry'
   },
   {
     id: 3,
@@ -54,8 +56,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Řím, Itálie',
     coordinates: { lat: 41.9028, lng: 12.4964 },
     description: 'Julius Caesar byl zavražděn skupinou římských senátorů včetně Bruta a Cassia.',
-    details: 'Atentát na Julia Caesara 15. března 44 př. n. l. byl klíčovým momentem v historii Římské říše. Caesarova smrt vedla k občanské válce a nakonec k pádu Římské republiky a vzniku Římského císařství.',
+    details: 'Atentát na Julia Caesara se odehrál 15. března 44 př. n. l. (Idy březnové) v divadle Pompeia v Římě. Spiklenci, vedení Marcem Juniem Brutem a Gaiem Cassiem Longinem, se obávali Caesarova rostoucího vlivu a možnosti, že se prohlásí králem. Celkem 60 senátorů se zapojilo do spiknutí, ale pouze 23 z nich skutečně provedlo útok. Caesar byl napaden dýkami a podle legendy řekl řecky "Kai su, teknon?" (I ty, synu?) poté, co uviděl Bruta mezi útočníky - Brutus byl totiž možná Caesarův nemanželský syn. Caesar utrpěl 23 ran dýkou, z nichž pouze jedna byla smrtelná. Jeho smrt vyvolala chaos v Římě a vedla k občanské válce mezi Caesarovými stoupenci (vedenými Markem Antoniem a Octavianem) a vrahy. Tato válka skončila pádem Římské republiky a vznikem Římského císařství pod vládou Octaviana (Augusta).',
     tags: ['Řím', 'Politika', 'Antika'],
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Atent%C3%A1t_na_Julia_Caesara',
     image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800',
     historicalBoundaries: [
       {
@@ -88,8 +91,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Řím, Itálie',
     coordinates: { lat: 41.9028, lng: 12.4964 },
     description: 'Poslední západořímský císař Romulus Augustulus byl sesazen germánským vůdcem Odoakerem.',
-    details: 'Tato událost je tradičně považována za konec starověku a začátek středověku. Pád Římské říše měl dalekosáhlé důsledky pro Evropu a celý svět.',
+    details: 'Pád Západořímské říše v roce 476 n. l. je tradičně považován za konec starověku a začátek středověku. Poslední císař Romulus Augustulus (malý Augustus) byl pouhým chlapcem, když ho jeho otec Orestes dosadil na trůn. Odoaker, germánský vůdce, který sloužil v římské armádě, sesadil Romula, ale místo aby ho zabil, poslal ho do exilu do Kampánie s roční rentou. Odoaker pak poslal římské císařské insignie do Konstantinopole císaři Zenovi s tím, že Západ už nepotřebuje vlastního císaře. Zajímavostí je, že Romulus Augustulus nebyl technicky posledním západořímským císařem - v Galii vládl ještě Julius Nepos až do roku 480. Pád Říma byl výsledkem dlouhodobého úpadku způsobeného ekonomickými problémy, barbarskými invazemi, politickou nestabilitou a rozdělením říše. Tato událost symbolicky ukončila více než tisíciletou existenci Římské říše na Západě a otevřela cestu pro vznik středověkých království.',
     tags: ['Řím', 'Středověk', 'Historie'],
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/P%C3%A1d_Z%C3%A1pado%C5%99%C3%ADmsk%C3%A9_%C5%99%C3%AD%C5%A1e',
     image: 'https://images.unsplash.com/photo-1529360269321-4c0a0c0b5b5e?w=800',
     historicalBoundaries: [
       {
@@ -133,8 +137,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Hastings, Anglie',
     coordinates: { lat: 50.8544, lng: 0.5858 },
     description: 'Vilém Dobyvatel porazil anglického krále Harolda II. a získal anglický trůn.',
-    details: 'Bitva u Hastingsu byla rozhodující bitvou normanského dobytí Anglie. Vilém Dobyvatel se stal anglickým králem a zavedl normanskou vládu, která změnila anglickou společnost, jazyk a kulturu.',
+    details: 'Bitva u Hastingsu se odehrála 14. října 1066 a byla rozhodující bitvou normanského dobytí Anglie. Anglický král Harold II. musel čelit dvěma invazím současně - norské invazi na severu a normanské na jihu. Po vítězství nad Nory u Stamford Bridge musel Harold rychle přesunout svou armádu na jih, kde čelil Vilémovi Normandskému. Bitva trvala celý den a byla velmi krvavá. Haroldova armáda zaujala výhodnou pozici na kopci, ale Vilém použil taktiku předstíraného ústupu, která rozbila anglické řady. Podle legendy byl Harold zabit šípem do oka, ačkoli to není historicky doloženo. Vilém Dobyvatel se stal anglickým králem a zavedl normanskou vládu, která změnila anglickou společnost, jazyk a kulturu. Normanská invaze přinesla do Anglie francouzštinu, která se smísila se starou angličtinou a vytvořila moderní angličtinu. Vilém také nechal sepsat Domesday Book, první velký průzkum anglického majetku a obyvatelstva, který sloužil jako základ pro daně.',
     tags: ['Anglie', 'Válka', 'Středověk'],
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Bitva_u_Hastingsu',
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
     period: getPeriodForYear(1066)
   },
@@ -145,8 +150,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Bahamy',
     coordinates: { lat: 25.0, lng: -77.0 },
     description: 'Kryštof Kolumbus přistál na Bahamách, čímž zahájil evropskou kolonizaci Ameriky.',
-    details: 'Kolumbova plavba otevřela novou éru v historii. Jeho objev vedl k masivní migraci Evropanů do Nového světa a k výměně zboží, rostlin, zvířat a nemocí mezi kontinenty, což mělo trvalý dopad na celý svět.',
+    details: 'Kryštof Kolumbus přistál na Bahamách 12. října 1492 po 70 dnech plavby přes Atlantik. Jeho tři lodě - Santa María, Pinta a Niña - vypluly z Palos de la Frontera ve Španělsku 3. srpna. Kolumbus si myslel, že dosáhl Asie (Indie), proto nazval domorodce "Indiány". Ve skutečnosti přistál na ostrově, který nazval San Salvador (dnešní Watling Island nebo Samana Cay). Kolumbova plavba otevřela novou éru v historii známou jako "Kolumbovská výměna" - masivní výměna zboží, rostlin, zvířat a nemocí mezi Starým a Novým světem. Z Ameriky se do Evropy dostaly brambory, kukuřice, rajčata, kakao a tabák, zatímco Evropané přivezli koně, dobytek, pšenici a bohužel i nemoci jako neštovice a spalničky, které způsobily masivní úmrtí domorodého obyvatelstva. Kolumbus podnikl celkem čtyři plavby do Ameriky, ale nikdy si neuvědomil, že objevil nový kontinent. Jeho objev vedl k masivní migraci Evropanů do Nového světa a k vytvoření koloniálních říší, což mělo trvalý dopad na celý svět.',
     tags: ['Objevy', 'Amerika', 'Kolonizace'],
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Kry%C5%A1tof_Kolumbus',
     image: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800',
     period: getPeriodForYear(1492)
   },
@@ -157,8 +163,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Paříž, Francie',
     coordinates: { lat: 48.8566, lng: 2.3522 },
     description: 'Začátek Francouzské revoluce, která svrhla monarchii a zavedla republiku.',
-    details: 'Francouzská revoluce byla jedním z nejvýznamnějších politických převratů v historii. Přinesla myšlenky svobody, rovnosti a bratrství, které ovlivnily celý svět a vedly k moderním demokratickým státům.',
+    details: 'Francouzská revoluce začala 14. července 1789 dobytím Bastily, vězení v Paříži, které symbolizovalo královskou tyranii. Revoluce byla výsledkem dlouhodobé nespokojenosti s absolutistickou monarchií, ekonomickými problémy a sociální nerovností. Třetí stav (běžní občané) se vzbouřil proti privilegované šlechtě a duchovenstvu. Revoluce přinesla heslo "Svoboda, rovnost, bratrství" a Deklaraci práv člověka a občana. Během revoluce došlo k popravě krále Ludvíka XVI. a královny Marie Antoinetty gilotinou, která se stala symbolem "teroru". Revoluce vedla k napoleonským válkám a šíření revolučních ideálů po celé Evropě. Byla jedním z nejvýznamnějších politických převratů v historii a inspirovala další revoluční hnutí po celém světě. Její odkaz ovlivnil moderní demokratické státy a myšlenky lidských práv.',
     tags: ['Francie', 'Revoluce', 'Politika'],
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Francouzsk%C3%A1_revoluce',
     image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800',
     period: getPeriodForYear(1789)
   },
@@ -169,10 +176,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Kennedy Space Center, Florida, USA',
     coordinates: { lat: 28.5721, lng: -80.6480 },
     description: 'Apollo 11 úspěšně přistálo na Měsíci, Neil Armstrong se stal prvním člověkem, který vstoupil na měsíční povrch.',
-    details: 'Tato událost byla vrcholem vesmírného závodu mezi USA a SSSR. Armstrongův krok na Měsíci byl sledován stovkami milionů lidí po celém světě a představoval jeden z největších úspěchů lidstva. Mise startovala z Kennedy Space Center na Floridě.',
+    details: 'Apollo 11 odstartovalo 16. července 1969 z Kennedy Space Center na Floridě. Posádku tvořili Neil Armstrong (velitel), Buzz Aldrin (pilot lunárního modulu) a Michael Collins (pilot velitelského modulu). Po čtyřech dnech cesty přistál lunární modul "Eagle" 20. července v Moři klidu. Když Armstrong vystoupil na povrch Měsíce, řekl slavnou větu: "To je malý krok pro člověka, ale velký skok pro lidstvo." Armstrong a Aldrin strávili na Měsíci 21,5 hodiny, během kterých nasbírali 21,5 kg měsíčních vzorků a vztyčili americkou vlajku. Mise byla sledována více než 600 miliony lidí po celém světě - největší televizní přenos v historii. Tato událost byla vrcholem vesmírného závodu mezi USA a SSSR a představovala jeden z největších úspěchů lidstva. Celkem 12 astronautů chodilo po Měsíci během šesti misí Apollo (1969-1972).',
     tags: ['Vesmír', 'USA', 'Věda'],
     image: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800',
-    period: getPeriodForYear(1969)
+    period: getPeriodForYear(1969),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Apollo_11'
   },
   // Pravěk
   {
@@ -185,7 +193,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Jeskynní malby v Chauvetově jeskyni jsou jedny z nejstarších známých uměleckých děl lidstva, datované do období před 30 000 až 40 000 lety. Jeskyně byla objevena v roce 1994 a obsahuje více než 400 maleb zvířat včetně lvů, medvědů, nosorožců a koní. Malby jsou vytvořené pomocí uhlíku a okru a vykazují pokročilé umělecké techniky jako perspektiva a stínování. Tyto malby představují důležitý milník v kulturním vývoji člověka a ukazují schopnost abstraktního myšlení, uměleckého vyjádření a možná i náboženských nebo rituálních praktik. Jeskyně byla pravděpodobně používána pro rituální účely a malby mohly sloužit jako forma komunikace nebo záznamu důležitých událostí. Objev těchto maleb změnil naše chápání pravěkého umění a ukázal, že lidé měli rozvinutou kulturu již v době paleolitu.',
     tags: ['Umění', 'Pravěk', 'Kultura'],
     image: jeskynniMalby,
-    period: getPeriodForYear(-40000)
+    period: getPeriodForYear(-40000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Chauvetova_jeskyn%C4%9B'
   },
   {
     id: 34,
@@ -197,7 +206,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Šamanismus byl jedním z prvních náboženských systémů lidstva, který vznikl pravděpodobně v období před 25 000 lety. Šamani sloužili jako prostředníci mezi lidským a duchovním světem, léčitelé, věštci a duchovní vůdci svých komunit. Šamanské praktiky zahrnovaly rituální tance, bubnování, užívání halucinogenních látek a transové stavy, během kterých šamani komunikovali s duchy a zvířaty. Šamanismus byl zvláště rozšířen v severních oblastech Eurasie a Severní Ameriky, kde přežívá dodnes u některých domorodých kultur. Tento náboženský systém měl hluboký vliv na pravěké společnosti - šamani pomáhali při lovu, léčení nemocí, předpovídání počasí a řešení konfliktů. Šamanismus také ovlivnil pozdější náboženské systémy a některé jeho prvky lze nalézt v mnoha světových náboženstvích. Archeologické nálezy z této doby, jako jsou rituální předměty a jeskynní malby, naznačují existenci šamanských praktik již v paleolitu.',
     tags: ['Náboženství', 'Pravěk', 'Kultura'],
     image: samanismus,
-    period: getPeriodForYear(-25000)
+    period: getPeriodForYear(-25000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/%C5%A0amanismus'
   },
   {
     id: 35,
@@ -209,7 +219,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Domestikace psa byla prvním a nejdůležitějším krokem k domestikaci zvířat. Proces začal před přibližně 15 000 až 12 000 lety, kdy se vlci začali přibližovat k lidským táborům, pravděpodobně kvůli zbytkům jídla. Postupně se vyvinul vzájemný vztah - lidé poskytovali vlkům potravu a úkryt, zatímco vlci pomáhali při lovu, hlídání tábora a varování před nebezpečím. Tento proces vedl k genetickým změnám - domestikovaní psi se lišili od vlků menší velikostí, kratšími čenichy a přátelštějším chováním. Psi se stali nepostradatelnými společníky pravěkých lidí - pomáhali při lovu velkých zvířat, hlídali osady, pomáhali při pastevectví a poskytovali teplo v chladných nocích. Tento vztah mezi člověkem a psem trvá dodnes a psi zůstávají jedním z nejvěrnějších společníků lidstva. Domestikace psa také otevřela cestu k domestikaci dalších zvířat, což bylo klíčové pro rozvoj zemědělství a usedlých společností.',
     tags: ['Domestikace', 'Pravěk', 'Zvířata'],
     image: domestikacePsa,
-    period: getPeriodForYear(-12000)
+    period: getPeriodForYear(-12000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Domestikace_psa'
   },
   {
     id: 36,
@@ -221,7 +232,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Neolitická revoluce, která začala před přibližně 12 000 lety v oblasti Úrodného půlměsíce (Mezopotámie, Levanta, Anatolie), byla jednou z nejdůležitějších změn v historii lidstva. Tento přechod od lovu a sběru k zemědělství a chovu zvířat způsobil revoluční změny v lidské společnosti. Lidé začali pěstovat pšenici, ječmen, čočku a hrách a domestikovali ovce, kozy, prasata a skot. Tato změna umožnila usedlý způsob života - místo neustálého putování za potravou mohli lidé zůstat na jednom místě a budovat trvalé osady. Zemědělství vedlo k růstu populace, protože dokázalo uživit více lidí na menší ploše. Vznikla specializace práce - někteří lidé se stali zemědělci, jiní řemeslníky, obchodníky nebo kněžími. To vedlo k rozvoji technologií, obchodu, sociální hierarchie a nakonec k vzniku prvních měst a civilizací. Neolitická revoluce se postupně šířila z Úrodného půlměsíce do Evropy, Asie a Afriky, transformovala lidskou společnost a položila základy pro moderní svět.',
     tags: ['Zemědělství', 'Pravěk', 'Civilizace'],
     image: zemedelstvi,
-    period: getPeriodForYear(-10000)
+    period: getPeriodForYear(-10000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Neolitick%C3%A1_revoluce'
   },
   {
     id: 37,
@@ -233,7 +245,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Jericho, ležící v údolí Jordánu, je považováno za jedno z nejstarších trvale obydlených měst na světě s historií sahající až do doby před 11 000 lety. Vzniklo díky neolitické revoluci a zemědělství, které umožnilo usedlý způsob života. Rané Jericho mělo kamenné zdi vysoké až 4 metry a kamennou věž vysokou 8,5 metru, což naznačuje pokročilé stavební techniky a potřebu obrany. Město mělo pravděpodobně několik set až tisíc obyvatel, kteří se živili zemědělstvím - pěstovali pšenici, ječmen, čočku a fíky a chovali kozy a ovce. Jericho bylo strategicky umístěno u pramene vody a na křižovatce obchodních cest, což přispělo k jeho dlouhodobému osídlení. Archeologické nálezy z Jericha zahrnují keramiku, kamenné nástroje, sošky a dokonce i lebky pokryté sádrou, což naznačuje rozvinutou kulturu a možná i náboženské praktiky. Jericho představuje přechod od nomádského způsobu života k usedlým městským společnostem a je považováno za kolébku městské civilizace.',
     tags: ['Osady', 'Pravěk', 'Civilizace'],
     image: prvniOsidleneOsady,
-    period: getPeriodForYear(-9000)
+    period: getPeriodForYear(-9000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Jericho'
   },
   {
     id: 38,
@@ -245,7 +258,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Vynález keramiky před přibližně 9 000 lety byl jedním z nejdůležitějších technologických pokroků v pravěku. Keramika se vyráběla z hlíny, která se tvarovala a pak vypalovala v ohni, čímž se stala tvrdou a vodotěsnou. První keramické nádoby byly jednoduché, ale postupně se technika zdokonalovala - lidé začali používat hrnčířský kruh, zdobit nádoby vzory a barvit je. Keramické nádoby měly zásadní význam pro usedlé společnosti - umožnily skladování obilí, vody a dalších potravin po delší dobu, což bylo klíčové pro přežití během suchých období. Keramika také umožnila vaření potravin, což zlepšilo stravitelnost a nutriční hodnotu jídla. Kromě praktického použití se keramika stala také uměleckým médiem - nádoby byly zdobeny složitými vzory, které nám dnes poskytují cenné informace o kultuře a umění pravěkých společností. Keramika také umožnila rozvoj obchodu, protože nádoby se staly cenným zbožím. Tento vynález přispěl k rozvoji usedlých společností a byl předzvěstí dalších technologických pokroků.',
     tags: ['Technologie', 'Pravěk', 'Řemesla'],
     image: keramika,
-    period: getPeriodForYear(-7000)
+    period: getPeriodForYear(-7000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Keramika'
   },
   {
     id: 39,
@@ -257,7 +271,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Domestikace koně před přibližně 6 000 lety v stepích střední Asie měla revoluční dopad na lidskou společnost. Koně byli původně loveni pro maso, ale postupně se lidé naučili je chovat a využívat k jízdě a tahu. První domestikovaní koně byli menší než moderní koně, ale jejich síla a rychlost změnily způsob života lidí. Koně umožnili rychlejší dopravu na dlouhé vzdálenosti, což vedlo k rozvoji obchodu a komunikace mezi vzdálenými komunitami. Byli klíčoví pro rozvoj nomádských kultur stepí, které mohly migrovat se svými stády a rychle se přesouvat. Koně také změnili způsob válčení - jízda na koni poskytovala vojákům mobilitu a výhodu v boji. Později se koně stali symbolem moci a bohatství. Domestikace koně také umožnila rozvoj pastevectví - pastevci mohli efektivněji spravovat velká stáda dobytka. Tento vynález měl zásadní vliv na historii - kočovné národy na koních, jako byli Hunové a Mongolové, později změnily mapu Evropy a Asie. Kůň zůstal hlavním dopravním prostředkem až do vynálezu parního stroje a automobilu.',
     tags: ['Domestikace', 'Pravěk', 'Zvířata'],
     image: domestikaceKone,
-    period: getPeriodForYear(-5000)
+    period: getPeriodForYear(-5000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Domestikace_kon%C4%9B'
   },
   {
     id: 40,
@@ -269,7 +284,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Vynález kola před přibližně 5 500 lety v Mezopotámii je považován za jeden z nejdůležitějších vynálezů v historii lidstva. První kola byla pravděpodobně použita pro hrnčířský kruh, ale brzy se začala používat pro dopravu. První vozíky a vozy s koly byly taženy lidmi nebo zvířaty a umožnily přepravu těžkých nákladů na dlouhé vzdálenosti. Kolo způsobilo revoluci v dopravě - místo nošení břemen na zádech nebo tažení saní mohli lidé používat vozy, což výrazně zvýšilo efektivitu přepravy. To mělo zásadní dopad na obchod, protože umožnilo přepravu většího množství zboží na větší vzdálenosti. Kolo také změnilo válčení - válečné vozy se staly důležitou zbraní starověkých armád. V průběhu historie se kolo stalo základem pro mnoho dalších vynálezů - od mlýnských kol přes hodinové mechanismy až po moderní automobily a letadla. Zajímavé je, že kolo bylo vynalezeno nezávisle na několika místech, ale v Americe se kolo prakticky nepoužívalo až do příchodu Evropanů, i když bylo známé. Kolo zůstává jedním z nejdůležitějších vynálezů lidstva dodnes.',
     tags: ['Technologie', 'Pravěk', 'Vynálezy'],
     image: kolo,
-    period: getPeriodForYear(-3500)
+    period: getPeriodForYear(-3500),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Kolo'
   },
   {
     id: 10,
@@ -281,7 +297,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Velká pyramida v Gíze je nejstarším a jediným dochovaným divem starověkého světa. Byla nejvyšší stavbou na světě po více než 3800 let a představuje vrchol egyptského stavebního umění.',
     tags: ['Egypt', 'Architektura', 'Starověk'],
     image: egyptskePyramidy,
-    period: getPeriodForYear(-2560)
+    period: getPeriodForYear(-2560),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Velk%C3%A1_pyramida'
   },
   // Starověk
   {
@@ -294,7 +311,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Sjednocení Egypta pod vládou faraona Menese položilo základy pro více než 3000 let trvající egyptskou civilizaci. Tato událost je považována za začátek egyptské historie.',
     tags: ['Egypt', 'Politika', 'Starověk'],
     image: sjednoceniEgypta,
-    period: getPeriodForYear(-3100)
+    period: getPeriodForYear(-3100),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Sjednocen%C3%AD_Egypta'
   },
   {
     id: 42,
@@ -306,7 +324,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Egyptské hieroglyfy byly složitým písmem používaným pro náboženské a oficiální texty. Byly klíčové pro rozvoj egyptské kultury a umožnily zaznamenávání historie a literatury.',
     tags: ['Egypt', 'Písmo', 'Starověk'],
     image: hieroglyfy,
-    period: getPeriodForYear(-2700)
+    period: getPeriodForYear(-2700),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Hieroglyf'
   },
   {
     id: 43,
@@ -318,7 +337,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Harappská civilizace byla jednou z nejvyspělejších starověkých civilizací. Měla pokročilé městské plánování, kanalizaci a obchodní sítě. Její písmo dosud nebylo rozluštěno.',
     tags: ['Indie', 'Civilizace', 'Starověk'],
     image: harappskaCivilizace,
-    period: getPeriodForYear(-2000)
+    period: getPeriodForYear(-2000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Harappsk%C3%A1_civilizace'
   },
   {
     id: 44,
@@ -330,7 +350,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Chammurapiho zákoník obsahoval 282 zákonů a zásadu "oko za oko, zub za zub". Byl vytesán do kamenné stély a představoval jeden z prvních pokusů o kodifikaci práva.',
     tags: ['Mezopotámie', 'Právo', 'Starověk'],
     image: chamurapihoZakonik,
-    period: getPeriodForYear(-1750)
+    period: getPeriodForYear(-1750),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Chammurapiho_z%C3%A1kon%C3%ADk'
   },
   {
     id: 45,
@@ -342,7 +363,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Trojan War, ačkoli je z velké části legendární, pravděpodobně měla historický základ. Homérova Iliada a Odyssea jsou jedny z nejvýznamnějších literárních děl západní civilizace.',
     tags: ['Řecko', 'Válka', 'Literatura'],
     image: trojanWar,
-    period: getPeriodForYear(-1200)
+    period: getPeriodForYear(-1200),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Trojsk%C3%A1_v%C3%A1lka'
   },
   {
     id: 46,
@@ -354,7 +376,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Založení Říma podle tradice proběhlo 21. dubna 753 př. n. l. Romulus se stal prvním římským králem. Toto město se později stalo centrem největší říše starověku.',
     tags: ['Řím', 'Politika', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800',
-    period: getPeriodForYear(-753)
+    period: getPeriodForYear(-753),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Zalo%C5%BEen%C3%AD_%C5%98%C3%ADma'
   },
   {
     id: 47,
@@ -366,7 +389,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Pád Ninive ukončil existenci asyrské říše, která byla jednou z nejmocnějších říší starověku. Tato událost změnila politickou mapu Blízkého východu.',
     tags: ['Mezopotámie', 'Válka', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(-612)
+    period: getPeriodForYear(-612),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Ninive'
   },
   {
     id: 48,
@@ -378,7 +402,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Buddha, známý také jako Siddhártha Gautama, založil jedno z nejvlivnějších náboženských a filozofických hnutí v historii. Buddhismus se rozšířil po celé Asii a ovlivnil miliony lidí.',
     tags: ['Náboženství', 'Indie', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
-    period: getPeriodForYear(-563)
+    period: getPeriodForYear(-563),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Buddha'
   },
   {
     id: 49,
@@ -387,10 +412,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Čína',
     coordinates: { lat: 35.0, lng: 105.0 },
     description: 'Narození Konfucia, zakladatele konfucianismu.',
-    details: 'Konfucius byl čínský filozof, jehož učení ovlivnilo čínskou kulturu a společnost po více než 2000 let. Konfucianismus se stal základem čínské etiky a politické filozofie.',
+    details: 'Konfucius (Kǒng Fūzǐ) se narodil 28. září 551 př. n. l. ve státě Lu (dnešní provincie Šan-tung) v městě Qufu. Pocházel z urozené, ale zchudlé rodiny - jeho otec zemřel, když byl ještě dítětem, a byl vychováván matkou. Navzdory skromným poměrům získal vynikající vzdělání a založil soukromou školu, kde vyučoval šestero umění: čtení a psaní, počty, vozatajství, lukostřelbu, etiketu a hudbu. Jeho učení kladlo důraz na pět základních ctností: lidskost (rén), spravedlnost (yì), slušnost (lǐ), moudrost (zhì) a věrnost (xìn). Konfucius věřil, že harmonická společnost vyžaduje správné mezilidské vztahy - mezi rodiči a dětmi, pánem a sluhou, mužem a ženou. Po jeho smrti v roce 479 př. n. l. jeho následovníci shromáždili jeho výroky do díla "Analekty" (Lunyu). Konfucianismus se stal základem čínské etiky, politické filozofie a státní ideologie na více než 2000 let. Jeho myšlenky ovlivnily nejen Čínu, ale i Koreu, Japonsko a Vietnam. Zajímavostí je, že Konfuciův rodokmen je jedním z nejdelších na světě - v roce 2009 bylo zaznamenáno přibližně dva miliony jeho potomků. Každoročně se 28. září slaví Konfuciovy narozeniny jako významný svátek.',
     tags: ['Filozofie', 'Čína', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
-    period: getPeriodForYear(-551)
+    period: getPeriodForYear(-551),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Konfucius'
   },
   {
     id: 50,
@@ -402,7 +428,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Bitva u Marathonu byla prvním velkým vítězstvím Řeků nad Peršany. Legenda o běžci, který běžel z Marathonu do Athén, inspirovala moderní maratonský běh.',
     tags: ['Řecko', 'Válka', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(-490)
+    period: getPeriodForYear(-490),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Bitva_u_Marathonu'
   },
   {
     id: 11,
@@ -414,7 +441,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Bitva u Thermopyl byla jednou z nejslavnějších bitev v historii. Ačkoli Řekové prohráli, jejich hrdinný odpor inspiroval celé Řecko k dalšímu boji proti perské invazi.',
     tags: ['Řecko', 'Válka', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(-480)
+    period: getPeriodForYear(-480),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Bitva_u_Thermopyl'
   },
   {
     id: 51,
@@ -426,7 +454,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Peloponéská válka trvala 27 let a byla jednou z nejničivějších konfliktů starověkého Řecka. Válka oslabila řecké městské státy a připravila půdu pro makedonskou nadvládu.',
     tags: ['Řecko', 'Válka', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(-431)
+    period: getPeriodForYear(-431),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Pelopon%C3%A9sk%C3%A1_v%C3%A1lka'
   },
   {
     id: 52,
@@ -438,7 +467,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Alexandr Veliký vytvořil jednu z největších říší starověku, která sahala od Řecka po Indii. Jeho dobyvačné kampaně šířily řeckou kulturu po celém známém světě.',
     tags: ['Řecko', 'Politika', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(-336)
+    period: getPeriodForYear(-336),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Alexandr_Velik%C3%BD'
   },
   {
     id: 53,
@@ -498,7 +528,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Sjednocení Číny pod dynastií Čchin ukončilo období válčících států. První císař zavedl jednotnou měnu, písmo a měřicí systémy. Začala se stavět Velká čínská zeď.',
     tags: ['Čína', 'Politika', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
-    period: getPeriodForYear(-221)
+    period: getPeriodForYear(-221),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Dynastie_%C4%8Cchin'
   },
   {
     id: 13,
@@ -510,7 +541,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Konec Římské republiky a začátek Římského císařství. Augustus zavedl Pax Romana, období míru a stability, které trvalo více než 200 let.',
     tags: ['Řím', 'Politika', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800',
-    period: getPeriodForYear(-27)
+    period: getPeriodForYear(-27),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/%C5%98%C3%ADmsk%C3%A9_c%C3%ADsa%C5%99stv%C3%AD'
   },
   {
     id: 14,
@@ -522,7 +554,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Edikt milánský ukončil pronásledování křesťanů a umožnil svobodu náboženského vyznání. Tato událost měla zásadní vliv na šíření křesťanství po celé Evropě.',
     tags: ['Řím', 'Náboženství', 'Starověk'],
     image: 'https://images.unsplash.com/photo-1529360269321-4c0a0c0b5b5e?w=800',
-    period: getPeriodForYear(313)
+    period: getPeriodForYear(313),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Edikt_mil%C3%A1nsk%C3%BD'
   },
   // Středověk
   {
@@ -535,7 +568,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Hidžra je jedním z nejdůležitějších momentů v historii islámu. Z Medíny se islám začal šířit po celém Arabském poloostrově a později do celého světa.',
     tags: ['Islám', 'Náboženství', 'Středověk'],
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(622)
+    period: getPeriodForYear(622),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Hid%C5%BEra'
   },
   {
     id: 16,
@@ -547,7 +581,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Korunovace Karla Velikého obnovila ideu římského císařství na Západě. Karel Veliký sjednotil velkou část západní Evropy a podporoval renesanci vzdělání a kultury.',
     tags: ['Evropa', 'Politika', 'Středověk'],
     image: 'https://images.unsplash.com/photo-1529360269321-4c0a0c0b5b5e?w=800',
-    period: getPeriodForYear(800)
+    period: getPeriodForYear(800),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Karel_Velik%C3%BD'
   },
   {
     id: 17,
@@ -775,8 +810,9 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Kartágo, Tunis',
     coordinates: { lat: 36.8528, lng: 10.3231 },
     description: 'Féničané založili město Kartágo, které se stalo mocnou obchodní říší.',
-    details: 'Kartágo bylo založeno fénickými kolonisty z Tyru. Stalo se jednou z nejmocnějších obchodních říší ve Středomoří a hlavním rivalem Říma.',
+    details: 'Kartágo bylo založeno v roce 814 př. n. l. fénickými osadníky z Tyru na území dnešního Tuniska. Podle legendy město založila fénická princezna Dídó (Elissa), která uprchla z Tyru po vraždě svého manžela. Město se rychle rozvinulo v mocné obchodní a námořní centrum Středomoří díky své strategické poloze. Kartágo mělo impozantní hradby, dva velké přístavy schopné kotvit stovkám lodí, a rozsáhlé obchodní sítě sahající od severní Afriky přes Středomoří až do Británie a západní Afriky. Kartáginci byli vynikající mořeplavci a obchodníci, kteří obchodovali s cínem, stříbrem, slonovinou a otroky. Město bylo známé svými pokročilými námořními technologiemi a silnou flotilou. Jeho rivalita s Římem vedla k sérii konfliktů známých jako punské války (264-146 př. n. l.), které nakonec vyústily v úplné zničení Kartága v roce 146 př. n. l. Římané údajně zasypali město solí, aby zajistili, že už nikdy nevyroste. Později bylo město znovu vybudováno a stalo se důležitým centrem římské Afriky.',
     tags: ['Afrika', 'Obchod', 'Starověk'],
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Kart%C3%A1go',
     image: kartago,
     period: getPeriodForYear(-814)
   },

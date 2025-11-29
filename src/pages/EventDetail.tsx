@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { historicalEvents } from '../data/events'
 import HistoricalMap from '../components/HistoricalMap'
+import EventLocationMap from '../components/EventLocationMap'
 import BackButton from '../components/ui/BackButton'
 import Section from '../components/ui/Section'
 import TagsList from '../components/ui/TagsList'
@@ -11,12 +13,17 @@ import Location from '../components/ui/Location'
 import Meta from '../components/ui/Meta'
 import NotFound from '../components/ui/NotFound'
 import Link from '../components/ui/Link'
+import Quiz from '../components/ui/Quiz'
+import QuizButton from '../components/ui/QuizButton'
+import Modal from '../components/ui/Modal'
 import { HistoricalPeriod, PERIODS } from '../types/periods'
+import { eventQuizQuestions } from '../data/quizQuestions'
 
 function EventDetail() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const location = useLocation()
+  const [isQuizOpen, setIsQuizOpen] = useState(false)
   const event = historicalEvents.find(e => e.id === parseInt(id || '0', 10))
 
   // Získat vybrané období z location state
@@ -45,6 +52,22 @@ function EventDetail() {
   // Získat barvu období pro událost
   const periodColor = PERIODS.find(p => p.id === event.period)?.color || '#667eea'
 
+  // Získat kvízové otázky pro tuto událost
+  const quizQuestions = eventQuizQuestions[event.id] || []
+
+  const handleQuizComplete = (score: number, total: number) => {
+    // Uložit skóre do localStorage
+    const quizStats = JSON.parse(localStorage.getItem('quizStats') || '{}')
+    if (!quizStats[event.id]) {
+      quizStats[event.id] = { attempts: 0, bestScore: 0, totalQuestions: total }
+    }
+    quizStats[event.id].attempts++
+    if (score > quizStats[event.id].bestScore) {
+      quizStats[event.id].bestScore = score
+    }
+    localStorage.setItem('quizStats', JSON.stringify(quizStats))
+  }
+
   return (
     <EventDetailContainer>
       <Header $hasImage={!!event.image} $imageUrl={event.image} $periodColor={periodColor}>
@@ -56,6 +79,13 @@ function EventDetail() {
             <Location location={event.location} />
           )}
         </Meta>
+        {quizQuestions.length > 0 && (
+          <QuizButton 
+            onClick={() => setIsQuizOpen(true)} 
+            color={periodColor}
+            hasQuestions={true}
+          />
+        )}
       </Header>
 
       <Content>
@@ -70,11 +100,22 @@ function EventDetail() {
         {event.details && (
           <Section title="Další informace" color={periodColor}>
             <p>{event.details}</p>
+            {event.wikipediaUrl && (
+              <WikipediaLink href={event.wikipediaUrl} target="_blank" rel="noopener noreferrer" $color={periodColor}>
+                Pro více info: Wikipedie
+              </WikipediaLink>
+            )}
+          </Section>
+        )}
+
+        {event.coordinates && (
+          <Section title="Mapa oblasti" color={periodColor}>
+            <EventLocationMap event={event} selectedPeriod={selectedPeriod} />
           </Section>
         )}
 
         {event.historicalBoundaries && event.historicalBoundaries.length > 0 && (
-          <Section title="Historická mapa">
+          <Section title="Historická mapa" color={periodColor}>
             <HistoricalMap event={event} />
           </Section>
         )}
@@ -86,6 +127,19 @@ function EventDetail() {
           </TagsSection>
         )}
       </Content>
+
+      <Modal
+        isOpen={isQuizOpen}
+        onClose={() => setIsQuizOpen(false)}
+        title="Otestujte své znalosti"
+        color={periodColor}
+      >
+        <Quiz 
+          questions={quizQuestions} 
+          color={periodColor}
+          onComplete={handleQuizComplete}
+        />
+      </Modal>
     </EventDetailContainer>
   )
 }
@@ -111,8 +165,10 @@ const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string; $periodColo
   }};
   color: white;
   padding: 3rem 2rem;
+  padding-right: 5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  overflow: visible;
+  min-height: 200px;
 
   &::before {
     content: '';
@@ -128,9 +184,14 @@ const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string; $periodColo
     z-index: 1;
   }
 
-  > * {
+  > *:not(.quiz-button) {
     position: relative;
     z-index: 2;
+  }
+
+  .quiz-button {
+    position: absolute !important;
+    z-index: 10 !important;
   }
 
   h1 {
@@ -167,6 +228,21 @@ const TagsSectionTitle = styled.h2`
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #333;
+`
+
+const WikipediaLink = styled.a<{ $color: string }>`
+  display: inline-block;
+  margin-top: 1rem;
+  color: ${props => props.$color};
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom-color: ${props => props.$color};
+    opacity: 0.8;
+  }
 `
 
 // Pomocná funkce pro převod hex barvy na RGB

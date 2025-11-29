@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { HistoricalEvent } from '../types'
-import { HistoricalPeriod } from '../types/periods'
+import { HistoricalPeriod, PERIODS } from '../types/periods'
 import EventTooltip from './EventTooltip'
 import Button from './ui/Button'
 import YearBadge from './ui/YearBadge'
@@ -53,6 +53,11 @@ function MarkerWithTooltip({
   navigate: (path: string, state?: { selectedPeriod: HistoricalPeriod }) => void
   selectedPeriod: HistoricalPeriod
 }) {
+  // Získat barvu období pro tuto událost
+  const periodColor = PERIODS.find(p => p.id === event.period)?.color || '#3388ff'
+  const eventIcon = createMarkerIcon(periodColor)
+  const hoverEventIcon = createMarkerIcon('#ffd700')
+
   const handleMarkerClick = () => {
     onEventSelect(event)
     navigate(`/event/${event.id}`, { state: { selectedPeriod } })
@@ -61,7 +66,7 @@ function MarkerWithTooltip({
   return (
     <Marker
       position={[event.coordinates.lat, event.coordinates.lng]}
-      icon={isHovered ? hoverIcon : defaultIcon}
+      icon={isHovered ? hoverEventIcon : eventIcon}
       eventHandlers={{
         click: handleMarkerClick,
         mouseover: (e) => {

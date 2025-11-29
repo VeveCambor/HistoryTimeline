@@ -23,5 +23,6 @@ export interface HistoricalEvent {
   image?: string
   historicalBoundaries?: HistoricalBoundary[]
   period?: HistoricalPeriod
+  wikipediaUrl?: string
 }
 

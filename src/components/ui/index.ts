@@ -14,4 +14,7 @@ export { default as Link } from './Link'
 export { default as PeriodCard } from './PeriodCard'
 export { default as MainPeriodCard } from './MainPeriodCard'
 export { default as SearchInput } from './SearchInput'
+export { default as Quiz } from './Quiz'
+export { default as QuizButton } from './QuizButton'
+export { default as Modal } from './Modal'
 
