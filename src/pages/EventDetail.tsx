@@ -111,12 +111,12 @@ function EventDetail() {
         )}
 
         <Section title="Popis události" color={periodColor}>
-          <p>{event.description}</p>
+          <DescriptionText>{event.description}</DescriptionText>
         </Section>
 
         {event.details && (
           <Section title="Další informace" color={periodColor}>
-            <p>{event.details}</p>
+            <DescriptionText>{event.details}</DescriptionText>
             {event.wikipediaUrl && (
               <WikipediaLink href={event.wikipediaUrl} target="_blank" rel="noopener noreferrer" $color={periodColor}>
                 Pro více info: Wikipedie
@@ -266,6 +266,14 @@ const TagsSectionTitle = styled.h2`
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #333;
+`
+
+const DescriptionText = styled.p`
+  color: ${theme.colors.text.primary};
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+  white-space: pre-line;
 `
 
 const WikipediaLink = styled.a<{ $color: string }>`

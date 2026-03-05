@@ -83,26 +83,26 @@ function PeriodDetail() {
       </Header>
 
       <Content>
-        {period.description && (
-          <Section title="Popis období">
-            <p>{period.description}</p>
-          </Section>
-        )}
+        <Section title="Popis období" color={period.color}>
+          <PeriodText>
+            {period.description || getPeriodDescription(period.id)}
+          </PeriodText>
+        </Section>
 
-        <Section title="Časové rozmezí">
-          <p>
+        <Section title="Časové rozmezí" color={period.color}>
+          <PeriodText>
             Toto období trvalo od roku{' '}
             <strong>{period.startYear < 0 ? `${Math.abs(period.startYear)} př. n. l.` : `${period.startYear} n. l.`}</strong>{' '}
             do roku{' '}
             <strong>{period.endYear < 0 ? `${Math.abs(period.endYear)} př. n. l.` : `${period.endYear} n. l.`}</strong>.
             Trvalo tedy přibližně <strong>{Math.abs(period.endYear - period.startYear)} let</strong>.
-          </p>
+          </PeriodText>
         </Section>
 
-        <Section title="Charakteristika">
-          <p>
+        <Section title="Charakteristika" color={period.color}>
+          <PeriodText>
             {getPeriodDescription(period.id)}
-          </p>
+          </PeriodText>
         </Section>
       </Content>
     </PeriodDetailContainer>
@@ -202,6 +202,13 @@ const Content = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+`
+
+const PeriodText = styled.p`
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
 `
 
 const YearSeparator = styled.span`
