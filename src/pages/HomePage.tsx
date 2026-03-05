@@ -61,8 +61,6 @@ function HomePage() {
   return (
     <HomePageContainer>
       <Header $periodColor={periodColor}>
-        <RuinsIcon>🏛️</RuinsIcon>
-        <TimelineIcon>⏳</TimelineIcon>
         <h1>Historická časová osa</h1>
         <p>Prozkoumejte významné milníky v historii lidstva</p>
       </Header>
@@ -157,36 +155,6 @@ const Header = styled.header<{ $periodColor: string }>`
     @media (max-width: 768px) {
       font-size: 0.85rem;
     }
-  }
-`
-
-const RuinsIcon = styled.div`
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 3rem;
-  opacity: 0.3;
-  z-index: 1;
-  
-  @media (max-width: 768px) {
-    font-size: 2rem;
-    top: 0.5rem;
-    left: 0.5rem;
-  }
-`
-
-const TimelineIcon = styled.div`
-  position: absolute;
-  top: 1rem;
-  left: 4.5rem;
-  font-size: 3rem;
-  opacity: 0.3;
-  z-index: 1;
-  
-  @media (max-width: 768px) {
-    font-size: 2rem;
-    top: 0.5rem;
-    left: 3rem;
   }
 `
 

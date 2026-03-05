@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { historicalEvents } from '../data/events'
@@ -15,15 +15,20 @@ import NotFound from '../components/ui/NotFound'
 import Link from '../components/ui/Link'
 import Quiz from '../components/ui/Quiz'
 import QuizButton from '../components/ui/QuizButton'
+import Model3DButton from '../components/ui/Model3DButton'
 import Modal from '../components/ui/Modal'
 import { HistoricalPeriod, PERIODS } from '../types/periods'
 import { eventQuizQuestions } from '../data/quizQuestions'
+
+// Lazy loading pro 3D viewer
+const Model3DViewer = lazy(() => import('../components/Model3DViewer'))
 
 function EventDetail() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const location = useLocation()
   const [isQuizOpen, setIsQuizOpen] = useState(false)
+  const [isModel3DOpen, setIsModel3DOpen] = useState(false)
   const event = historicalEvents.find(e => e.id === parseInt(id || '0', 10))
 
   // Získat vybrané období z location state
@@ -79,16 +84,24 @@ function EventDetail() {
             <Location location={event.location} />
           )}
         </Meta>
-        {quizQuestions.length > 0 && (
-          <QuizButton 
-            onClick={() => setIsQuizOpen(true)} 
-            color={periodColor}
-            hasQuestions={true}
-          />
-        )}
       </Header>
 
       <Content>
+        <ButtonsWrapper>
+          {quizQuestions.length > 0 && (
+            <QuizButton 
+              onClick={() => setIsQuizOpen(true)} 
+              color={periodColor}
+              hasQuestions={true}
+            />
+          )}
+          {event.model3D && (
+            <Model3DButton 
+              onClick={() => setIsModel3DOpen(true)} 
+              color={periodColor}
+            />
+          )}
+        </ButtonsWrapper>
         {event.image && (
           <EventImage src={event.image} alt={event.title} />
         )}
@@ -140,6 +153,24 @@ function EventDetail() {
           onComplete={handleQuizComplete}
         />
       </Modal>
+
+      {event.model3D && (
+        <Modal
+          isOpen={isModel3DOpen}
+          onClose={() => setIsModel3DOpen(false)}
+          title="3D Vizualizace"
+          color={periodColor}
+          size="large"
+        >
+          <Suspense 
+            fallback={<Loading3D>Načítání 3D modelu...</Loading3D>}
+          >
+            <Model3DViewerWrapper>
+              <Model3DViewer modelConfig={event.model3D} color={periodColor} />
+            </Model3DViewerWrapper>
+          </Suspense>
+        </Modal>
+      )}
     </EventDetailContainer>
   )
 }
@@ -167,7 +198,6 @@ const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string; $periodColo
   padding: 3rem 2rem;
   padding-right: 5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  overflow: visible;
   min-height: 200px;
 
   &::before {
@@ -184,14 +214,9 @@ const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string; $periodColo
     z-index: 1;
   }
 
-  > *:not(.quiz-button) {
+  > * {
     position: relative;
     z-index: 2;
-  }
-
-  .quiz-button {
-    position: absolute !important;
-    z-index: 10 !important;
   }
 
   h1 {
@@ -215,6 +240,16 @@ const Content = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  position: relative;
+`
+
+const ButtonsWrapper = styled.div`
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
 `
 
 const TagsSection = styled.div`
@@ -243,6 +278,23 @@ const WikipediaLink = styled.a<{ $color: string }>`
     border-bottom-color: ${props => props.$color};
     opacity: 0.8;
   }
+`
+
+const Loading3D = styled.div`
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+`
+
+const Model3DViewerWrapper = styled.div`
+  width: 100%;
 `
 
 // Pomocná funkce pro převod hex barvy na RGB

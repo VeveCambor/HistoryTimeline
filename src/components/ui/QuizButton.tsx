@@ -21,10 +21,7 @@ export default QuizButton
 
 // Styled Components
 const FloatingButton = styled.button<{ $color?: string }>`
-  position: absolute !important;
-  bottom: 1.5rem;
-  right: 2rem;
-  left: auto !important;
+  position: relative;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -39,7 +36,6 @@ const FloatingButton = styled.button<{ $color?: string }>`
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s;
-  z-index: 10;
   animation: pulse 2s infinite;
 
   &:hover {
@@ -65,8 +61,6 @@ const FloatingButton = styled.button<{ $color?: string }>`
     width: 45px;
     height: 45px;
     font-size: 1.5rem;
-    bottom: 1rem;
-    right: 1rem;
   }
 `
 
@@ -77,7 +71,7 @@ const QuestionIcon = styled.span`
 
 const Tooltip = styled.span<{ $color?: string }>`
   position: absolute;
-  right: 70px;
+  right: calc(100% + 15px);
   top: 50%;
   transform: translateY(-50%);
   background: ${props => props.$color || '#FF8C00'};
@@ -98,7 +92,7 @@ const Tooltip = styled.span<{ $color?: string }>`
   &::after {
     content: '';
     position: absolute;
-    right: -6px;
+    left: 100%;
     top: 50%;
     transform: translateY(-50%);
     border: 6px solid transparent;

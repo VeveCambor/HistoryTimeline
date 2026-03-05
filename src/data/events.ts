@@ -20,6 +20,65 @@ import chavinskaKultura from '../assets/gallery/pravek/chavínská-kutua.jpeg'
 import kartago from '../assets/gallery/pravek/kartágo.jpeg'
 import vznikPisma from '../assets/gallery/pravek/vznik-písma.jpg'
 import trojanWar from '../assets/gallery/pravek/trojan-war.webp'
+import stonehenge from '../assets/gallery/pravek/stonehenge.png'
+
+// Starověk
+import prvniOlympijskeHryImg from '../assets/gallery/starovek/první-olympijské-hry.jpg'
+import zalozeniRimaImg from '../assets/gallery/starovek/založení říma.jpg'
+import atentatNaJuliaCezaraImg from '../assets/gallery/starovek/atentát-na-julia-cézara.jpeg'
+import padNiniveImg from '../assets/gallery/starovek/pád ninvie.jpg'
+import narozeniBuddhyImg from '../assets/gallery/starovek/nrození-buddhy.jpeg'
+import narozeniKonfuciaImg from '../assets/gallery/starovek/narození konfucia.jpg'
+import bitvaUMarathonuImg from '../assets/gallery/starovek/bitva-u-marathonu.jpg'
+import bitvaThermopylImg from '../assets/gallery/starovek/bitva-Thermopyl.jpg'
+import zacatekPeloponeskeValkyImg from '../assets/gallery/starovek/začátek-peloponéské-války.jpg'
+import alexanderSeStalKralemImg from '../assets/gallery/starovek/alexander-se-stal-králem.png'
+import smrtAlexandraVelkehoImg from '../assets/gallery/starovek/smrt-Alexanda-Velkeho.jpg'
+import zacatekPunskychValkImg from '../assets/gallery/starovek/začátek-punských-válek.jpg'
+import zniceniKartagaImg from '../assets/gallery/starovek/zničení-kartága.jpg'
+import vznikHedvabneStezkyImg from '../assets/gallery/starovek/vznik-hedvábné-stezky.png'
+import sjednoceniCinyPredDynastiiImg from '../assets/gallery/starovek/sjednocení-číny-před-dynastii.jpg'
+import zalozeniRimskehoCisarstviImg from '../assets/gallery/starovek/založení-římského-císařství.webp'
+import ediktMilanskyImg from '../assets/gallery/starovek/edikt-milánský.jpg'
+import zalozeniAksumskeRiseImg from '../assets/gallery/starovek/založení-aksumské-říše.jpg'
+
+// Středověk
+import padZapadorimskeRiseImg from '../assets/gallery/stredovek/pad zapado rimskej rise.webp'
+import hidzaraImg from '../assets/gallery/stredovek/hidzara zacatek islamskeho kalendare.jpg'
+import korunovaceKarlaVelkehoImg from '../assets/gallery/stredovek/korunovace karla velkeho.jpg'
+import prvniKrizovaVypravaImg from '../assets/gallery/stredovek/prvni krizova viprava.jpg'
+import magnaChartaImg from '../assets/gallery/stredovek/magna charta liberatum.jpg'
+import zacatekCerneSmrtiImg from '../assets/gallery/stredovek/zacatek cerne smrti.png'
+import padKonstantinopoleImg from '../assets/gallery/stredovek/pad konstantinopole.jpg'
+import gutenbergTiskarskaImg from '../assets/gallery/stredovek/gutrnbargova tiskarska revoluce.jpg'
+import bitvaUHastingsuImg from '../assets/gallery/stredovek/bitva u hastigsu.jpg'
+import vznikInckeRiseImg from '../assets/gallery/stredovek/vznik incke rise.png'
+import padGhanskeRiseImg from '../assets/gallery/stredovek/pad ghanske rise.webp'
+import poutMansaMusyImg from '../assets/gallery/stredovek/pout mansa musy do mekky.jpg'
+
+// Novověk
+import kolumbusObjavujeAmericuImg from '../assets/gallery/novovek/kolumbus objavuje ameriku.jpg'
+import lutherovy95TeziImg from '../assets/gallery/novovek/lutherovy 95 tezi.webp'
+import zacatek30ValkyImg from '../assets/gallery/novovek/zacatek 30. valky.webp'
+import newtonovyPrincipImg from '../assets/gallery/novovek/newtonovy pricip.webp'
+import americkaDeklaraceImg from '../assets/gallery/novovek/americka delegrace nezavislosti.webp'
+import dobitiInckeRiseImg from '../assets/gallery/novovek/dobiti incke rise.webp'
+
+// Moderní doba
+import francouzskaRevoluceImg from '../assets/gallery/modernidoba/Francouzská revoluce.jpg'
+import napoleonCesarImg from '../assets/gallery/modernidoba/napoelon se stava cezarom.jpg'
+import bitvaUWaterlooImg from '../assets/gallery/modernidoba/bitva u waterloo.png'
+import konecAmerickeObcanskeValkyImg from '../assets/gallery/modernidoba/konec americke obcanske valky.jpg'
+import zacatek1SvetoveValkyImg from '../assets/gallery/modernidoba/zacatek 1 svetove valky.jpg'
+import ruskaRevoluceImg from '../assets/gallery/modernidoba/ruska revoluce.jpg'
+import konecDruheSvetoveValkyImg from '../assets/gallery/modernidoba/konec druhe svetove valky.jpg'
+import prvniPristaniNaMesiciImg from '../assets/gallery/modernidoba/prvni pristani na mesice.webp'
+import utokyNaSvetoveObchodniCentrumImg from '../assets/gallery/modernidoba/utoky na svetove obchodni centrum.jpg'
+import padBerlinskeZdiImg from '../assets/gallery/modernidoba/pad berlinske zdi.jpeg'
+import berlinskaKonferenceImg from '../assets/gallery/modernidoba/Berlínská konference.jpg'
+import nezavislostBrazileImg from '../assets/gallery/modernidoba/nezavislost brazilie.jpg'
+import otevreniPanamskehoPrulivuImg from '../assets/gallery/modernidoba/otevreni panamskeho prulivu.webp'
+import konecApartheiduImg from '../assets/gallery/modernidoba/konec zpartheidu v jizni americe.jpg'
 
 // Ukázková data historických událostí
 export const historicalEvents: HistoricalEvent[] = [
@@ -45,9 +104,15 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'První zaznamenané olympijské hry v antickém Řecku, které se konaly na počest boha Dia.',
     details: 'První olympijské hry se konaly v roce 776 př. n. l. v posvátném okrsku Olympie na Peloponésu. Původně to byla jednodenní událost s jediným závodem - během na délku stadionu (asi 192 metrů). Postupně se hry rozrostly na pětidenní festival s více než 20 disciplínami včetně běhu, skoku do dálky, vrhu diskem, oštěpem, zápasu, boxu a vozatajství. Vítězové získávali pouze olivový věnec, ale doma byli oslavováni jako hrdinové a často dostávali doživotní rentu. Hry byly tak posvátné, že během jejich konání se vyhlašoval "posvátný mír" (ekecheiria), který zastavoval všechny války mezi řeckými městskými státy. Ženy nesměly hry sledovat ani se jich účastnit - dokonce i divačky riskovaly trest smrti. Antické olympijské hry se konaly více než 1000 let, až do roku 393 n. l., kdy je zakázal římský císař Theodosius I. jako pohanský rituál. Moderní olympijské hry byly obnoveny v roce 1896 v Athénách.',
     tags: ['Sport', 'Řecko', 'Antika'],
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800',
+    image: prvniOlympijskeHryImg,
     period: getPeriodForYear(-776),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Olympijsk%C3%A9_hry'
+    // model3D: {
+    //   // Najdi model na: https://sketchfab.com/3d-models?q=ancient+greek+temple+olympia
+    //   type: 'sketchfab',
+    //   sketchfabId: 'ID_Z_URL',
+    //   url: 'https://sketchfab.com/3d-models/...'
+    // }
   },
   {
     id: 3,
@@ -59,7 +124,12 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Atentát na Julia Caesara se odehrál 15. března 44 př. n. l. (Idy březnové) v divadle Pompeia v Římě. Spiklenci, vedení Marcem Juniem Brutem a Gaiem Cassiem Longinem, se obávali Caesarova rostoucího vlivu a možnosti, že se prohlásí králem. Celkem 60 senátorů se zapojilo do spiknutí, ale pouze 23 z nich skutečně provedlo útok. Caesar byl napaden dýkami a podle legendy řekl řecky "Kai su, teknon?" (I ty, synu?) poté, co uviděl Bruta mezi útočníky - Brutus byl totiž možná Caesarův nemanželský syn. Caesar utrpěl 23 ran dýkou, z nichž pouze jedna byla smrtelná. Jeho smrt vyvolala chaos v Římě a vedla k občanské válce mezi Caesarovými stoupenci (vedenými Markem Antoniem a Octavianem) a vrahy. Tato válka skončila pádem Římské republiky a vznikem Římského císařství pod vládou Octaviana (Augusta).',
     tags: ['Řím', 'Politika', 'Antika'],
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Atent%C3%A1t_na_Julia_Caesara',
-    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800',
+    image: atentatNaJuliaCezaraImg,
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: '2f9cb1fbc2eb470686eb8ba596b059cb',
+      url: 'https://sketchfab.com/3d-models/massive-scale-model-of-ancient-rome-2f9cb1fbc2eb470686eb8ba596b059cb'
+    },
     historicalBoundaries: [
       {
         name: 'Římská říše (cca 44 př. n. l.)',
@@ -94,7 +164,7 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Pád Západořímské říše v roce 476 n. l. je tradičně považován za konec starověku a začátek středověku. Poslední císař Romulus Augustulus (malý Augustus) byl pouhým chlapcem, když ho jeho otec Orestes dosadil na trůn. Odoaker, germánský vůdce, který sloužil v římské armádě, sesadil Romula, ale místo aby ho zabil, poslal ho do exilu do Kampánie s roční rentou. Odoaker pak poslal římské císařské insignie do Konstantinopole císaři Zenovi s tím, že Západ už nepotřebuje vlastního císaře. Zajímavostí je, že Romulus Augustulus nebyl technicky posledním západořímským císařem - v Galii vládl ještě Julius Nepos až do roku 480. Pád Říma byl výsledkem dlouhodobého úpadku způsobeného ekonomickými problémy, barbarskými invazemi, politickou nestabilitou a rozdělením říše. Tato událost symbolicky ukončila více než tisíciletou existenci Římské říše na Západě a otevřela cestu pro vznik středověkých království.',
     tags: ['Řím', 'Středověk', 'Historie'],
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/P%C3%A1d_Z%C3%A1pado%C5%99%C3%ADmsk%C3%A9_%C5%99%C3%AD%C5%A1e',
-    image: 'https://images.unsplash.com/photo-1529360269321-4c0a0c0b5b5e?w=800',
+    image: padZapadorimskeRiseImg,
     historicalBoundaries: [
       {
         name: 'Západořímská říše (476 n. l.)',
@@ -140,7 +210,7 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Bitva u Hastingsu se odehrála 14. října 1066 a byla rozhodující bitvou normanského dobytí Anglie. Anglický král Harold II. musel čelit dvěma invazím současně - norské invazi na severu a normanské na jihu. Po vítězství nad Nory u Stamford Bridge musel Harold rychle přesunout svou armádu na jih, kde čelil Vilémovi Normandskému. Bitva trvala celý den a byla velmi krvavá. Haroldova armáda zaujala výhodnou pozici na kopci, ale Vilém použil taktiku předstíraného ústupu, která rozbila anglické řady. Podle legendy byl Harold zabit šípem do oka, ačkoli to není historicky doloženo. Vilém Dobyvatel se stal anglickým králem a zavedl normanskou vládu, která změnila anglickou společnost, jazyk a kulturu. Normanská invaze přinesla do Anglie francouzštinu, která se smísila se starou angličtinou a vytvořila moderní angličtinu. Vilém také nechal sepsat Domesday Book, první velký průzkum anglického majetku a obyvatelstva, který sloužil jako základ pro daně.',
     tags: ['Anglie', 'Válka', 'Středověk'],
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Bitva_u_Hastingsu',
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    image: bitvaUHastingsuImg,
     period: getPeriodForYear(1066)
   },
   {
@@ -153,7 +223,7 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Kryštof Kolumbus přistál na Bahamách 12. října 1492 po 70 dnech plavby přes Atlantik. Jeho tři lodě - Santa María, Pinta a Niña - vypluly z Palos de la Frontera ve Španělsku 3. srpna. Kolumbus si myslel, že dosáhl Asie (Indie), proto nazval domorodce "Indiány". Ve skutečnosti přistál na ostrově, který nazval San Salvador (dnešní Watling Island nebo Samana Cay). Kolumbova plavba otevřela novou éru v historii známou jako "Kolumbovská výměna" - masivní výměna zboží, rostlin, zvířat a nemocí mezi Starým a Novým světem. Z Ameriky se do Evropy dostaly brambory, kukuřice, rajčata, kakao a tabák, zatímco Evropané přivezli koně, dobytek, pšenici a bohužel i nemoci jako neštovice a spalničky, které způsobily masivní úmrtí domorodého obyvatelstva. Kolumbus podnikl celkem čtyři plavby do Ameriky, ale nikdy si neuvědomil, že objevil nový kontinent. Jeho objev vedl k masivní migraci Evropanů do Nového světa a k vytvoření koloniálních říší, což mělo trvalý dopad na celý svět.',
     tags: ['Objevy', 'Amerika', 'Kolonizace'],
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Kry%C5%A1tof_Kolumbus',
-    image: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800',
+    image: kolumbusObjavujeAmericuImg,
     period: getPeriodForYear(1492)
   },
   {
@@ -166,7 +236,7 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Francouzská revoluce začala 14. července 1789 dobytím Bastily, vězení v Paříži, které symbolizovalo královskou tyranii. Revoluce byla výsledkem dlouhodobé nespokojenosti s absolutistickou monarchií, ekonomickými problémy a sociální nerovností. Třetí stav (běžní občané) se vzbouřil proti privilegované šlechtě a duchovenstvu. Revoluce přinesla heslo "Svoboda, rovnost, bratrství" a Deklaraci práv člověka a občana. Během revoluce došlo k popravě krále Ludvíka XVI. a královny Marie Antoinetty gilotinou, která se stala symbolem "teroru". Revoluce vedla k napoleonským válkám a šíření revolučních ideálů po celé Evropě. Byla jedním z nejvýznamnějších politických převratů v historii a inspirovala další revoluční hnutí po celém světě. Její odkaz ovlivnil moderní demokratické státy a myšlenky lidských práv.',
     tags: ['Francie', 'Revoluce', 'Politika'],
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Francouzsk%C3%A1_revoluce',
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800',
+    image: francouzskaRevoluceImg,
     period: getPeriodForYear(1789)
   },
   {
@@ -178,7 +248,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Apollo 11 úspěšně přistálo na Měsíci, Neil Armstrong se stal prvním člověkem, který vstoupil na měsíční povrch.',
     details: 'Apollo 11 odstartovalo 16. července 1969 z Kennedy Space Center na Floridě. Posádku tvořili Neil Armstrong (velitel), Buzz Aldrin (pilot lunárního modulu) a Michael Collins (pilot velitelského modulu). Po čtyřech dnech cesty přistál lunární modul "Eagle" 20. července v Moři klidu. Když Armstrong vystoupil na povrch Měsíce, řekl slavnou větu: "To je malý krok pro člověka, ale velký skok pro lidstvo." Armstrong a Aldrin strávili na Měsíci 21,5 hodiny, během kterých nasbírali 21,5 kg měsíčních vzorků a vztyčili americkou vlajku. Mise byla sledována více než 600 miliony lidí po celém světě - největší televizní přenos v historii. Tato událost byla vrcholem vesmírného závodu mezi USA a SSSR a představovala jeden z největších úspěchů lidstva. Celkem 12 astronautů chodilo po Měsíci během šesti misí Apollo (1969-1972).',
     tags: ['Vesmír', 'USA', 'Věda'],
-    image: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800',
+    image: prvniPristaniNaMesiciImg,
     period: getPeriodForYear(1969),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Apollo_11'
   },
@@ -236,6 +306,24 @@ export const historicalEvents: HistoricalEvent[] = [
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Neolitick%C3%A1_revoluce'
   },
   {
+    id: 70,
+    year: -3000,
+    title: 'Výstavba Stonehenge',
+    location: 'Wiltshire, Anglie',
+    coordinates: { lat: 51.1789, lng: -1.8262 },
+    description: 'Začátek výstavby megalitického kamenného kruhu Stonehenge, jednoho z nejznámějších pravěkých monumentů.',
+    details: 'Stonehenge je prehistorický kamenný monument postavený v několika fázích mezi lety 3000 a 2000 př. n. l. v jižní Anglii. Skládá se z kruhu stojících kamenů, z nichž každý váží kolem 25 tun. Kameny byly přepravovány z lomů vzdálených až 240 km. Účel Stonehenge zůstává záhadou - mohl sloužit jako observatoř, náboženské místo, pohřebiště nebo místo léčení. Je zarovnán s východem slunce při letním slunovratu, což naznačuje astronomický význam. Stonehenge je součástí většího komplexu pravěkých památek včetně Avebury a dalších menhirů. Je to jedna z nejznámějších pravěkých památek na světě a je zapsána na seznamu UNESCO.',
+    tags: ['Pravěk', 'Architektura', 'Anglie'],
+    image: stonehenge,
+    period: getPeriodForYear(-3000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Stonehenge',
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: '23cf1bcb2b974eb2ac935ee885b22f14',
+      url: 'https://sketchfab.com/3d-models/stonehenge-23cf1bcb2b974eb2ac935ee885b22f14'
+    }
+  },
+  {
     id: 37,
     year: -9000,
     title: 'První trvalé osady',
@@ -259,7 +347,13 @@ export const historicalEvents: HistoricalEvent[] = [
     tags: ['Technologie', 'Pravěk', 'Řemesla'],
     image: keramika,
     period: getPeriodForYear(-7000),
-    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Keramika'
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Keramika',
+    // model3D: {
+    //   // Najděte model na: https://sketchfab.com/3d-models?q=ancient+pottery+amphora
+    //   type: 'sketchfab',
+    //   sketchfabId: 'ID_MODELU',
+    //   url: 'https://sketchfab.com/3d-models/...'
+    // }
   },
   {
     id: 39,
@@ -285,7 +379,13 @@ export const historicalEvents: HistoricalEvent[] = [
     tags: ['Technologie', 'Pravěk', 'Vynálezy'],
     image: kolo,
     period: getPeriodForYear(-3500),
-    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Kolo'
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Kolo',
+    // model3D: {
+    //   // Najděte model na: https://sketchfab.com/3d-models?q=ancient+wheel+chariot
+    //   type: 'sketchfab',
+    //   sketchfabId: 'ID_MODELU',
+    //   url: 'https://sketchfab.com/3d-models/...'
+    // }
   },
   {
     id: 10,
@@ -298,7 +398,12 @@ export const historicalEvents: HistoricalEvent[] = [
     tags: ['Egypt', 'Architektura', 'Starověk'],
     image: egyptskePyramidy,
     period: getPeriodForYear(-2560),
-    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Velk%C3%A1_pyramida'
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Velk%C3%A1_pyramida',
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: 'df4b6e9a25474ae9927fdb01f33ba561',
+      url: 'https://sketchfab.com/3d-models/egyptian-pyramids-giza-cairo-egypt-df4b6e9a25474ae9927fdb01f33ba561'
+    }
   },
   // Starověk
   {
@@ -312,7 +417,12 @@ export const historicalEvents: HistoricalEvent[] = [
     tags: ['Egypt', 'Politika', 'Starověk'],
     image: sjednoceniEgypta,
     period: getPeriodForYear(-3100),
-    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Sjednocen%C3%AD_Egypta'
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Sjednocen%C3%AD_Egypta',
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: 'd149daf5b3ea4e138e6b0b4d71387bc7',
+      url: 'https://sketchfab.com/3d-models/luxor-sfinga-draft-d149daf5b3ea4e138e6b0b4d71387bc7'
+    }
   },
   {
     id: 42,
@@ -351,7 +461,12 @@ export const historicalEvents: HistoricalEvent[] = [
     tags: ['Mezopotámie', 'Právo', 'Starověk'],
     image: chamurapihoZakonik,
     period: getPeriodForYear(-1750),
-    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Chammurapiho_z%C3%A1kon%C3%ADk'
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Chammurapiho_z%C3%A1kon%C3%ADk',
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: '39851042e5c74fbf924503c590356237',
+      url: 'https://sketchfab.com/3d-models/ishtar-gate-babylon-v03-39851042e5c74fbf924503c590356237'
+    }
   },
   {
     id: 45,
@@ -375,7 +490,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Podle legendy založili Romulus a Remus město Řím.',
     details: 'Založení Říma podle tradice proběhlo 21. dubna 753 př. n. l. Romulus se stal prvním římským králem. Toto město se později stalo centrem největší říše starověku.',
     tags: ['Řím', 'Politika', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800',
+    image: zalozeniRimaImg,
     period: getPeriodForYear(-753),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Zalo%C5%BEen%C3%AD_%C5%98%C3%ADma'
   },
@@ -388,7 +503,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Pád asyrské říše po dobytí Ninive spojenými silami Babyloňanů a Médů.',
     details: 'Pád Ninive ukončil existenci asyrské říše, která byla jednou z nejmocnějších říší starověku. Tato událost změnila politickou mapu Blízkého východu.',
     tags: ['Mezopotámie', 'Válka', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    image: padNiniveImg,
     period: getPeriodForYear(-612),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Ninive'
   },
@@ -401,7 +516,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Narození Siddhárthy Gautamy, zakladatele buddhismu.',
     details: 'Buddha, známý také jako Siddhártha Gautama, založil jedno z nejvlivnějších náboženských a filozofických hnutí v historii. Buddhismus se rozšířil po celé Asii a ovlivnil miliony lidí.',
     tags: ['Náboženství', 'Indie', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    image: narozeniBuddhyImg,
     period: getPeriodForYear(-563),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Buddha'
   },
@@ -414,7 +529,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Narození Konfucia, zakladatele konfucianismu.',
     details: 'Konfucius (Kǒng Fūzǐ) se narodil 28. září 551 př. n. l. ve státě Lu (dnešní provincie Šan-tung) v městě Qufu. Pocházel z urozené, ale zchudlé rodiny - jeho otec zemřel, když byl ještě dítětem, a byl vychováván matkou. Navzdory skromným poměrům získal vynikající vzdělání a založil soukromou školu, kde vyučoval šestero umění: čtení a psaní, počty, vozatajství, lukostřelbu, etiketu a hudbu. Jeho učení kladlo důraz na pět základních ctností: lidskost (rén), spravedlnost (yì), slušnost (lǐ), moudrost (zhì) a věrnost (xìn). Konfucius věřil, že harmonická společnost vyžaduje správné mezilidské vztahy - mezi rodiči a dětmi, pánem a sluhou, mužem a ženou. Po jeho smrti v roce 479 př. n. l. jeho následovníci shromáždili jeho výroky do díla "Analekty" (Lunyu). Konfucianismus se stal základem čínské etiky, politické filozofie a státní ideologie na více než 2000 let. Jeho myšlenky ovlivnily nejen Čínu, ale i Koreu, Japonsko a Vietnam. Zajímavostí je, že Konfuciův rodokmen je jedním z nejdelších na světě - v roce 2009 bylo zaznamenáno přibližně dva miliony jeho potomků. Každoročně se 28. září slaví Konfuciovy narozeniny jako významný svátek.',
     tags: ['Filozofie', 'Čína', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    image: narozeniKonfuciaImg,
     period: getPeriodForYear(-551),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Konfucius'
   },
@@ -427,7 +542,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Řekové porazili perskou armádu v rozhodující bitvě řecko-perských válek.',
     details: 'Bitva u Marathonu byla prvním velkým vítězstvím Řeků nad Peršany. Legenda o běžci, který běžel z Marathonu do Athén, inspirovala moderní maratonský běh.',
     tags: ['Řecko', 'Válka', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    image: bitvaUMarathonuImg,
     period: getPeriodForYear(-490),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Bitva_u_Marathonu'
   },
@@ -440,7 +555,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Spartský král Leonidas a jeho 300 bojovníků bránili průsmyk proti perské armádě.',
     details: 'Bitva u Thermopyl byla jednou z nejslavnějších bitev v historii. Ačkoli Řekové prohráli, jejich hrdinný odpor inspiroval celé Řecko k dalšímu boji proti perské invazi.',
     tags: ['Řecko', 'Válka', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    image: bitvaThermopylImg,
     period: getPeriodForYear(-480),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Bitva_u_Thermopyl'
   },
@@ -453,7 +568,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Začátek dlouhé války mezi Athénami a Spartou, která zničila řeckou moc.',
     details: 'Peloponéská válka trvala 27 let a byla jednou z nejničivějších konfliktů starověkého Řecka. Válka oslabila řecké městské státy a připravila půdu pro makedonskou nadvládu.',
     tags: ['Řecko', 'Válka', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    image: zacatekPeloponeskeValkyImg,
     period: getPeriodForYear(-431),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Pelopon%C3%A9sk%C3%A1_v%C3%A1lka'
   },
@@ -466,7 +581,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Alexandr Veliký nastoupil na makedonský trůn a začal svou dobyvačnou kampaň.',
     details: 'Alexandr Veliký vytvořil jednu z největších říší starověku, která sahala od Řecka po Indii. Jeho dobyvačné kampaně šířily řeckou kulturu po celém známém světě.',
     tags: ['Řecko', 'Politika', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    image: alexanderSeStalKralemImg,
     period: getPeriodForYear(-336),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Alexandr_Velik%C3%BD'
   },
@@ -479,7 +594,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Alexandr Veliký zemřel ve věku 32 let, jeho říše se rozpadla.',
     details: 'Smrt Alexandra Velikého vedla k rozdělení jeho říše mezi jeho generály (diadochy). Toto období známé jako helénistické období pokračovalo v šíření řecké kultury.',
     tags: ['Řecko', 'Politika', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    image: smrtAlexandraVelkehoImg,
     period: getPeriodForYear(-323)
   },
   {
@@ -491,7 +606,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Začátek série válek mezi Římem a Kartágem o nadvládu ve Středomoří.',
     details: 'Punské války byly tři konflikty mezi Římskou republikou a Kartágem. Třetí punská válka skončila úplným zničením Kartága a upevnila římskou nadvládu ve Středomoří.',
     tags: ['Řím', 'Válka', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800',
+    image: zacatekPunskychValkImg,
     period: getPeriodForYear(-264)
   },
   {
@@ -503,7 +618,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Řím úplně zničil Kartágo po třetí punské válce.',
     details: 'Zničení Kartága ukončilo dlouholetý konflikt mezi Římem a Kartágem. Řím se stal dominantní mocností ve Středomoří. Legenda říká, že Římané zasypali město solí.',
     tags: ['Řím', 'Válka', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800',
+    image: zniceniKartagaImg,
     period: getPeriodForYear(-146)
   },
   {
@@ -515,7 +630,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Začátek obchodní sítě spojující Čínu se Středním východem a Evropou.',
     details: 'Hedvábná stezka byla sítí obchodních cest, která umožnila výměnu zboží, myšlenek a technologií mezi Východem a Západem. Hrála klíčovou roli v rozvoji civilizací.',
     tags: ['Obchod', 'Čína', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    image: vznikHedvabneStezkyImg,
     period: getPeriodForYear(-100)
   },
   {
@@ -527,9 +642,14 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'První císař Čchin Š\'-chuang-ti sjednotil Čínu a založil první centralizovanou čínskou říši.',
     details: 'Sjednocení Číny pod dynastií Čchin ukončilo období válčících států. První císař zavedl jednotnou měnu, písmo a měřicí systémy. Začala se stavět Velká čínská zeď.',
     tags: ['Čína', 'Politika', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
+    image: sjednoceniCinyPredDynastiiImg,
     period: getPeriodForYear(-221),
-    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Dynastie_%C4%8Cchin'
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Dynastie_%C4%8Cchin',
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: '3d085397bf904e649ce97eb6c4bd9c7a',
+      url: 'https://sketchfab.com/3d-models/the-great-wall-of-china-3d085397bf904e649ce97eb6c4bd9c7a'
+    }
   },
   {
     id: 13,
@@ -540,9 +660,14 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Octavianus přijal titul Augustus a stal se prvním římským císařem.',
     details: 'Konec Římské republiky a začátek Římského císařství. Augustus zavedl Pax Romana, období míru a stability, které trvalo více než 200 let.',
     tags: ['Řím', 'Politika', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800',
+    image: zalozeniRimskehoCisarstviImg,
     period: getPeriodForYear(-27),
-    wikipediaUrl: 'https://cs.wikipedia.org/wiki/%C5%98%C3%ADmsk%C3%A9_c%C3%ADsa%C5%99stv%C3%AD'
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/%C5%98%C3%ADmsk%C3%A9_c%C3%ADsa%C5%99stv%C3%AD',
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: '544c64b6445e4899a17350c949b7766a',
+      url: 'https://sketchfab.com/3d-models/coliseo-de-roma-roman-colosseum-544c64b6445e4899a17350c949b7766a'
+    }
   },
   {
     id: 14,
@@ -553,7 +678,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Císař Konstantin I. legalizoval křesťanství v Římské říši.',
     details: 'Edikt milánský ukončil pronásledování křesťanů a umožnil svobodu náboženského vyznání. Tato událost měla zásadní vliv na šíření křesťanství po celé Evropě.',
     tags: ['Řím', 'Náboženství', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1529360269321-4c0a0c0b5b5e?w=800',
+    image: ediktMilanskyImg,
     period: getPeriodForYear(313),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Edikt_mil%C3%A1nsk%C3%BD'
   },
@@ -567,7 +692,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Prorok Mohamed uprchl z Mekky do Medíny, což označuje začátek islámské éry.',
     details: 'Hidžra je jedním z nejdůležitějších momentů v historii islámu. Z Medíny se islám začal šířit po celém Arabském poloostrově a později do celého světa.',
     tags: ['Islám', 'Náboženství', 'Středověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    image: hidzaraImg,
     period: getPeriodForYear(622),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Hid%C5%BEra'
   },
@@ -580,7 +705,7 @@ export const historicalEvents: HistoricalEvent[] = [
     description: 'Karel Veliký byl korunován císařem Svaté říše římské papežem Lvem III.',
     details: 'Korunovace Karla Velikého obnovila ideu římského císařství na Západě. Karel Veliký sjednotil velkou část západní Evropy a podporoval renesanci vzdělání a kultury.',
     tags: ['Evropa', 'Politika', 'Středověk'],
-    image: 'https://images.unsplash.com/photo-1529360269321-4c0a0c0b5b5e?w=800',
+    image: korunovaceKarlaVelkehoImg,
     period: getPeriodForYear(800),
     wikipediaUrl: 'https://cs.wikipedia.org/wiki/Karel_Velik%C3%BD'
   },
@@ -591,10 +716,16 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Jeruzalém',
     coordinates: { lat: 31.7683, lng: 35.2137 },
     description: 'Začátek první křížové výpravy na výzvu papeže Urbana II. k osvobození Svaté země.',
-    details: 'První křížová výprava byla první z řady vojenských tažení evropských křesťanů do Svaté země. Výprava vedla k dobytí Jeruzaléma a založení křižáckých států.',
+    details: 'První křížová výprava byla vyhlášena papežem Urbanem II. v roce 1095 na koncilu v Clermontu. Výprava začala v roce 1096 a byla první z řady vojenských tažení evropských křesťanů do Svaté země. Motivy křižáků byly smíšené - náboženské (osvobození Jeruzaléma z rukou muslimů), ekonomické (získání bohatství) a politické (rozšíření moci). Výprava vedla k dobytí Jeruzaléma v roce 1099 po krvavém obléhání, během kterého křižáci zmasakrovali většinu muslimského a židovského obyvatelstva města. Bylo založeno několik křižáckých států v Levantě, včetně Jeruzalémského království, které existovalo téměř 200 let. První křížová výprava byla jedinou úspěšnou - další výpravy většinou selhaly nebo dosáhly jen omezených úspěchů. Křížové výpravy měly hluboký dopad na vztahy mezi křesťanstvím a islámem a ovlivnily evropskou kulturu, architekturu a obchod.',
     tags: ['Válka', 'Náboženství', 'Středověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1096)
+    image: prvniKrizovaVypravaImg,
+    period: getPeriodForYear(1096),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Prvn%C3%AD_k%C5%99%C3%AD%C5%BEov%C3%A1_v%C3%BDprava',
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: 'a44d1cde49d842e7a63fe3ccead1c9b5',
+      url: 'https://sketchfab.com/3d-models/knight-a44d1cde49d842e7a63fe3ccead1c9b5'
+    }
   },
   {
     id: 18,
@@ -603,10 +734,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Runnymede, Anglie',
     coordinates: { lat: 51.4444, lng: -0.5611 },
     description: 'Anglický král Jan Bezzemek podepsal Magnu Chartu, která omezila královskou moc.',
-    details: 'Magna Charta byla jedním z prvních dokumentů, které omezily moc panovníka a zavedly principy právního státu. Stala se základem pro moderní ústavní právo.',
+    details: 'Magna Charta Libertatum (Velká listina svobod) byla podepsána 15. června 1215 anglickým králem Janem Bezzemkem pod nátlakem vzpurných baronů. Dokument obsahoval 63 článků, které omezovaly královskou moc a zavazovaly krále respektovat práva šlechty, církve a svobodných občanů. Magna Charta zavedla princip, že král není nad zákonem, a zaručila právo na spravedlivý proces. I když byla původně zamýšlena jako řešení konkrétních problémů mezi králem a barony, stala se základem anglického ústavního práva a inspirovala pozdější dokumenty o lidských právech, včetně americké Deklarace nezávislosti a Listiny práv. Magna Charta byla několikrát potvrzena a upravena a její principy ovlivnily vývoj demokracie po celém světě. Originální dokumenty se dochovaly v několika kopiích a jsou považovány za jeden z nejdůležitějších právních dokumentů v historii.',
     tags: ['Anglie', 'Politika', 'Právo'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1215)
+    image: magnaChartaImg,
+    period: getPeriodForYear(1215),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Magna_Charta'
   },
   {
     id: 19,
@@ -615,10 +747,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Sicílie, Itálie',
     coordinates: { lat: 37.5, lng: 14.0 },
     description: 'Morová epidemie dorazila do Evropy a způsobila smrt třetiny až poloviny populace.',
-    details: 'Černá smrt byla jednou z nejničivějších pandemií v historii lidstva. Zabila odhadem 75-200 milionů lidí v Evropě a Asii a měla hluboký dopad na společnost, ekonomiku a kulturu.',
+    details: 'Černá smrt (mor) byla jednou z nejničivějších pandemií v historii lidstva. Původně se objevila v Asii a do Evropy dorazila v roce 1347 přes obchodní cesty. Bakterie Yersinia pestis se šířila krysami a blechami, které cestovaly na obchodních lodích. Pandemie zabila odhadem 75-200 milionů lidí, což představovalo 30-60% evropské populace. Některé regiony byly zcela vylidněny. Mor měl hluboký dopad na společnost - způsobil nedostatek pracovní síly, což vedlo ke zvýšení mezd a oslabení feudálního systému. Lidé hledali viníky a často obviňovali Židy, což vedlo k pogromům. Umění a literatura té doby odrážely smrt a pomíjivost života. Pandemie se vracela v několika vlnách po dalších 300 let. Černá smrt změnila ekonomickou strukturu Evropy, přispěla k úpadku středověkého systému a připravila půdu pro renesanci a novověk.',
     tags: ['Epidemie', 'Evropa', 'Středověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1347)
+    image: zacatekCerneSmrtiImg,
+    period: getPeriodForYear(1347),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/%C4%8Cern%C3%A1_smrt'
   },
   {
     id: 20,
@@ -627,10 +760,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Konstantinopol (Istanbul), Turecko',
     coordinates: { lat: 41.0082, lng: 28.9784 },
     description: 'Osmanská říše dobyla Konstantinopol, čímž skončila Byzantská říše.',
-    details: 'Pád Konstantinopole ukončil více než tisíciletou existenci Byzantské říše. Tato událost je často považována za konec středověku a začátek novověku.',
+    details: 'Pád Konstantinopole 29. května 1453 ukončil více než tisíciletou existenci Byzantské říše. Město bylo obléháno osmanskou armádou pod vedením 21letého sultána Mehmeda II. po 53 dní. Byzantinci měli pouze 7 000 obránců proti 80 000 osmanským vojákům. Mehmed použil obří děla, včetně slavného děla "Basilica", které dokázalo prorazit byzantské hradby. Když se Osmané dostali do města, došlo k třídennímu plenění - tisíce obyvatel byly zabity nebo zotročeny. Poslední byzantský císař Konstantin XI. padl v boji. Pád Konstantinopole měl zásadní dopad - uzavřel obchodní cesty mezi Evropou a Asií, což přimělo Evropany hledat nové námořní trasy a přispělo k věku objevů. Mnoho byzantských učenců uprchlo do Itálie a přineslo s sebou znalosti, které pomohly nastartovat renesanci. Tato událost je často považována za konec středověku a začátek novověku.',
     tags: ['Turecko', 'Válka', 'Středověk'],
-    image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800',
-    period: getPeriodForYear(1453)
+    image: padKonstantinopoleImg,
+    period: getPeriodForYear(1453),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/P%C3%A1d_Konstantinopole'
   },
   {
     id: 21,
@@ -639,10 +773,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Mohuč, Německo',
     coordinates: { lat: 50.0, lng: 8.2667 },
     description: 'Johannes Gutenberg vytiskl první knihu pomocí pohyblivých liter.',
-    details: 'Gutenbergův vynález knihtisku způsobil revoluci v šíření informací. Umožnil masovou produkci knih, což vedlo k šíření vzdělání, vědy a myšlenek po celé Evropě.',
+    details: 'Johannes Gutenberg z Mohuče vynalezl knihtisk s pohyblivými literami kolem roku 1450. Jeho nejslavnějším dílem byla Gutenbergova bible, vytištěná v letech 1454-1455, která byla první knihou vytištěnou pomocí pohyblivých liter v Evropě. Gutenbergův vynález kombinoval několik technologií - pohyblivé kovové litery, tiskařský lis (upravený z vinařského lisu) a tiskařskou barvu. Tento systém umožnil rychlou a levnou produkci knih - místo ručního přepisování mohlo být vytištěno stovky kopií za den. Knihtisk způsobil revoluci v šíření informací - cena knih klesla o 80%, což je učinilo dostupnými pro širší vrstvy společnosti. To vedlo k šíření vzdělání, vědeckých poznatků a myšlenek po celé Evropě. Knihtisk hrál klíčovou roli v reformaci - Lutherovy spisy se mohly rychle šířit. Gutenbergův vynález je považován za jeden z nejdůležitějších v historii lidstva a položil základy pro moderní informační společnost.',
     tags: ['Technologie', 'Vzdělání', 'Středověk'],
-    image: 'https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?w=800',
-    period: getPeriodForYear(1455)
+    image: gutenbergTiskarskaImg,
+    period: getPeriodForYear(1455),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Johannes_Gutenberg'
   },
   // Novověk
   {
@@ -652,10 +787,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Wittenberg, Německo',
     coordinates: { lat: 51.8667, lng: 12.6333 },
     description: 'Martin Luther zveřejnil 95 tezí, čímž zahájil protestantskou reformaci.',
-    details: 'Lutherovy teze kritizovaly praktiky katolické církve a vedly k náboženské reformaci, která rozdělila západní křesťanství a změnila politickou mapu Evropy.',
+    details: 'Martin Luther, augustiniánský mnich a profesor teologie, přibil 31. října 1517 svých 95 tezí na dveře kostela ve Wittenbergu. Teze kritizovaly prodej odpustků a další praktiky katolické církve. Luther původně zamýšlel akademickou diskusi, ale díky knihtisku se jeho myšlenky rychle rozšířily po celé Evropě. Luther kritizoval autoritu papeže, učení o očistci a prodej odpustků. Jeho hlavní myšlenkou bylo, že spása přichází pouze skrze víru, ne skrze dobré skutky nebo peníze. Papež Lev X. exkomunikoval Luthera v roce 1521, ale němečtí knížata ho ochránili. Reformace vedla k náboženským válkám, rozdělení západního křesťanství na katolíky a protestanty a změnila politickou mapu Evropy. Vznikly nové protestantské církve - luteránství, kalvinismus a anglikánství. Reformace také přispěla k rozvoji národních jazyků, protože Bible byla překládána z latiny do místních jazyků. Tato událost měla hluboký dopad na evropskou kulturu, politiku a společnost.',
     tags: ['Náboženství', 'Reformace', 'Novověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1517)
+    image: lutherovy95TeziImg,
+    period: getPeriodForYear(1517),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Martin_Luther'
   },
   {
     id: 23,
@@ -664,10 +800,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Praha, Čechy',
     coordinates: { lat: 50.0755, lng: 14.4378 },
     description: 'Pražská defenestrace zahájila třicetiletou válku, jeden z nejničivějších konfliktů v evropské historii.',
-    details: 'Třicetiletá válka byla konfliktem mezi katolickými a protestantskými státy. Způsobila obrovské utrpení a změnila politickou strukturu Evropy. Ukončila ji Vestfálská mírová smlouva v roce 1648.',
+    details: 'Třicetiletá válka začala 23. května 1618 pražskou defenestrací, kdy protestantští šlechtici vyhodili z oken Pražského hradu dva katolické místodržící. Válka byla komplexním konfliktem, který kombinoval náboženské, politické a dynastické spory. Zúčastnily se jí téměř všechny evropské mocnosti - Svatá říše římská, Španělsko, Francie, Švédsko, Dánsko a další. Válka probíhala ve čtyřech fázích: česká (1618-1625), dánská (1625-1629), švédská (1630-1635) a francouzská (1635-1648). Byla to jedna z nejničivějších válek v evropské historii - zabila přibližně 8 milionů lidí, což představovalo 20-40% populace v postižených oblastech. Německo bylo obzvlášť zdevastované - některé regiony ztratily až 50% obyvatelstva. Válka skončila Vestfálským mírem v roce 1648, který ukončil náboženské války v Evropě, posílil suverenitu států a změnil politickou strukturu kontinentu. Mír také ukončil dominanci Habsburků a připravil půdu pro vzestup Francie jako hlavní evropské mocnosti.',
     tags: ['Válka', 'Evropa', 'Novověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1618)
+    image: zacatek30ValkyImg,
+    period: getPeriodForYear(1618),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/T%C5%99icetilet%C3%A1_v%C3%A1lka'
   },
   {
     id: 24,
@@ -676,10 +813,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Londýn, Anglie',
     coordinates: { lat: 51.5074, lng: -0.1278 },
     description: 'Isaac Newton publikoval "Philosophiæ Naturalis Principia Mathematica", základní dílo moderní fyziky.',
-    details: 'Newtonovy Principia popisují zákony pohybu a gravitace. Toto dílo položilo základy moderní fyziky a vědecké revoluce, která změnila způsob, jakým lidé chápou svět.',
+    details: 'Isaac Newton publikoval "Philosophiæ Naturalis Principia Mathematica" (Matematické principy přírodní filozofie) v roce 1687. Toto třídílné dílo obsahuje tři zákony pohybu a zákon univerzální gravitace. První zákon (setrvačnost) říká, že těleso v klidu zůstane v klidu, pokud na něj nepůsobí síla. Druhý zákon definuje vztah mezi silou, hmotností a zrychlením (F=ma). Třetí zákon stanoví, že každá akce má stejnou a opačnou reakci. Zákon gravitace vysvětluje, že každá dvě tělesa se přitahují silou úměrnou jejich hmotnostem a nepřímo úměrnou druhé mocnině jejich vzdálenosti. Principia položila základy klasické mechaniky a ukázala, že stejné zákony platí pro pohyb na Zemi i ve vesmíru. Newton také vyvinul diferenciální a integrální počet (nezávisle na Leibnizovi). Toto dílo je považováno za jedno z nejvlivnějších vědeckých děl v historii a změnilo způsob, jakým lidé chápou vesmír. Newtonova fyzika zůstala dominantní až do 20. století, kdy ji nahradila Einsteinova teorie relativity.',
     tags: ['Věda', 'Fyzika', 'Novověk'],
-    image: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800',
-    period: getPeriodForYear(1687)
+    image: newtonovyPrincipImg,
+    period: getPeriodForYear(1687),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica'
   },
   // Moderní doba
   {
@@ -689,10 +827,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Filadelfie, USA',
     coordinates: { lat: 39.9526, lng: -75.1652 },
     description: 'Třináct amerických kolonií vyhlásilo nezávislost na Velké Británii.',
-    details: 'Deklarace nezávislosti založila Spojené státy americké a vyjádřila principy lidských práv a demokracie. Inspirovala revoluční hnutí po celém světě.',
+    details: 'Americká deklarace nezávislosti byla přijata Kontinentálním kongresem 4. července 1776 ve Filadelfii. Dokument, který sepsal převážně Thomas Jefferson, vyhlásil nezávislost třinácti amerických kolonií na Velké Británii. Deklarace obsahuje slavnou větu: "Považujeme za samozřejmé pravdy, že všichni lidé jsou stvořeni sobě rovni, že jsou obdařeni svým Stvořitelem určitými nezcizitelnými právy, mezi něž patří právo na život, svobodu a sledování štěstí." Dokument vyjmenovává stížnosti proti králi Jiřímu III. a ospravedlňuje revoluci. Byla to první oficiální deklarace nezávislosti v moderní historii. Signatáři riskovali svůj život - kdyby válka skončila porážkou, byli by popraveni jako zrádci. Deklarace inspirovala revoluční hnutí po celém světě, včetně francouzské revoluce a latinskoamerických bojů za nezávislost. 4. červenec se stal americkým národním svátkem - Dnem nezávislosti. Originální dokument je uložen v Národním archivu ve Washingtonu D.C.',
     tags: ['USA', 'Politika', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800',
-    period: getPeriodForYear(1776)
+    image: americkaDeklaraceImg,
+    period: getPeriodForYear(1776),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Americk%C3%A1_deklarace_nez%C3%A1vislosti'
   },
   {
     id: 26,
@@ -701,10 +840,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Paříž, Francie',
     coordinates: { lat: 48.8566, lng: 2.3522 },
     description: 'Napoleon Bonaparte se korunoval císařem Francouzů.',
-    details: 'Napoleonova korunovace symbolizovala vrchol jeho moci. Jeho vojenské kampaně změnily mapu Evropy a šířily revoluční ideály, i když také vedly k rozsáhlým válkám.',
+    details: 'Napoleon Bonaparte se korunoval císařem Francouzů 2. prosince 1804 v katedrále Notre-Dame v Paříži. Při korunovaci vzal korunu z rukou papeže Pia VII. a sám si ji nasadil na hlavu, čímž symbolicky ukázal, že jeho moc nepochází od církve, ale od lidu. Napoleonova korunovace byla vrcholem jeho moci - byl prvním císařem Francie od pádu Římské říše. Během své vlády Napoleon reformoval francouzský právní systém (Code Napoléon), který ovlivnil právní systémy po celém světě. Jeho vojenské kampaně změnily mapu Evropy - dobyl většinu kontinentu a založil satelitní státy. Napoleon šířil revoluční ideály (rovnost, svoboda, bratrství) po celé Evropě, ale také vedl rozsáhlé války, které způsobily smrt milionů lidí. Jeho invaze do Ruska v roce 1812 skončila katastrofou a vedla k jeho pádu. Napoleon byl vyhoštěn na Elbu v roce 1814, uprchl v roce 1815, ale byl definitivně poražen u Waterloo a zemřel ve vyhnanství na Svaté Heleně v roce 1821.',
     tags: ['Francie', 'Politika', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800',
-    period: getPeriodForYear(1804)
+    image: napoleonCesarImg,
+    period: getPeriodForYear(1804),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Napoleon_Bonaparte'
   },
   {
     id: 27,
@@ -713,10 +853,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Waterloo, Belgie',
     coordinates: { lat: 50.7147, lng: 4.3992 },
     description: 'Napoleonova definitivní porážka spojenými armádami pod vedením vévody z Wellingtonu.',
-    details: 'Bitva u Waterloo ukončila napoleonské války a Napoleonovu kariéru. Tato porážka vedla k obnově monarchií v Evropě a novému uspořádání kontinentu.',
+    details: 'Bitva u Waterloo se odehrála 18. června 1815 v Belgii a byla Napoleonovou definitivní porážkou. Po útěku z Elby a návratu k moci musel Napoleon čelit spojeným armádám pod vedením vévody z Wellingtonu (Britové) a generála Blüchera (Prusové). Bitva trvala celý den a byla velmi krvavá - zúčastnilo se jí přibližně 200 000 vojáků. Napoleonův útok na britské pozice byl zpočátku úspěšný, ale příchod pruských posil rozhodl bitvu ve prospěch spojenců. Napoleon ztratil přibližně 25 000 mužů, spojenci 22 000. Tato porážka ukončila napoleonské války a Napoleonovu kariéru. Byl vyhoštěn na odlehlý ostrov Svatá Helena v jižním Atlantiku, kde zemřel v roce 1821. Bitva vedla k obnově monarchií v Evropě a novému uspořádání kontinentu na Vídeňském kongresu. Slovo "Waterloo" se stalo synonymem pro definitivní porážku. Bitva je považována za jeden z nejdůležitějších vojenských střetů v historii a každoročně se u Waterloo konají rekonstrukce bitvy.',
     tags: ['Válka', 'Evropa', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1815)
+    image: bitvaUWaterlooImg,
+    period: getPeriodForYear(1815),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Bitva_u_Waterloo'
   },
   {
     id: 28,
@@ -725,10 +866,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Appomattox, USA',
     coordinates: { lat: 37.3842, lng: -78.8256 },
     description: 'Generál Lee se vzdal generálu Grantovi, čímž skončila občanská válka a otroctví bylo zrušeno.',
-    details: 'Konec občanské války sjednotil Spojené státy a vedl ke zrušení otroctví. Byla to nejkrvavější válka v americké historii a měla hluboký dopad na americkou společnost.',
+    details: 'Americká občanská válka (1861-1865) skončila 9. dubna 1865 kapitulací generála Roberta E. Leea v Appomattox Court House ve Virginii. Byla to nejkrvavější válka v americké historii - zabila přibližně 620 000 vojáků (více než všechny ostatní americké války dohromady). Válka vypukla kvůli sporu o otroctví a práva států. Jih (Konfederace) se pokusil odtrhnout od Unie, ale Sever (Unie) pod vedením prezidenta Abrahama Lincolna bojoval za zachování unie a zrušení otroctví. Válka zahrnovala první použití železnic, telegrafu a dalších moderních technologií ve válčení. Bitva u Gettysburgu v roce 1863 byla nejkrvavější bitvou války a obratem ve prospěch Unie. Konec války vedl ke zrušení otroctví (13. dodatek ústavy) a sjednocení Spojených států. Válka měla hluboký dopad na americkou společnost - zanechala hořkost mezi Severem a Jihem, která trvala desítky let. Rekonstrukce Jihu byla dlouhý a bolestivý proces, který formoval moderní Ameriku.',
     tags: ['USA', 'Válka', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800',
-    period: getPeriodForYear(1865)
+    image: konecAmerickeObcanskeValkyImg,
+    period: getPeriodForYear(1865),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Americk%C3%A1_ob%C4%8Dansk%C3%A1_v%C3%A1lka'
   },
   {
     id: 29,
@@ -737,10 +879,16 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Sarajevo, Bosna',
     coordinates: { lat: 43.8563, lng: 18.4131 },
     description: 'Atentát na arcivévodu Františka Ferdinanda d\'Este vyvolal první světovou válku.',
-    details: 'První světová válka byla jedním z nejničivějších konfliktů v historii. Způsobila smrt milionů lidí a vedla k pádu čtyř velkých říší. Změnila politickou mapu Evropy a světa.',
+    details: 'První světová válka začala 28. července 1914 po atentátu na rakousko-uherského následníka trůnu arcivévodu Františka Ferdinanda d\'Este v Sarajevu. Válka trvala do 11. listopadu 1918 a byla jedním z nejničivějších konfliktů v historii. Zúčastnilo se jí více než 70 milionů vojáků z 30 zemí. Válka byla charakterizována zákopovou válkou, která vedla k obrovským ztrátám na životech při minimálních územních ziscích. Bylo poprvé použito chemických zbraní, tanků a letadel. Celkem zahynulo přibližně 16-20 milionů lidí (vojáci i civilisté). Válka vedla k pádu čtyř velkých říší - Ruské, Německé, Rakousko-Uherské a Osmanské. Versailleská mírová smlouva ukončila válku, ale její tvrdé podmínky přispěly k vzestupu nacismu v Německu a druhé světové válce. První světová válka změnila politickou mapu Evropy a světa, vedla k vzniku nových států a položila základy pro moderní mezinárodní systém.',
     tags: ['Válka', 'Evropa', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1914)
+    image: zacatek1SvetoveValkyImg,
+    period: getPeriodForYear(1914),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Prvn%C3%AD_sv%C4%9Btov%C3%A1_v%C3%A1lka',
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: '14fc482da7a94997ae7bc8ad81274e45',
+      url: 'https://sketchfab.com/3d-models/versailles-france-14fc482da7a94997ae7bc8ad81274e45'
+    }
   },
   {
     id: 30,
@@ -749,10 +897,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Petrohrad, Rusko',
     coordinates: { lat: 59.9343, lng: 30.3351 },
     description: 'Bolševická revoluce svrhla carský režim a zavedla komunistickou vládu.',
-    details: 'Ruská revoluce vedla k pádu Ruské říše a vzniku Sovětského svazu. Měla zásadní vliv na světovou politiku 20. století a vedla ke studené válce.',
+    details: 'Ruská revoluce proběhla ve dvou fázích v roce 1917. Únorová revoluce (podle juliánského kalendáře, březen podle gregoriánského) svrhla cara Mikuláše II. a ukončila více než 300 let trvající vládu Romanovců. Vznikla Prozatímní vláda, ale ta nedokázala řešit válečné a ekonomické problémy. V říjnu (listopadu) 1917 provedli bolševici pod vedením Vladimira Lenina úspěšný převrat - dobyli Zimní palác v Petrohradě a převzali moc. Bolševická revoluce vedla k pádu Ruské říše a vzniku Sovětského svazu, prvního komunistického státu na světě. Revoluce měla zásadní vliv na světovou politiku 20. století - inspirovala komunistická hnutí po celém světě a vedla ke studené válce mezi USA a SSSR. Ruská občanská válka (1917-1923) následovala po revoluci a způsobila smrt milionů lidí. Revoluce změnila mapu Evropy a světa a její důsledky jsou patrné dodnes.',
     tags: ['Rusko', 'Revoluce', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1917)
+    image: ruskaRevoluceImg,
+    period: getPeriodForYear(1917),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/%C5%98%C3%ADjnov%C3%A1_revoluce'
   },
   {
     id: 31,
@@ -761,10 +910,16 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Berlín, Německo',
     coordinates: { lat: 52.5200, lng: 13.4050 },
     description: 'Kapitulace Německa a Japonska ukončila nejničivější válku v historii.',
-    details: 'Druhá světová válka způsobila smrt více než 60 milionů lidí. Její konec vedl k novému světovému uspořádání, vzniku OSN a začátku studené války mezi USA a SSSR.',
+    details: 'Druhá světová válka (1939-1945) byla nejničivějším konfliktem v historii lidstva. Zúčastnilo se jí více než 100 milionů vojáků z více než 30 zemí. Válka skončila kapitulací Německa 8. května 1945 a kapitulací Japonska 2. září 1945 po svržení atomových bomb na Hirošimu a Nagasaki. Celkem zahynulo přibližně 60-85 milionů lidí, z toho více než polovina byli civilisté. Holocaust způsobil smrt 6 milionů Židů a milionů dalších obětí nacistického režimu. Válka vedla k novému světovému uspořádání - vzniku Organizace spojených národů (OSN) v roce 1945, rozdělení Evropy na východní a západní blok a začátku studené války mezi USA a SSSR. Německo bylo rozděleno na východní a západní část, stejně jako Berlín. Válka změnila politickou mapu světa - zanikly koloniální říše, vznikly nové státy a USA a SSSR se staly supervelmocemi. Válečné zločiny byly souzeny v Norimberském procesu, který stanovil mezinárodní právo.',
     tags: ['Válka', 'Evropa', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1945)
+    image: konecDruheSvetoveValkyImg,
+    period: getPeriodForYear(1945),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Druh%C3%A1_sv%C4%9Btov%C3%A1_v%C3%A1lka',
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: '6718a21b8e15463c997206857ebd2a3c',
+      url: 'https://sketchfab.com/3d-models/world-war-2-spitfire-6718a21b8e15463c997206857ebd2a3c'
+    }
   },
   {
     id: 32,
@@ -773,10 +928,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Berlín, Německo',
     coordinates: { lat: 52.5200, lng: 13.4050 },
     description: 'Pád Berlínské zdi symbolizoval konec studené války a sjednocení Německa.',
-    details: 'Pád Berlínské zdi byl jedním z nejvýznamnějších momentů konce studené války. Symbolizoval konec rozdělení Evropy a vedl k demokratickým změnám ve východní Evropě.',
+    details: 'Berlínská zeď, která rozdělovala východní a západní Berlín, padla 9. listopadu 1989 po 28 letech existence. Zeď byla postavena v roce 1961, aby zabránila útěkům z východního Německa na Západ. Byla dlouhá 155 km a vysoká 3,6 metru, s ostnatým drátem, strážními věžemi a "pásmem smrti". Při pokusech o útěk přes zeď zahynulo nejméně 140 lidí. Pád zdi začal, když východoněmecký mluvčí Günter Schabowski na tiskové konferenci omylem oznámil, že hranice jsou okamžitě otevřené. Tisíce Východních Berlíňanů se shromáždily u zdi a pohraničníci, zmatení nejasnými rozkazy, otevřeli hraniční přechody. Lidé začali demolovat zeď kladivy a majzlíky. Pád zdi symbolizoval konec studené války a vedl k znovusjednocení Německa 3. října 1990. Tato událost inspirovala demokratické změny ve východní Evropě a přispěla k pádu komunistických režimů. Fragmenty zdi se staly sběratelskými předměty a památníky po celém světě.',
     tags: ['Německo', 'Politika', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1989)
+    image: padBerlinskeZdiImg,
+    period: getPeriodForYear(1989),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Berl%C3%ADnsk%C3%A1_ze%C4%8F'
   },
   {
     id: 33,
@@ -785,10 +941,16 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'New York, USA',
     coordinates: { lat: 40.7128, lng: -74.0060 },
     description: 'Teroristické útoky na Světové obchodní centrum změnily světovou bezpečnostní politiku.',
-    details: 'Útoky z 11. září 2001 byly nejničivějším teroristickým útokem v historii USA. Měly zásadní dopad na mezinárodní vztahy, bezpečnostní politiku a vedly k válkám v Afghánistánu a Iráku.',
+    details: 'Útoky z 11. září 2001 byly sérií čtyř koordinovaných teroristických útoků provedených islámskými teroristy z al-Káidy. Dva letadla narazila do dvojčat Světového obchodního centra v New Yorku, jedno do Pentagonu ve Virginii a čtvrté se zřítilo v Pensylvánii poté, co cestující převzali kontrolu. Útoky způsobily smrt 2 977 lidí (kromě 19 únosců) a zranění více než 6 000 dalších. Dvojčata se zhroutila během několika hodin, což způsobilo masivní destrukci v dolním Manhattanu. Útoky byly nejničivějším teroristickým útokem v historii USA a největším útokem na americkou půdu od Pearl Harboru. Měly zásadní dopad na mezinárodní vztahy a bezpečnostní politiku - USA zahájily "válku proti teroru", invazi do Afghánistánu (2001) a Iráku (2003). Byla vytvořena nová bezpečnostní opatření, včetně Ministerstva vnitřní bezpečnosti a rozšířených pravomocí zpravodajských služeb. Útoky změnily způsob, jakým svět vnímal terorismus a bezpečnost.',
     tags: ['USA', 'Terorismus', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800',
-    period: getPeriodForYear(2001)
+    image: utokyNaSvetoveObchodniCentrumImg,
+    period: getPeriodForYear(2001),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/%C3%9Atoky_11._z%C3%A1%C5%99%C3%AD',
+    model3D: {
+      type: 'sketchfab',
+      sketchfabId: '7750351736404beab6ae1581a0b20e9d',
+      url: 'https://sketchfab.com/3d-models/911-scene-twin-towers-plane-crash-7750351736404beab6ae1581a0b20e9d'
+    }
   },
   // Afrika
   {
@@ -798,10 +960,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Egypt',
     coordinates: { lat: 26.0, lng: 31.0 },
     description: 'Začátek egyptské civilizace sjednocením Horního a Dolního Egypta.',
-    details: 'Starověký Egypt byl jednou z nejvyspělejších civilizací starověku. Vznikl podél řeky Nil a přinesl významné objevy v architektuře, matematice, medicíně a písmu.',
+    details: 'Starověký Egypt vznikl kolem roku 3100 př. n. l. sjednocením Horního a Dolního Egypta pod vládou faraona Menese (Narmera). Egyptská civilizace trvala více než 3000 let a byla jednou z nejvyspělejších civilizací starověku. Egypt vznikl podél řeky Nil, která poskytovala úrodnou půdu, vodu a dopravní cestu. Nilské záplavy každoročně obnovovaly půdu, což umožnilo rozvoj zemědělství a podporovalo velkou populaci. Egypťané dosáhli významných objevů v architektuře (pyramidy, chrámy), matematice (geometrie pro měření polí), medicíně (chirurgie, anatomie), astronomii (kalendář) a písmu (hieroglyfy). Vytvořili složitý náboženský systém s mnoha bohy a vírou v posmrtný život, což vedlo k mumifikaci a stavbě hrobek. Egyptská společnost byla hierarchická s faraonem na vrcholu, následovaným kněžími, úředníky, vojáky, řemeslníky a rolníky. Egyptská kultura a umění ovlivnily pozdější civilizace a dodnes fascinují svět.',
     tags: ['Egypt', 'Afrika', 'Civilizace', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73a6e?w=800',
-    period: getPeriodForYear(-3000)
+    image: sjednoceniEgypta,
+    period: getPeriodForYear(-3000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Starov%C4%9Bk%C3%BD_Egypt'
   },
   {
     id: 58,
@@ -823,10 +986,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Etiopie',
     coordinates: { lat: 14.0, lng: 38.5 },
     description: 'Vznik Aksumské říše, jedné z nejmocnějších afrických říší starověku.',
-    details: 'Aksumská říše byla významnou obchodní mocností, která kontrolovala obchod mezi Afrikou, Arábií a Indií. Byla jednou z prvních říší, které přijaly křesťanství.',
+    details: 'Aksumská říše vzkvétala v oblasti dnešní Etiopie a Eritreje od 1. do 8. století n. l. Byla významnou obchodní mocností, která kontrolovala obchod mezi Afrikou, Arábií a Indií. Aksum měl vlastní měnu, pokročilé stavební techniky (včetně obelisků) a vlastní písmo (ge\'ez). Říše byla jednou z prvních, které přijaly křesťanství - král Ezana přijal křesťanství kolem roku 330 n. l., což z Etiopie učinilo jeden z prvních křesťanských států na světě. Aksum obchodoval se zlatem, slonovinou, želvovinou a otroky. Město Aksum bylo hlavním městem a náboženským centrem říše. Aksumští králové si nárokovali původ od krále Šalomouna a královny ze Sáby. Říše upadla v 7. století kvůli islámské expanzi, která přerušila obchodní cesty, a změnám klimatu. Aksumská kultura a křesťanství však přežily v Etiopii dodnes.',
     tags: ['Afrika', 'Etiopie', 'Obchod', 'Starověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(330)
+    image: zalozeniAksumskeRiseImg,
+    period: getPeriodForYear(330),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Aksumsk%C3%A1_%C5%99%C3%AD%C5%A1e'
   },
   {
     id: 60,
@@ -835,10 +999,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Ghana',
     coordinates: { lat: 8.0, lng: -2.0 },
     description: 'Konec Ghanské říše, první velké západoafrické říše.',
-    details: 'Ghanská říše byla první významnou říší v západní Africe. Kontrolovala obchod se zlatem a solí a byla známá svým bohatstvím. Její pád otevřel cestu pro další západoafrické říše.',
+    details: 'Ghanská říše vzkvétala v západní Africe od 6. do 13. století n. l. a byla první významnou říší v této oblasti. Říše kontrolovala obchodní cesty mezi severní a západní Afrikou, zejména obchod se zlatem a solí. Zlato z Ghany bylo klíčové pro středověký obchod a říše byla známá svým obrovským bohatstvím. Ghanská říše měla silnou armádu a efektivní administrativní systém. Hlavní město Kumbi Saleh bylo významným obchodním centrem s tisíci obyvateli. Říše upadla v 11. století kvůli kombinaci faktorů - invaze Almoravidů ze severu, vnitřní konflikty a změny obchodních tras. Pád Ghanské říše otevřel cestu pro vzestup Mali říše, která se stala ještě mocnější. Ghanská říše zanechala dědictví v západoafrické kultuře a obchodních praktikách. Moderní stát Ghana si vybral své jméno na počest této starověké říše, i když se geograficky nachází jinde.',
     tags: ['Afrika', 'Ghana', 'Obchod', 'Středověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1076)
+    image: padGhanskeRiseImg,
+    period: getPeriodForYear(1076),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Ghansk%C3%A1_%C5%99%C3%AD%C5%A1e'
   },
   {
     id: 61,
@@ -847,10 +1012,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Mali',
     coordinates: { lat: 17.0, lng: -4.0 },
     description: 'Mansa Musa, král Mali, podnikl legendární pouť do Mekky s obrovským bohatstvím.',
-    details: 'Mansa Musa byl jedním z nejbohatších lidí v historii. Jeho pouť do Mekky s karavanou nesoucí obrovské množství zlata způsobila inflaci v celém Středomoří a upoutala pozornost celého světa k bohatství Mali.',
+    details: 'Mansa Musa (vládl 1312-1337) byl desátým králem Mali říše a je považován za jednoho z nejbohatších lidí v historii. V roce 1324 podnikl legendární pouť (hadždž) do Mekky, která trvala rok a prošla přes Egypt. Jeho karavana čítala 60 000 lidí, včetně 12 000 otroků, a nesla obrovské množství zlata - podle některých zdrojů až 18 tun. Mansa Musa rozdával zlato tak štědře po cestě, že způsobil masivní inflaci v Egyptě a celém Středomoří - cena zlata klesla a trvalo 12 let, než se trh zotavil. V Káhiře utratil tolik zlata, že zlomil místní ekonomiku. Jeho štědrost a bohatství upoutaly pozornost celého světa - jeho jméno a Mali se objevily na evropských mapách. Mansa Musa také investoval do vzdělání a architektury - založil univerzity a mešity, včetně slavné mešity v Timbuktu. Jeho vláda představovala vrchol Mali říše, která byla jednou z největších a nejbohatších říší v africké historii.',
     tags: ['Afrika', 'Mali', 'Náboženství', 'Středověk'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1324)
+    image: poutMansaMusyImg,
+    period: getPeriodForYear(1324),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Mansa_Musa'
   },
   {
     id: 62,
@@ -859,10 +1025,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Berlín, Německo',
     coordinates: { lat: 52.5200, lng: 13.4050 },
     description: 'Evropské mocnosti rozdělily Afriku na kolonie bez ohledu na africké národy.',
-    details: 'Berlínská konference rozdělila Afriku mezi evropské koloniální mocnosti. Toto rozdělení ignorovalo etnické a kulturní hranice a mělo trvalé negativní dopady na africké národy.',
+    details: 'Berlínská konference (1884-1885) byla svolána německým kancléřem Otto von Bismarckem a zúčastnilo se jí 14 evropských zemí a USA. Konference měla "regulovat" kolonizaci Afriky, ale ve skutečnosti rozdělila kontinent mezi evropské mocnosti bez jakékoli účasti afrických představitelů. Hlavní zásadou bylo "efektivní okupace" - země musela prokázat, že skutečně kontroluje území, které si nárokuje. Konference ignorovala etnické, kulturní a historické hranice - uměle vytvořené hranice rozdělily etnické skupiny a spojily nepřátelské národy. Toto rozdělení mělo trvalé negativní dopady - vedlo k etnickým konfliktům, občanským válkám a nestabilitě, které trvají dodnes. Konference také legalizovala obchod s otroky a stanovila pravidla pro "civilizaci" afrických národů. Do roku 1914 bylo 90% Afriky pod evropskou kontrolou. Berlínská konference je považována za jeden z nejhanebnějších momentů v koloniální historii a symbolizuje evropský imperialismus v Africe.',
     tags: ['Afrika', 'Kolonizace', 'Politika', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1885)
+    image: berlinskaKonferenceImg,
+    period: getPeriodForYear(1885),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Berl%C3%ADnsk%C3%A1_konference'
   },
   {
     id: 63,
@@ -871,10 +1038,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Jižní Afrika',
     coordinates: { lat: -25.7, lng: 28.2 },
     description: 'Nelson Mandela se stal prvním černošským prezidentem Jižní Afriky.',
-    details: 'Konec apartheidu a zvolení Nelsona Mandely prezidentem ukončilo desetiletí rasové segregace v Jižní Africe. Mandela se stal symbolem boje za svobodu a usmíření.',
+    details: 'Apartheid (rasová segregace) v Jižní Africe trval od roku 1948 do roku 1994. Systém odděloval bílé, černé, barevné a asijské obyvatelstvo a omezoval práva nebělochů. Nelson Mandela strávil 27 let ve vězení za boj proti apartheidu. V roce 1990 byl propuštěn z vězení prezidentem F.W. de Klerkem, který zahájil proces ukončení apartheidu. První demokratické volby s univerzálním volebním právem se konaly 27. dubna 1994. Nelson Mandela byl zvolen prvním černošským prezidentem Jižní Afriky a sloužil do roku 1999. Konec apartheidu ukončil desetiletí rasové segregace a diskriminace. Mandela se stal symbolem boje za svobodu, usmíření a odpuštění - místo pomsty prosazoval jednotu a smíření mezi rasami. Založil Komisi pravdy a usmíření, která vyšetřovala zločiny apartheidu. Mandela získal Nobelovu cenu míru v roce 1993 spolu s de Klerkem. Konec apartheidu inspiroval bojovníky za lidská práva po celém světě a ukázal, že změna je možná i v nejtěžších podmínkách.',
     tags: ['Afrika', 'Politika', 'Lidská práva', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-    period: getPeriodForYear(1994)
+    image: konecApartheiduImg,
+    period: getPeriodForYear(1994),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Apartheid'
   },
   // Jižní Amerika
   {
@@ -887,7 +1055,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Andské civilizace začaly vznikat před přibližně 5 000 lety podél pobřeží a v horách Jižní Ameriky, zejména v oblasti dnešního Peru. Tyto rané společnosti se přizpůsobily náročnému horskému prostředí And a vyvinuly unikátní zemědělské techniky. Vytvořily terasovitá pole (andenes) na strmých svazích, která umožnila pěstování plodin v nadmořské výšce přes 3 000 metrů. Pěstovali brambory, kukuřici, quinoa a další plodiny odolné vůči vysoké nadmořské výšce. Andské společnosti také domestikovaly lamy a alpaky, které poskytovaly vlnu, maso a sloužily jako soumaři. Vyvinuly pokročilé textilní techniky a vytvářely složité tkané látky. Architektura těchto raných společností zahrnovala kamenné stavby a chrámy, které ukazují pokročilé stavební techniky. Andské civilizace také vytvořily rozsáhlé sítě cest a mostů, které spojovaly vzdálené oblasti. Tyto rané společnosti položily základy pro pozdější velké andské civilizace, jako byly Inkové.',
     tags: ['Jižní Amerika', 'Peru', 'Civilizace', 'Pravěk'],
     image: zacatekAndskeCivilizace,
-    period: getPeriodForYear(-3000)
+    period: getPeriodForYear(-3000),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Andsk%C3%A9_civilizace'
   },
   {
     id: 65,
@@ -899,7 +1068,8 @@ export const historicalEvents: HistoricalEvent[] = [
     details: 'Chavínská kultura, která vzkvétala mezi lety 900 a 200 př. n. l., byla první velkou andskou civilizací a je považována za "matku andských kultur". Centrum této kultury bylo v Chavín de Huántar, posvátném místě v peruánských Andách. Chavínská kultura vytvořila rozsáhlou obchodní síť, která spojovala pobřežní a horská údolí a umožnila výměnu zboží, myšlenek a technologií. Chavínci vyvinuli charakteristický umělecký styl s náboženskými motivy - jejich umění zobrazovalo hybridní bytosti kombinující lidské a zvířecí rysy, často s kočkovitými šelmami, hady a dravými ptáky. Tyto motivy byly vyřezávány do kamene, tkané do textilií a vytvářeny v keramice. Chavínská architektura zahrnovala složité chrámy s podzemními chodbami a komorami, kde se pravděpodobně konaly rituály. Chavínci také vyvinuli pokročilé inženýrské techniky, včetně akvaduktů a odvodňovacích systémů. Tato kultura měla zásadní vliv na pozdější andské civilizace a její umělecký styl a náboženské praktiky ovlivnily celou andskou oblast po staletí.',
     tags: ['Jižní Amerika', 'Peru', 'Civilizace', 'Pravěk'],
     image: chavinskaKultura,
-    period: getPeriodForYear(-1200)
+    period: getPeriodForYear(-1200),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Chav%C3%ADnsk%C3%A1_kultura'
   },
   {
     id: 66,
@@ -908,10 +1078,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Peru',
     coordinates: { lat: -13.2, lng: -72.5 },
     description: 'Inkové začali budovat svou říši v Andách.',
-    details: 'Incká říše byla největší říší v předkolumbovské Americe. Rozkládala se podél celého západního pobřeží Jižní Ameriky a měla pokročilý systém silnic, zemědělství a administrativy.',
+    details: 'Incká říše (Tawantinsuyu) byla největší říší v předkolumbovské Americe, rozkládající se podél celého západního pobřeží Jižní Ameriky od dnešního Ekvádoru po Chile. Říše začala vznikat kolem roku 1438 pod vládou Pachacutiho, který přeměnil malé království v obrovskou říši. Inkové měli pokročilý systém silnic (Qhapaq Ñan) dlouhý přes 40 000 km, který spojoval všechny části říše. Používali systém uzlů zvaný kipu pro vedení záznamů a komunikaci. Incká společnost byla hierarchická s Inkou (císařem) na vrcholu, považovaným za syna Slunce. Inkové vyvinuli pokročilé zemědělské techniky včetně terasovitých polí, zavlažovacích systémů a skladování potravin. Jejich architektura byla pozoruhodná - kamenné bloky byly opracovány tak přesně, že mezi ně neprošel ani list papíru. Inkové neměli písmo, ale měli bohatou ústní tradici a složité náboženské rituály. Machu Picchu je jedním z nejslavnějších příkladů incké architektury. Říše dosáhla vrcholu za vlády Huayna Capaca, ale byla oslabena občanskou válkou a pak dobyta Španěly.',
     tags: ['Jižní Amerika', 'Peru', 'Civilizace', 'Středověk'],
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
-    period: getPeriodForYear(1438)
+    image: vznikInckeRiseImg,
+    period: getPeriodForYear(1438),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Inck%C3%A1_%C5%99%C3%AD%C5%A1e'
   },
   {
     id: 67,
@@ -920,10 +1091,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Peru',
     coordinates: { lat: -13.2, lng: -72.5 },
     description: 'Francisco Pizarro dobyl Inckou říši pro Španělsko.',
-    details: 'Dobytí Incké říše Španěly vedenými Pizarrem ukončilo existenci největší předkolumbovské říše v Americe. Tato událost změnila historii Jižní Ameriky a vedla k evropské kolonizaci.',
+    details: 'Dobytí Incké říše začalo v roce 1532, kdy Francisco Pizarro s pouhými 168 muži přistál v Peru. Incká říše byla oslabena občanskou válkou mezi bratry Atahualpou a Huáscarem a také evropskými nemocemi (neštovice), které zabily velkou část populace. Pizarro pozval Inku Atahualpu na setkání v Cajamarce, ale místo toho ho zajal a požadoval obrovské výkupné - místnost plnou zlata a stříbra. I když bylo výkupné zaplaceno, Pizarro Atahualpu popravil. Španělé využili technologické převahy (koně, ocelové zbraně, střelné zbraně) a rozdělení mezi Inky k rychlému dobytí říše. Dobytí bylo brutální - tisíce Inků byly zabity, jejich kultura zničena a poklady rozkradeny. Poslední Inka, Túpac Amaru, byl popraven v roce 1572. Dobytí ukončilo existenci největší předkolumbovské říše v Americe a změnilo historii Jižní Ameriky. Vedlo k evropské kolonizaci, zavedení křesťanství a zničení incké kultury. Miliony Inků zemřely na nemoci, nucenou práci a války. Dědictví Inků však přežívá v peruánské kultuře, jazyce (kečuánština) a tradicích dodnes.',
     tags: ['Jižní Amerika', 'Peru', 'Kolonizace', 'Novověk'],
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
-    period: getPeriodForYear(1532)
+    image: dobitiInckeRiseImg,
+    period: getPeriodForYear(1532),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Dobyt%C3%AD_Inck%C3%A9_%C5%99%C3%AD%C5%A1e'
   },
   {
     id: 68,
@@ -932,10 +1104,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Brazílie',
     coordinates: { lat: -15.8, lng: -47.9 },
     description: 'Brazílie vyhlásila nezávislost na Portugalsku.',
-    details: 'Brazílie získala nezávislost mírovou cestou pod vedením Dom Pedra I. Stala se největším nezávislým státem v Jižní Americe a jedinou portugalsky mluvící zemí na kontinentu.',
+    details: 'Brazílie vyhlásila nezávislost na Portugalsku 7. září 1822 pod vedením Dom Pedra I., syna portugalského krále. Na rozdíl od většiny latinskoamerických zemí získala Brazílie nezávislost relativně mírovou cestou - bez rozsáhlé války. Dom Pedro I. odmítl vrátit se do Portugalska a místo toho vyhlásil nezávislost s heslem "Nezávislost nebo smrt!" (Independência ou Morte!). Brazílie se stala nezávislým císařstvím s Dom Pedrem I. jako císařem. Stala se největším nezávislým státem v Jižní Americe a jedinou portugalsky mluvící zemí na kontinentu. Nezávislost byla uznána Portugalskem v roce 1825. Brazílie zůstala monarchií až do roku 1889, kdy byla vyhlášena republika. Nezávislost Brazílie byla součástí širšího hnutí za nezávislost v Latinské Americe, ale byla jedinečná svou mírovou povahou a zachováním monarchie. Brazílie si zachovala silné vazby s Portugalskem a evropskou kulturou, což ovlivnilo její vývoj. Dnes je Brazílie největší a nejlidnatější zemí Jižní Ameriky.',
     tags: ['Jižní Amerika', 'Brazílie', 'Politika', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
-    period: getPeriodForYear(1822)
+    image: nezavislostBrazileImg,
+    period: getPeriodForYear(1822),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Nez%C3%A1vislost_Braz%C3%ADlie'
   },
   {
     id: 69,
@@ -944,10 +1117,11 @@ export const historicalEvents: HistoricalEvent[] = [
     location: 'Panama',
     coordinates: { lat: 9.0, lng: -79.5 },
     description: 'Panamský průplav byl otevřen, čímž propojil Atlantik a Pacifik.',
-    details: 'Otevření Panamského průplavu zkrátilo námořní cestu mezi Atlantikem a Pacifikem o tisíce kilometrů. Mělo zásadní dopad na světový obchod a změnilo geopolitickou situaci.',
+    details: 'Panamský průplav byl otevřen 15. srpna 1914 po 10 letech stavby pod vedením USA. Průplav je dlouhý 82 km a spojuje Atlantský a Tichý oceán, čímž zkracuje námořní cestu mezi východním a západním pobřežím USA o více než 13 000 km. První pokus o stavbu provedli Francouzi v letech 1881-1894, ale projekt selhal kvůli nemocem (malárie, žlutá zimnice), technickým problémům a bankrotu. USA převzaly projekt v roce 1904 a dokončily ho za 10 let. Stavba si vyžádala životy přibližně 27 000 dělníků. Průplav používá systém zdymadel, která zvedají lodě na úroveň Gatúnského jezera (26 metrů nad mořem). Otevření průplavu mělo zásadní dopad na světový obchod - umožnilo rychlejší a levnější přepravu zboží mezi oceány. Průplav změnil geopolitickou situaci - USA získaly strategickou kontrolu nad důležitou obchodní cestou. V roce 1999 přešel průplav pod kontrolu Panamy. Dnes projede průplavem přibližně 14 000 lodí ročně, což představuje 5% světového obchodu. Průplav je považován za jeden z největších inženýrských úspěchů 20. století.',
     tags: ['Jižní Amerika', 'Panama', 'Technologie', 'Moderní doba'],
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800',
-    period: getPeriodForYear(1914)
+    image: otevreniPanamskehoPrulivuImg,
+    period: getPeriodForYear(1914),
+    wikipediaUrl: 'https://cs.wikipedia.org/wiki/Panamsk%C3%BD_pr%C5%AFplav'
   }
 ]
 

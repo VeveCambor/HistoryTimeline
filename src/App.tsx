@@ -6,16 +6,18 @@ import EventDetail from './pages/EventDetail'
 import PeriodDetail from './pages/PeriodDetail'
 
 function App() {
+  console.log('📱 App komponenta se renderuje...')
+  
   return (
     <>
       <GlobalStyle />
       <Router>
         <AppContainer>
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/event/:id" element={<EventDetail />} />
-                  <Route path="/period/:id" element={<PeriodDetail />} />
-                </Routes>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/event/:id" element={<EventDetail />} />
+            <Route path="/period/:id" element={<PeriodDetail />} />
+          </Routes>
         </AppContainer>
       </Router>
     </>

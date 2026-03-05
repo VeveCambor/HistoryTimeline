@@ -8,9 +8,10 @@ interface ModalProps {
   title?: string
   children: ReactNode
   color?: string
+  size?: 'normal' | 'large'
 }
 
-function Modal({ isOpen, onClose, title, children, color }: ModalProps) {
+function Modal({ isOpen, onClose, title, children, color, size = 'normal' }: ModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -26,7 +27,7 @@ function Modal({ isOpen, onClose, title, children, color }: ModalProps) {
 
   return (
     <ModalOverlay onClick={onClose}>
-      <ModalContent onClick={(e) => e.stopPropagation()} $color={color}>
+      <ModalContent onClick={(e) => e.stopPropagation()} $color={color} $size={size}>
         <ModalHeader $color={color}>
           {title && <ModalTitle>{title}</ModalTitle>}
           <CloseButton onClick={onClose} $color={color}>
@@ -68,10 +69,10 @@ const ModalOverlay = styled.div`
   }
 `
 
-const ModalContent = styled.div<{ $color?: string }>`
+const ModalContent = styled.div<{ $color?: string; $size?: 'normal' | 'large' }>`
   background: white;
   border-radius: 16px;
-  max-width: 600px;
+  max-width: ${props => props.$size === 'large' ? '90vw' : '600px'};
   width: 100%;
   max-height: 90vh;
   display: flex;

@@ -11,6 +11,15 @@ export interface HistoricalBoundary {
 
 import { HistoricalPeriod } from './periods'
 
+export interface Model3DConfig {
+  url: string
+  type?: 'gltf' | 'glb' | 'sketchfab' // Typ modelu
+  sketchfabId?: string // ID pro Sketchfab embed
+  scale?: number
+  position?: [number, number, number]
+  rotation?: [number, number, number]
+}
+
 export interface HistoricalEvent {
   id: number
   year: number
@@ -24,5 +33,6 @@ export interface HistoricalEvent {
   historicalBoundaries?: HistoricalBoundary[]
   period?: HistoricalPeriod
   wikipediaUrl?: string
+  model3D?: Model3DConfig
 }
 

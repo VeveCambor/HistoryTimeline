@@ -61,4 +61,3 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
     b: parseInt(result[3], 16)
   } : null
 }
-
