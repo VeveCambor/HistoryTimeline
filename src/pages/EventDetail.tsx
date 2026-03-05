@@ -19,6 +19,9 @@ import Model3DButton from '../components/ui/Model3DButton'
 import Modal from '../components/ui/Modal'
 import { HistoricalPeriod, PERIODS } from '../types/periods'
 import { eventQuizQuestions } from '../data/quizQuestions'
+import { useEventImage } from '../hooks/useEventImage'
+import { hexToRgbObject, hexToRgba } from '../utils/color'
+import { theme } from '../styles/theme'
 
 // Lazy loading pro 3D viewer
 const Model3DViewer = lazy(() => import('../components/Model3DViewer'))
@@ -55,7 +58,8 @@ function EventDetail() {
   }
 
   // Získat barvu období pro událost
-  const periodColor = PERIODS.find(p => p.id === event.period)?.color || '#667eea'
+  const periodColor = PERIODS.find(p => p.id === event.period)?.color || theme.colors.primary
+  const [headerImageUrl] = useEventImage(event.image)
 
   // Získat kvízové otázky pro tuto událost
   const quizQuestions = eventQuizQuestions[event.id] || []
@@ -75,7 +79,7 @@ function EventDetail() {
 
   return (
     <EventDetailContainer>
-      <Header $hasImage={!!event.image} $imageUrl={event.image} $periodColor={periodColor}>
+      <Header $hasImage={!!headerImageUrl} $imageUrl={headerImageUrl} $periodColor={periodColor}>
         <BackButton onClick={handleBack} />
         <h1>{event.title}</h1>
         <Meta>
@@ -186,9 +190,8 @@ const EventDetailContainer = styled.div`
 const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string; $periodColor: string }>`
   position: relative;
   background: ${props => {
-    const colorRgb = hexToRgb(props.$periodColor)
-    const overlayColor = colorRgb ? `rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, 0.85)` : 'rgba(102, 126, 234, 0.85)'
-    
+    const colorRgb = hexToRgbObject(props.$periodColor)
+    const overlayColor = colorRgb ? `rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, 0.85)` : hexToRgba(theme.colors.primary, 0.85)
     if (props.$hasImage && props.$imageUrl) {
       return `linear-gradient(135deg, ${overlayColor} 0%, ${overlayColor} 100%), url('${props.$imageUrl}') center/cover`
     }
@@ -197,7 +200,7 @@ const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string; $periodColo
   color: white;
   padding: 3rem 2rem;
   padding-right: 5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: ${theme.shadows.md};
   min-height: 200px;
 
   &::before {
@@ -208,8 +211,8 @@ const Header = styled.div<{ $hasImage?: boolean; $imageUrl?: string; $periodColo
     right: 0;
     bottom: 0;
     background: ${props => {
-      const colorRgb = hexToRgb(props.$periodColor)
-      return colorRgb ? `linear-gradient(135deg, rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, 0.75) 0%, rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, 0.75) 100%)` : 'linear-gradient(135deg, rgba(102, 126, 234, 0.75) 0%, rgba(118, 75, 162, 0.75) 100%)'
+      const colorRgb = hexToRgbObject(props.$periodColor)
+      return colorRgb ? `linear-gradient(135deg, rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, 0.75) 0%, rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, 0.75) 100%)` : `linear-gradient(135deg, ${hexToRgba(theme.colors.primary, 0.75)} 0%, ${hexToRgba(theme.colors.primaryDark, 0.75)} 100%)`
     }};
     z-index: 1;
   }
@@ -286,8 +289,8 @@ const Loading3D = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 12px;
+  background: ${theme.colors.primaryGradient};
+  border-radius: ${theme.borderRadius.lg};
   color: white;
   font-size: 1.2rem;
   font-weight: 500;
@@ -296,13 +299,3 @@ const Loading3D = styled.div`
 const Model3DViewerWrapper = styled.div`
   width: 100%;
 `
-
-// Pomocná funkce pro převod hex barvy na RGB
-function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null
-}

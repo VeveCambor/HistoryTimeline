@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
 import styled from 'styled-components'
 import GlobalStyle from './styles/GlobalStyle'
+import { theme } from './styles/theme'
 import HomePage from './pages/HomePage'
 import EventDetail from './pages/EventDetail'
 import PeriodDetail from './pages/PeriodDetail'
 
 function App() {
-  console.log('📱 App komponenta se renderuje...')
-  
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
         <AppContainer>
@@ -20,7 +20,7 @@ function App() {
           </Routes>
         </AppContainer>
       </Router>
-    </>
+    </ThemeProvider>
   )
 }
 
@@ -31,3 +31,4 @@ const AppContainer = styled.div`
   width: 100%;
   min-height: 100vh;
 `
+

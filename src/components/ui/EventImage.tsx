@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useEventImage } from '../../hooks/useEventImage'
 
 interface EventImageProps {
   src: string
@@ -6,9 +7,21 @@ interface EventImageProps {
 }
 
 function EventImage({ src, alt }: EventImageProps) {
+  const [url, loading] = useEventImage(src)
+  const displayUrl = url
+
+  if (!displayUrl && loading) {
+    return (
+      <ImageContainer>
+        <Placeholder>Načítání obrázku…</Placeholder>
+      </ImageContainer>
+    )
+  }
+  if (!displayUrl) return null
+
   return (
     <ImageContainer>
-      <Image src={src} alt={alt} />
+      <Image src={displayUrl} alt={alt} />
     </ImageContainer>
   )
 }
@@ -27,6 +40,14 @@ const ImageContainer = styled.div`
   @media (max-width: 768px) {
     max-width: 100%;
   }
+`
+
+const Placeholder = styled.div`
+  padding: 3rem;
+  text-align: center;
+  color: var(--color-text-secondary, #666);
+  background: var(--color-border, #eee);
+  border-radius: 12px;
 `
 
 const Image = styled.img`

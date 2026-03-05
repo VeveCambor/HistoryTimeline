@@ -8,6 +8,7 @@ import SearchInput from '../components/ui/SearchInput'
 import { historicalEvents } from '../data/events'
 import { HistoricalEvent } from '../types'
 import { HistoricalPeriod, PERIODS } from '../types/periods'
+import { theme } from '../styles/theme'
 
 function HomePage() {
   const location = useLocation()
@@ -56,7 +57,7 @@ function HomePage() {
   }, [selectedPeriod, searchQuery])
 
   // Získat barvu vybraného období
-  const periodColor = PERIODS.find(p => p.id === selectedPeriod)?.color || '#667eea'
+  const periodColor = PERIODS.find(p => p.id === selectedPeriod)?.color || theme.colors.primary
 
   return (
     <HomePageContainer>
